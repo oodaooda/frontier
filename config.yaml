@@ -1,0 +1,26 @@
+# Frontier benchmark configuration
+
+rendering:
+  default_dpi: 300          # DPI for construction drawings
+  text_dpi: 150             # DPI for text-heavy specs
+  format: png
+
+models:
+  - id: claude-opus-4-6
+    provider: anthropic
+    max_tokens: 4096
+
+  - id: gpt-5.4
+    provider: openai
+    max_tokens: 4096
+
+scoring:
+  numeric_tolerance_default: 0.01
+  semantic_similarity_threshold: 0.85
+
+paths:
+  pdfs: datasets/pdfs
+  ground_truth: datasets/ground_truth
+  rendered: datasets/rendered
+  results: reports/results
+  reports: reports

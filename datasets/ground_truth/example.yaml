@@ -1,0 +1,35 @@
+document: example.pdf
+
+tasks:
+  - id: table-001
+    page: 1
+    tier: 1
+    category: table
+    question: "What is the total square footage listed in the area summary table?"
+    expected: "12,450 SF"
+    scoring: exact
+
+  - id: spec-001
+    page: 3
+    tier: 2
+    category: specification
+    question: "Which ASTM standard governs the concrete mix design referenced in Section 03 30 00?"
+    expected: "ASTM C94"
+    scoring: contains
+
+  - id: drawing-001
+    page: 2
+    tier: 3
+    category: drawing
+    question: "What is the dimension between gridline A and gridline B?"
+    expected: "32'-6\""
+    scoring: exact
+    notes: "Dimension shown on the foundation plan along the north elevation."
+
+  - id: lookahead-001
+    page: 5
+    tier: 2
+    category: lookahead
+    question: "What activity is scheduled to start in week 2?"
+    expected: "Structural steel erection"
+    scoring: semantic

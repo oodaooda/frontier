@@ -1,0 +1,26 @@
+# Ground Truth Schema
+# Each YAML file in this directory represents test cases for one PDF document.
+#
+# Fields:
+#   document:       Filename of the source PDF in datasets/pdfs/
+#   tasks:          List of evaluation tasks
+#     - id:         Unique task identifier (e.g., "schedule-001")
+#       page:       Page number(s) to send to the model (1-indexed)
+#       tier:       1 = text extraction, 2 = structured understanding, 3 = spatial/visual
+#       category:   Document type: table | schedule | specification | drawing | lookahead
+#       question:   The question to ask the model
+#       expected:   The ground truth answer
+#       scoring:    How to evaluate: exact | numeric_tolerance | contains | semantic
+#       tolerance:  For numeric_tolerance scoring — acceptable deviation (e.g., 0.5)
+#       notes:      Optional context about why this answer is correct
+
+# Example:
+# document: A-301.pdf
+# tasks:
+#   - id: schedule-001
+#     page: 1
+#     tier: 1
+#     category: schedule
+#     question: "How many doors are listed in the door schedule?"
+#     expected: "14"
+#     scoring: exact

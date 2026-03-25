@@ -1,0 +1,5 @@
+You are analyzing a construction document. Answer the following question based solely on what is visible in the provided image(s).
+
+Be precise and specific. If the answer involves a measurement, include the unit. If the answer involves a count, provide the exact number. If you cannot determine the answer from the image, respond with "UNABLE TO DETERMINE" and briefly explain why.
+
+Question: {question}
