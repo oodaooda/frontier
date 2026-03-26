@@ -4,6 +4,18 @@ All notable milestone completions for Frontier are documented here.
 
 ## [Unreleased]
 
+### M004 — Model Runners & Evaluation Engine (2026-03-26)
+- Anthropic runner (Claude) with vision support
+- OpenAI runner (GPT) with vision support
+- Evaluation pipeline: iterate tasks, call model, parse response, score, store
+- Response parsing: extract Answer and Confidence from model output
+- Simple scoring: exact, contains, numeric_tolerance, semantic
+- Cost calculation per request based on model pricing
+- Evaluate page: select model, documents, prompt, run
+- Results list and per-question drill-down with comments
+- Run notes and per-result annotations
+- 58 automated tests
+
 ### M003 — Ground Truth Editor & Versioning (2026-03-26)
 - Side-by-side PDF viewer + Q&A editor with inline editing
 - Task CRUD: create, edit, verify, delete ground truth tasks

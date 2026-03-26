@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% set active_nav = "results" %}
+{% block title_suffix %} — Run #{{ evaluation.id }}{% endblock %}
+
+{% block head %}
+<style>
+    .stat-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .stat-chip {
+        border: 1px solid var(--pico-muted-border-color); border-radius: 8px;
+        padding: 0.75rem 1rem; font-size: 0.85rem;
+    }
+    .stat-chip .label { opacity: 0.7; font-size: 0.75rem; }
+    .stat-chip .val { font-weight: 700; font-size: 1.1rem; }
+    .badge-pass { background: #dcfce7; color: #166534; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+    .badge-fail { background: #fee2e2; color: #991b1b; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+    .model-answer { background: var(--pico-muted-color, #f9fafb); padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 0.8rem; }
+    .expected-answer { background: rgba(34,197,94,0.1); padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 0.8rem; }
+    .conf { font-size: 0.75rem; }
+    .conf-high { color: var(--pass); }
+    .conf-low { color: var(--fail); }
+    .comment-form { display: flex; gap: 0.25rem; }
+    .comment-form input { font-size: 0.8rem; padding: 0.25rem; flex: 1; margin: 0; }
+    .comment-form button { font-size: 0.7rem; padding: 0.2rem 0.4rem; white-space: nowrap; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="breadcrumb">
+    <a href="/results">Results</a> / Run #{{ evaluation.id }}
+</div>
+
+<div class="page-header">
+    <div>
+        <h1 style="margin:0;">Run #{{ evaluation.id }} — {{ evaluation.model_name or evaluation.model_id }}</h1>
+        <div style="font-size:0.85rem; opacity:0.7;">{{ evaluation.started_date }}</div>
+    </div>
+</div>
+
+<div class="stat-row">
+    <div class="stat-chip">
+        <div class="label">Overall Score</div>
+        <div class="val" style="color: {% if evaluation.total_tasks > 0 and (evaluation.passed_tasks / evaluation.total_tasks) >= 0.75 %}var(--pass){% elif evaluation.total_tasks > 0 and (evaluation.passed_tasks / evaluation.total_tasks) >= 0.5 %}var(--warn){% else %}var(--fail){% endif %};">
+            {% if evaluation.total_tasks > 0 %}
+            {{ (evaluation.passed_tasks / evaluation.total_tasks * 100)|round(0)|int }}%
+            ({{ evaluation.passed_tasks }}/{{ evaluation.total_tasks }})
+            {% else %}—{% endif %}
+        </div>
+    </div>
+    {% for tier, stats in tier_stats.items()|sort %}
+    <div class="stat-chip">
+        <div class="label">Tier {{ tier }}</div>
+        <div class="val">
+            {% if stats.total > 0 %}
+            {{ (stats.passed / stats.total * 100)|round(0)|int }}%
+            {% else %}—{% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    <div class="stat-chip">
+        <div class="label">Total Cost</div>
+        <div class="val">${{ "%.2f"|format(evaluation.total_cost) }}</div>
+    </div>
+    <div class="stat-chip">
+        <div class="label">Status</div>
+        <div class="val">{{ evaluation.status }}</div>
+    </div>
+</div>
+
+<!-- Run Notes -->
+<form action="/results/{{ evaluation.id }}/notes" method="post" style="margin-bottom:1.5rem;">
+    <label style="font-size:0.85rem;">Run Notes
+        <div style="display:flex; gap:0.5rem;">
+            <input type="text" name="notes" value="{{ evaluation.notes or '' }}" placeholder="Add notes about this run...">
+            <button type="submit" class="outline" style="font-size:0.85rem; white-space:nowrap;">Save</button>
+        </div>
+    </label>
+</form>
+
+<!-- Per-question results -->
+<table style="font-size:0.85rem;">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Doc</th>
+            <th>Tier</th>
+            <th>Question</th>
+            <th>Expected</th>
+            <th>Model Answer</th>
+            <th>Result</th>
+            <th>Conf</th>
+            <th>Latency</th>
+            <th>Cost</th>
+            <th>Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in results %}
+        <tr style="{% if r.passed %}background: rgba(34,197,94,0.05);{% else %}background: rgba(239,68,68,0.05);{% endif %}">
+            <td>{{ r.task_key }}</td>
+            <td style="font-size:0.75rem;">{{ r.doc_name[:15] }}</td>
+            <td>T{{ r.tier }}</td>
+            <td style="max-width:200px;">{{ r.question }}</td>
+            <td><span class="expected-answer">{{ r.expected_answer }}</span></td>
+            <td><span class="model-answer">{{ r.model_answer or "—" }}</span></td>
+            <td>
+                {% if r.passed %}
+                <span class="badge-pass">PASS</span>
+                {% else %}
+                <span class="badge-fail">FAIL</span>
+                {% endif %}
+            </td>
+            <td>
+                {% if r.confidence %}
+                <span class="conf {% if r.confidence >= 4 %}conf-high{% elif r.confidence <= 2 %}conf-low{% endif %}">
+                    {{ r.confidence }}
+                </span>
+                {% else %}—{% endif %}
+            </td>
+            <td>{% if r.latency_ms %}{{ "%.1f"|format(r.latency_ms / 1000) }}s{% else %}—{% endif %}</td>
+            <td>{% if r.cost %}${{ "%.3f"|format(r.cost) }}{% else %}—{% endif %}</td>
+            <td>
+                <form action="/results/{{ evaluation.id }}/results/{{ r.id }}/comment" method="post" class="comment-form">
+                    <input type="text" name="comment" value="{{ r.comment or '' }}" placeholder="...">
+                    <button type="submit" class="outline">Save</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

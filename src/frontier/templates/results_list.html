@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% set active_nav = "results" %}
+{% block title_suffix %} — Results{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Evaluation Results</h1>
+</div>
+
+{% if evaluations %}
+<table>
+    <thead>
+        <tr>
+            <th>Run</th>
+            <th>Model</th>
+            <th>Tasks</th>
+            <th>Score</th>
+            <th>Cost</th>
+            <th>Status</th>
+            <th>Prompt</th>
+            <th>Date</th>
+            <th>Notes</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for e in evaluations %}
+        <tr {% if e.status == 'complete' and e.total_tasks > 0 and (e.passed_tasks / e.total_tasks) >= 0.75 %}style="background: rgba(34, 197, 94, 0.08);"{% endif %}>
+            <td><strong>#{{ e.id }}</strong></td>
+            <td>{{ e.model_name or e.model_id }}</td>
+            <td>{{ e.completed_tasks }}/{{ e.total_tasks }}</td>
+            <td>
+                {% if e.total_tasks > 0 %}
+                    {% set score = (e.passed_tasks / e.total_tasks * 100)|round(0)|int %}
+                    {{ score }}%
+                    ({{ e.passed_tasks }}/{{ e.total_tasks }})
+                {% else %}
+                    —
+                {% endif %}
+            </td>
+            <td>${{ "%.2f"|format(e.total_cost) }}</td>
+            <td>
+                {% if e.status == 'complete' %}
+                <span style="color: var(--pass);">Complete</span>
+                {% elif e.status == 'running' %}
+                <span style="color: var(--warn);">Running...</span>
+                {% else %}
+                {{ e.status }}
+                {% endif %}
+            </td>
+            <td>{{ e.prompt_name or "—" }} {% if e.prompt_version %}v{{ e.prompt_version }}{% endif %}</td>
+            <td>{{ e.started_date[:10] if e.started_date else "—" }}</td>
+            <td style="max-width:200px; font-size:0.8rem; opacity:0.7;">{{ e.notes or "" }}</td>
+            <td><a href="/results/{{ e.id }}">Detail →</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p style="text-align:center; opacity:0.5; padding:2rem;">No evaluation runs yet. <a href="/evaluate">Run your first evaluation →</a></p>
+{% endif %}
+{% endblock %}

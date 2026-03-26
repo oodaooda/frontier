@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% set active_nav = "evaluate" %}
+{% block title_suffix %} — Run Evaluation{% endblock %}
+
+{% block content %}
+<h1>Run Evaluation</h1>
+
+{% if request.query_params.get('error') %}
+<div class="flash flash-error">{{ request.query_params.get('error') }}</div>
+{% endif %}
+
+<form action="/evaluate/run" method="post">
+    <!-- Step 1: Select Model -->
+    <article>
+        <header><strong>1. Select Model</strong></header>
+        {% for model in models %}
+        <label style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem; cursor:pointer;">
+            <input type="radio" name="model_id" value="{{ model.id }}" style="width:auto;"
+                   {% if loop.first %}checked{% endif %}>
+            <div>
+                <strong>{{ model.display_name }}</strong>
+                <span style="font-size:0.8rem; opacity:0.7;">
+                    ({{ model.provider }}) — ${{ "%.2f"|format(model.input_cost_per_m) }} / ${{ "%.2f"|format(model.output_cost_per_m) }} per 1M tokens
+                </span>
+            </div>
+        </label>
+        {% endfor %}
+        {% if not models %}
+        <p style="opacity:0.5;">No models configured. Check database seed.</p>
+        {% endif %}
+    </article>
+
+    <!-- Step 2: Select Documents -->
+    <article>
+        <header><strong>2. Select Documents</strong></header>
+        {% for di in doc_info %}
+        <label style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem; cursor:pointer;">
+            <input type="checkbox" name="document_ids" value="{{ di.doc.id }}" style="width:auto;"
+                   {% if di.verified_tasks > 0 %}checked{% endif %}>
+            <div>
+                <strong>{{ di.doc.original_filename }}</strong>
+                <span style="font-size:0.8rem; opacity:0.7;">
+                    — {{ di.total_tasks }} tasks ({{ di.verified_tasks }} verified)
+                </span>
+                {% if di.doc.doc_type %}
+                <span class="tag tag-{{ di.doc.doc_type }}">{{ di.doc.doc_type }}</span>
+                {% endif %}
+            </div>
+        </label>
+        {% endfor %}
+        {% if not doc_info %}
+        <p style="opacity:0.5;">No documents uploaded yet.</p>
+        {% endif %}
+    </article>
+
+    <!-- Step 3: Prompt Template -->
+    <article>
+        <header><strong>3. Prompt Template</strong></header>
+        <select name="prompt_id">
+            {% for prompt in prompts %}
+            <option value="{{ prompt.id }}">{{ prompt.name }} v{{ prompt.version }}</option>
+            {% endfor %}
+        </select>
+    </article>
+
+    <!-- Step 4: Options -->
+    <article>
+        <header><strong>4. Options</strong></header>
+        <label style="display:flex; align-items:center; gap:0.5rem;">
+            <input type="checkbox" name="verified_only" value="true" checked style="width:auto;">
+            Only evaluate verified ground truth tasks
+        </label>
+        <label style="margin-top:0.75rem;">
+            Run notes (optional)
+            <input type="text" name="notes" placeholder="e.g., Testing with updated prompt template...">
+        </label>
+    </article>
+
+    <button type="submit" style="width:100%; font-size:1.1rem; padding:0.75rem;">
+        Run Evaluation
+    </button>
+</form>
+{% endblock %}
