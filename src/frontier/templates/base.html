@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontier{% block title_suffix %} — Benchmark Platform{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="/static/css/app.css">
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="/" class="brand"><span>F</span>rontier</a>
+        <a href="/" class="{% if active_nav == 'dashboard' %}active{% endif %}">Dashboard</a>
+        <a href="/documents" class="{% if active_nav == 'documents' %}active{% endif %}">Documents</a>
+        <a href="#" class="{% if active_nav == 'ground-truth' %}active{% endif %}">Ground Truth</a>
+        <a href="#" class="{% if active_nav == 'evaluate' %}active{% endif %}">Evaluate</a>
+        <a href="#" class="{% if active_nav == 'results' %}active{% endif %}">Results</a>
+        <a href="#" class="{% if active_nav == 'comparison' %}active{% endif %}">Comparison</a>
+        <a href="#" class="{% if active_nav == 'models' %}active{% endif %}">Models</a>
+        <a href="#" class="{% if active_nav == 'news' %}active{% endif %}">News</a>
+        <a href="#" class="{% if active_nav == 'prompt-lab' %}active{% endif %}">Prompt Lab</a>
+        <a href="#" class="{% if active_nav == 'trends' %}active{% endif %}">Trends</a>
+        <a href="#" onclick="toggleTheme(event)" id="theme-toggle" title="Toggle dark mode">Light</a>
+    </nav>
+
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script>
+    function toggleTheme(e) {
+        e.preventDefault();
+        const html = document.documentElement;
+        const current = html.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('frontier-theme', next);
+        document.getElementById('theme-toggle').textContent = next === 'dark' ? 'Dark' : 'Light';
+    }
+    (function() {
+        const saved = localStorage.getItem('frontier-theme');
+        if (saved) {
+            document.documentElement.setAttribute('data-theme', saved);
+            const btn = document.getElementById('theme-toggle');
+            if (btn) btn.textContent = saved === 'dark' ? 'Dark' : 'Light';
+        }
+    })();
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

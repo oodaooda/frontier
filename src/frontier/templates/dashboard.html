@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% set active_nav = "dashboard" %}
+{% block title_suffix %} — Dashboard{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Dashboard</h1>
+</div>
+
+<div class="stat-grid">
+    <div class="stat-card">
+        <div class="label">Documents</div>
+        <div class="value">{{ stats.total_docs }}</div>
+        <div class="subtext">{{ stats.total_pages }} total pages</div>
+    </div>
+    <div class="stat-card">
+        <div class="label">By Type</div>
+        <div class="value" style="font-size:1rem;">
+            {% if stats.by_type %}
+                {% for type, count in stats.by_type.items() %}
+                    <span class="tag tag-{{ type }}">{{ type }}: {{ count }}</span>
+                {% endfor %}
+            {% else %}
+                <span style="opacity:0.5;">No documents yet</span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="label">Ground Truth Tasks</div>
+        <div class="value">—</div>
+        <div class="subtext">Coming in M003</div>
+    </div>
+    <div class="stat-card">
+        <div class="label">Evaluation Runs</div>
+        <div class="value">—</div>
+        <div class="subtext">Coming in M004</div>
+    </div>
+</div>
+
+{% if stats.total_docs == 0 %}
+<div style="text-align:center; padding:3rem; opacity:0.6;">
+    <h2>Get started</h2>
+    <p>Upload your first construction document to begin building your benchmark dataset.</p>
+    <a href="/documents" role="button">Go to Documents →</a>
+</div>
+{% endif %}
+{% endblock %}
