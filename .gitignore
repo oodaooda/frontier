@@ -23,6 +23,9 @@ env/
 .env
 .env.*
 
+# Source PDFs (large, proprietary)
+datasets/pdfs/*.pdf
+
 # Rendered images from PDFs (large, regenerable)
 datasets/rendered/
 

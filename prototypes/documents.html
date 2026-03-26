@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontier — Documents</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root {
+            --nav-bg: #1a1a2e;
+            --nav-text: #e0e0e0;
+            --accent: #4a9eff;
+        }
+        nav.top-nav {
+            background: var(--nav-bg);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav.top-nav .brand {
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-decoration: none;
+        }
+        nav.top-nav .brand span { color: var(--accent); }
+        nav.top-nav a {
+            color: var(--nav-text);
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        nav.top-nav a:hover, nav.top-nav a.active {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        nav.top-nav a.active { border-bottom: 2px solid var(--accent); }
+        main { padding: 2rem; max-width: 1400px; margin: 0 auto; }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .page-header h1 { margin: 0; }
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: #e0e7ff;
+            color: #3730a3;
+            margin-right: 0.25rem;
+        }
+        .tag-schedule { background: #dbeafe; color: #1e40af; }
+        .tag-plan { background: #dcfce7; color: #166534; }
+        .tag-elevation { background: #fef3c7; color: #92400e; }
+        .tag-spec { background: #f3e8ff; color: #6b21a8; }
+        .tag-lookahead { background: #fee2e2; color: #991b1b; }
+        .badge-verified { background: #dcfce7; color: #166534; display: inline-block; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; }
+        .badge-unverified { background: #fef3c7; color: #92400e; display: inline-block; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; }
+        table { font-size: 0.9rem; }
+        .upload-area {
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            background: #f9fafb;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+        }
+        .upload-area:hover { border-color: var(--accent); background: #eff6ff; }
+        .upload-area p { margin: 0.5rem 0 0; color: #6b7280; font-size: 0.9rem; }
+        .actions { display: flex; gap: 0.5rem; }
+        .actions button, .actions a {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="dashboard.html" class="brand"><span>F</span>rontier</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="documents.html" class="active">Documents</a>
+        <a href="ground-truth-editor.html">Ground Truth</a>
+        <a href="run-evaluation.html">Evaluate</a>
+        <a href="results.html">Results</a>
+        <a href="comparison.html">Comparison</a>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Documents</h1>
+        </div>
+
+        <div class="upload-area">
+            <strong>Upload Construction Documents</strong>
+            <p>Drag &amp; drop PDF files here, or click to browse. Supports plans, elevations, schedules, specifications, and lookaheads.</p>
+            <button style="margin-top: 1rem;">Choose Files</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Document</th>
+                    <th>Type</th>
+                    <th>Pages</th>
+                    <th>Tasks</th>
+                    <th>GT Version</th>
+                    <th>Uploaded</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="document-detail.html"><strong>A700_door_schedule.pdf</strong></a></td>
+                    <td><span class="tag tag-schedule">schedule</span></td>
+                    <td>1</td>
+                    <td>18 <span class="badge-unverified">15 unverified</span></td>
+                    <td>v3</td>
+                    <td>2026-03-26</td>
+                    <td class="actions">
+                        <a href="ground-truth-editor.html" role="button" class="outline">Edit GT</a>
+                        <a href="run-evaluation.html" role="button" class="outline">Evaluate</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="#"><strong>A101_floor_plan_level1.pdf</strong></a></td>
+                    <td><span class="tag tag-plan">plan</span></td>
+                    <td>2</td>
+                    <td>24 <span class="badge-verified">all verified</span></td>
+                    <td>v7</td>
+                    <td>2026-03-22</td>
+                    <td class="actions">
+                        <a href="#" role="button" class="outline">Edit GT</a>
+                        <a href="#" role="button" class="outline">Evaluate</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="#"><strong>A201_north_elevation.pdf</strong></a></td>
+                    <td><span class="tag tag-elevation">elevation</span></td>
+                    <td>1</td>
+                    <td>12 <span class="badge-verified">all verified</span></td>
+                    <td>v4</td>
+                    <td>2026-03-20</td>
+                    <td class="actions">
+                        <a href="#" role="button" class="outline">Edit GT</a>
+                        <a href="#" role="button" class="outline">Evaluate</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="#"><strong>03_30_00_cast_in_place_concrete.pdf</strong></a></td>
+                    <td><span class="tag tag-spec">specification</span></td>
+                    <td>8</td>
+                    <td>15 <span class="badge-unverified">3 unverified</span></td>
+                    <td>v2</td>
+                    <td>2026-03-19</td>
+                    <td class="actions">
+                        <a href="#" role="button" class="outline">Edit GT</a>
+                        <a href="#" role="button" class="outline">Evaluate</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="#"><strong>two_week_lookahead_wk12.pdf</strong></a></td>
+                    <td><span class="tag tag-lookahead">lookahead</span></td>
+                    <td>1</td>
+                    <td>8 <span class="badge-verified">all verified</span></td>
+                    <td>v1</td>
+                    <td>2026-03-18</td>
+                    <td class="actions">
+                        <a href="#" role="button" class="outline">Edit GT</a>
+                        <a href="#" role="button" class="outline">Evaluate</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="#"><strong>E400_electrical_plan.pdf</strong></a></td>
+                    <td><span class="tag tag-plan">plan</span></td>
+                    <td>1</td>
+                    <td>10 <span class="badge-unverified">10 unverified</span></td>
+                    <td>v1</td>
+                    <td>2026-03-16</td>
+                    <td class="actions">
+                        <a href="#" role="button" class="outline">Edit GT</a>
+                        <a href="#" role="button" class="outline">Evaluate</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontier — Run Evaluation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root { --nav-bg: #1a1a2e; --nav-text: #e0e0e0; --accent: #4a9eff; }
+        nav.top-nav {
+            background: var(--nav-bg); padding: 0.75rem 2rem;
+            display: flex; align-items: center; gap: 2rem;
+            position: sticky; top: 0; z-index: 100;
+        }
+        nav.top-nav .brand { color: white; font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+        nav.top-nav .brand span { color: var(--accent); }
+        nav.top-nav a { color: var(--nav-text); text-decoration: none; padding: 0.5rem 0.75rem; border-radius: 4px; font-size: 0.9rem; }
+        nav.top-nav a:hover, nav.top-nav a.active { background: rgba(255,255,255,0.1); color: white; }
+        nav.top-nav a.active { border-bottom: 2px solid var(--accent); }
+        main { padding: 2rem; max-width: 900px; margin: 0 auto; }
+        .config-section {
+            background: white; border: 1px solid #e5e7eb;
+            border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;
+        }
+        .config-section h3 { margin-top: 0; font-size: 1rem; }
+        .checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        .checkbox-grid label { font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+        .checkbox-grid input[type="checkbox"] { margin: 0; width: auto; }
+        .model-card {
+            border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem;
+            margin-bottom: 0.75rem; display: flex; justify-content: space-between;
+            align-items: center;
+        }
+        .model-card.selected { border-color: var(--accent); background: #eff6ff; }
+        .model-info .name { font-weight: 600; }
+        .model-info .provider { font-size: 0.8rem; color: #6b7280; }
+        .model-info .pricing { font-size: 0.75rem; color: #9ca3af; margin-top: 0.25rem; }
+        .cost-estimate {
+            background: #fffbeb; border: 1px solid #fbbf24;
+            border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .cost-estimate strong { color: #92400e; }
+        .progress-section {
+            background: #f0fdf4; border: 1px solid #86efac;
+            border-radius: 8px; padding: 1.5rem; margin-top: 1.5rem;
+            display: none;
+        }
+        .progress-bar {
+            width: 100%; height: 12px; background: #e5e7eb;
+            border-radius: 6px; overflow: hidden; margin: 0.75rem 0;
+        }
+        .progress-bar .fill { height: 100%; background: #22c55e; border-radius: 6px; width: 65%; }
+        .progress-stats { display: flex; gap: 2rem; font-size: 0.85rem; color: #374151; }
+        /* Show progress for prototype demo */
+        .show-progress .progress-section { display: block; }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="dashboard.html" class="brand"><span>F</span>rontier</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="documents.html">Documents</a>
+        <a href="ground-truth-editor.html">Ground Truth</a>
+        <a href="run-evaluation.html" class="active">Evaluate</a>
+        <a href="results.html">Results</a>
+        <a href="comparison.html">Comparison</a>
+    </nav>
+
+    <main class="show-progress">
+        <h1>Run Evaluation</h1>
+
+        <!-- Step 1: Select Models -->
+        <div class="config-section">
+            <h3>1. Select Models</h3>
+            <div class="model-card selected">
+                <div class="model-info">
+                    <div class="name">Claude Opus 4.6</div>
+                    <div class="provider">Anthropic</div>
+                    <div class="pricing">$5.00 / 1M input tokens — $25.00 / 1M output tokens</div>
+                </div>
+                <input type="checkbox" checked style="width:auto;">
+            </div>
+            <div class="model-card">
+                <div class="model-info">
+                    <div class="name">GPT-5.4</div>
+                    <div class="provider">OpenAI</div>
+                    <div class="pricing">Pricing TBD</div>
+                </div>
+                <input type="checkbox" style="width:auto;">
+            </div>
+        </div>
+
+        <!-- Step 2: Select Documents -->
+        <div class="config-section">
+            <h3>2. Select Documents</h3>
+            <div style="display:flex; gap:0.75rem; margin-bottom:0.75rem;">
+                <button class="outline" style="font-size:0.8rem; padding:0.3rem 0.6rem;">Select All</button>
+                <button class="outline" style="font-size:0.8rem; padding:0.3rem 0.6rem;">Select Verified Only</button>
+                <button class="outline" style="font-size:0.8rem; padding:0.3rem 0.6rem;">Clear All</button>
+            </div>
+            <div class="checkbox-grid">
+                <label><input type="checkbox" checked> A700_door_schedule.pdf (18 tasks)</label>
+                <label><input type="checkbox" checked> A101_floor_plan_level1.pdf (24 tasks)</label>
+                <label><input type="checkbox" checked> A201_north_elevation.pdf (12 tasks)</label>
+                <label><input type="checkbox"> 03_30_00_cast_in_place_concrete.pdf (15 tasks)</label>
+                <label><input type="checkbox"> two_week_lookahead_wk12.pdf (8 tasks)</label>
+                <label><input type="checkbox"> E400_electrical_plan.pdf (10 tasks)</label>
+            </div>
+        </div>
+
+        <!-- Step 3: Prompt Template -->
+        <div class="config-section">
+            <h3>3. Prompt Template</h3>
+            <select>
+                <option>default v2 — Standard extraction with confidence scoring</option>
+                <option>default v1 — Standard extraction (no confidence)</option>
+                <option>spatial v1 — Optimized for dimensional/scale questions</option>
+            </select>
+            <details style="margin-top:0.75rem;">
+                <summary style="font-size:0.85rem; cursor:pointer;">Preview prompt template</summary>
+                <pre style="font-size:0.8rem; background:#f9fafb; padding:1rem; border-radius:4px; margin-top:0.5rem; white-space:pre-wrap;">You are analyzing a construction document. Answer the following question based solely on what is visible in the provided image(s).
+
+Be precise and specific. If the answer involves a measurement, include the unit. If the answer involves a count, provide the exact number.
+
+Rate your confidence in your answer on a scale of 1-5:
+1 = Very uncertain, 2 = Somewhat uncertain, 3 = Moderately confident, 4 = Confident, 5 = Very confident
+
+Format your response as:
+Answer: [your answer]
+Confidence: [1-5]
+
+Question: {question}</pre>
+            </details>
+        </div>
+
+        <!-- Step 4: Options -->
+        <div class="config-section">
+            <h3>4. Options</h3>
+            <label>
+                <input type="checkbox" checked style="width:auto; display:inline; margin-right:0.5rem;">
+                Only evaluate verified ground truth tasks
+            </label>
+            <label>
+                <input type="checkbox" style="width:auto; display:inline; margin-right:0.5rem;">
+                Skip previously passed tasks (only re-evaluate failures)
+            </label>
+            <label style="margin-top:0.5rem;">
+                Run notes (optional)
+                <input type="text" placeholder="e.g., Testing with updated prompt template v2...">
+            </label>
+        </div>
+
+        <!-- Cost Estimate -->
+        <div class="cost-estimate">
+            <strong>Estimated cost:</strong> ~$0.45 for 54 tasks across 3 documents using Claude Opus 4.6<br>
+            <small>Based on average 2,000 input tokens + 200 output tokens per task</small>
+        </div>
+
+        <button style="width:100%; font-size:1.1rem; padding:0.75rem;">Run Evaluation</button>
+
+        <!-- Progress (shown during/after run) -->
+        <div class="progress-section">
+            <h3 style="margin-top:0;">Evaluation in Progress</h3>
+            <div>
+                <strong>Claude Opus 4.6</strong> — A700_door_schedule.pdf
+            </div>
+            <div class="progress-bar">
+                <div class="fill"></div>
+            </div>
+            <div class="progress-stats">
+                <span>35 / 54 tasks complete</span>
+                <span>12 passed</span>
+                <span>3 failed</span>
+                <span>Elapsed: 1m 42s</span>
+                <span>Cost so far: $0.29</span>
+            </div>
+            <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+                <button class="outline secondary" style="font-size:0.85rem;">Cancel Run</button>
+                <a href="run-detail.html" role="button" class="outline" style="font-size:0.85rem;">View Results So Far →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

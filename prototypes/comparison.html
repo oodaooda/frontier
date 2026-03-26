@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontier — Comparison</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root { --nav-bg: #1a1a2e; --nav-text: #e0e0e0; --accent: #4a9eff; --pass: #22c55e; --fail: #ef4444; --warn: #f59e0b; }
+        nav.top-nav {
+            background: var(--nav-bg); padding: 0.75rem 2rem;
+            display: flex; align-items: center; gap: 2rem;
+            position: sticky; top: 0; z-index: 100;
+        }
+        nav.top-nav .brand { color: white; font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+        nav.top-nav .brand span { color: var(--accent); }
+        nav.top-nav a { color: var(--nav-text); text-decoration: none; padding: 0.5rem 0.75rem; border-radius: 4px; font-size: 0.9rem; }
+        nav.top-nav a:hover, nav.top-nav a.active { background: rgba(255,255,255,0.1); color: white; }
+        nav.top-nav a.active { border-bottom: 2px solid var(--accent); }
+        main { padding: 2rem; max-width: 1400px; margin: 0 auto; }
+        .compare-selector {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem;
+            align-items: center; margin-bottom: 2rem;
+        }
+        .compare-selector .vs { font-size: 1.5rem; font-weight: 700; color: #9ca3af; text-align: center; }
+        .run-select-card {
+            border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; background: white;
+        }
+        .run-select-card select { font-size: 0.9rem; }
+        .run-select-card .run-info { font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem; }
+        .delta-grid {
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 2rem;
+        }
+        .delta-card {
+            border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; background: white; text-align: center;
+        }
+        .delta-card .label { font-size: 0.8rem; color: #6b7280; }
+        .delta-card .values { display: flex; justify-content: center; gap: 0.5rem; align-items: baseline; margin: 0.5rem 0; }
+        .delta-card .left { font-size: 1.2rem; font-weight: 700; }
+        .delta-card .arrow { color: #9ca3af; }
+        .delta-card .right { font-size: 1.2rem; font-weight: 700; }
+        .delta-card .delta { font-size: 0.85rem; font-weight: 600; }
+        .delta-up { color: var(--pass); }
+        .delta-down { color: var(--fail); }
+        .delta-same { color: #9ca3af; }
+        .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+        .badge-pass { background: #dcfce7; color: #166534; }
+        .badge-fail { background: #fee2e2; color: #991b1b; }
+        .badge-improved { background: #dcfce7; color: #166534; }
+        .badge-regressed { background: #fee2e2; color: #991b1b; }
+        .badge-same { background: #f3f4f6; color: #6b7280; }
+        table { font-size: 0.85rem; }
+        .warn-banner {
+            background: #fffbeb; border: 1px solid #fbbf24; border-radius: 8px;
+            padding: 0.75rem 1rem; margin-bottom: 1.5rem; font-size: 0.85rem; color: #92400e;
+        }
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin: 1.5rem 0 1rem; }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="dashboard.html" class="brand"><span>F</span>rontier</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="documents.html">Documents</a>
+        <a href="ground-truth-editor.html">Ground Truth</a>
+        <a href="run-evaluation.html">Evaluate</a>
+        <a href="results.html">Results</a>
+        <a href="comparison.html" class="active">Comparison</a>
+    </nav>
+
+    <main>
+        <h1>Run Comparison</h1>
+
+        <!-- Run Selector -->
+        <div class="compare-selector">
+            <div class="run-select-card">
+                <label style="font-size:0.85rem; font-weight:600;">Run A (Baseline)</label>
+                <select>
+                    <option>Run #3 — GPT-5.4 — Mar 18</option>
+                    <option>Run #4 — Claude Opus 4.6 — Mar 20</option>
+                    <option selected>Run #5 — Claude Opus 4.6 — Mar 24</option>
+                </select>
+                <div class="run-info">
+                    Claude Opus 4.6 | 54 tasks | GT v3 | Prompt: default v2 | $0.68
+                </div>
+            </div>
+            <div class="vs">VS</div>
+            <div class="run-select-card">
+                <label style="font-size:0.85rem; font-weight:600;">Run B (Comparison)</label>
+                <select>
+                    <option>Run #3 — GPT-5.4 — Mar 18</option>
+                    <option>Run #4 — Claude Opus 4.6 — Mar 20</option>
+                    <option selected>Run #6 — GPT-5.4 — Mar 25</option>
+                </select>
+                <div class="run-info">
+                    GPT-5.4 | 54 tasks | GT v3 | Prompt: default v2 | $0.42
+                </div>
+            </div>
+        </div>
+
+        <!-- Warnings -->
+        <div class="warn-banner" style="display:none;">
+            ⚠ These runs used different ground truth versions (v2 vs v3). Comparison may not be apples-to-apples.
+        </div>
+
+        <!-- Delta Summary -->
+        <div class="delta-grid">
+            <div class="delta-card">
+                <div class="label">Overall Score</div>
+                <div class="values">
+                    <span class="left">78%</span>
+                    <span class="arrow">→</span>
+                    <span class="right">71%</span>
+                </div>
+                <div class="delta delta-down">-7% (Claude wins)</div>
+            </div>
+            <div class="delta-card">
+                <div class="label">Tier 1 — Text</div>
+                <div class="values">
+                    <span class="left">92%</span>
+                    <span class="arrow">→</span>
+                    <span class="right">88%</span>
+                </div>
+                <div class="delta delta-down">-4%</div>
+            </div>
+            <div class="delta-card">
+                <div class="label">Tier 2 — Structured</div>
+                <div class="values">
+                    <span class="left">76%</span>
+                    <span class="arrow">→</span>
+                    <span class="right">68%</span>
+                </div>
+                <div class="delta delta-down">-8%</div>
+            </div>
+            <div class="delta-card">
+                <div class="label">Tier 3 — Spatial</div>
+                <div class="values">
+                    <span class="left">58%</span>
+                    <span class="arrow">→</span>
+                    <span class="right">45%</span>
+                </div>
+                <div class="delta delta-down">-13%</div>
+            </div>
+            <div class="delta-card">
+                <div class="label">Cost</div>
+                <div class="values">
+                    <span class="left">$0.68</span>
+                    <span class="arrow">→</span>
+                    <span class="right">$0.42</span>
+                </div>
+                <div class="delta delta-up">-38% (GPT cheaper)</div>
+            </div>
+        </div>
+
+        <!-- Per-question comparison -->
+        <div class="section-header">
+            <h3 style="margin:0;">Per-Question Comparison</h3>
+            <div style="display:flex; gap:0.5rem;">
+                <select style="font-size:0.85rem; padding:0.35rem; width:auto;">
+                    <option>All Results</option>
+                    <option>Differences Only</option>
+                    <option>Regressions Only</option>
+                    <option>Improvements Only</option>
+                </select>
+                <button class="outline" style="font-size:0.85rem; padding:0.35rem 0.6rem;">Export Comparison</button>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Doc</th>
+                    <th>Tier</th>
+                    <th>Question</th>
+                    <th>Expected</th>
+                    <th>Run A (Claude)</th>
+                    <th>Run B (GPT)</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>door-t1-001</td>
+                    <td>A700</td>
+                    <td>T1</td>
+                    <td>Project name in title block?</td>
+                    <td>The Wellington</td>
+                    <td><span class="badge badge-pass">PASS</span> The Wellington</td>
+                    <td><span class="badge badge-pass">PASS</span> The Wellington</td>
+                    <td><span class="badge badge-same">—</span></td>
+                </tr>
+                <tr>
+                    <td>door-t1-005</td>
+                    <td>A700</td>
+                    <td>T1</td>
+                    <td>Total doors listed?</td>
+                    <td>42</td>
+                    <td><span class="badge badge-fail">FAIL</span> 38</td>
+                    <td><span class="badge badge-fail">FAIL</span> 35</td>
+                    <td><span class="badge badge-same">Both fail</span></td>
+                </tr>
+                <tr style="background: #fef2f2;">
+                    <td>door-t2-003</td>
+                    <td>A700</td>
+                    <td>T2</td>
+                    <td>Doors with fire rating?</td>
+                    <td>12</td>
+                    <td><span class="badge badge-fail">FAIL</span> 10</td>
+                    <td><span class="badge badge-fail">FAIL</span> 8</td>
+                    <td><span class="badge badge-same">Both fail</span></td>
+                </tr>
+                <tr style="background: #f0fdf4;">
+                    <td>door-t2-004</td>
+                    <td>A700</td>
+                    <td>T2</td>
+                    <td>Doors using WOOD / GLASS?</td>
+                    <td>5</td>
+                    <td><span class="badge badge-pass">PASS</span> 5</td>
+                    <td><span class="badge badge-pass">PASS</span> 5</td>
+                    <td><span class="badge badge-same">—</span></td>
+                </tr>
+                <tr style="background: #fef2f2;">
+                    <td>plan-t3-001</td>
+                    <td>A101</td>
+                    <td>T3</td>
+                    <td>Approx area of Room 101?</td>
+                    <td>280 SF</td>
+                    <td><span class="badge badge-pass">PASS</span> 275 SF</td>
+                    <td><span class="badge badge-fail">FAIL</span> 340 SF</td>
+                    <td><span class="badge badge-regressed">Regression</span></td>
+                </tr>
+                <tr style="background: #f0fdf4;">
+                    <td>elev-t3-002</td>
+                    <td>A201</td>
+                    <td>T3</td>
+                    <td>Floor-to-floor height?</td>
+                    <td>12'-6"</td>
+                    <td><span class="badge badge-fail">FAIL</span> 11'-0"</td>
+                    <td><span class="badge badge-pass">PASS</span> 12'-6"</td>
+                    <td><span class="badge badge-improved">Improvement</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top:2rem; padding:1.5rem; background:#f9fafb; border-radius:8px; border:1px solid #e5e7eb;">
+            <h3 style="margin-top:0;">Summary</h3>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; font-size:0.9rem;">
+                <div>
+                    <strong style="color:var(--pass);">Claude Opus 4.6 wins on:</strong>
+                    <ul style="font-size:0.85rem; margin-top:0.5rem;">
+                        <li>Overall accuracy (+7%)</li>
+                        <li>Tier 2 structured understanding (+8%)</li>
+                        <li>Tier 3 spatial reasoning (+13%)</li>
+                        <li>Room area estimation</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong style="color:var(--accent);">GPT-5.4 wins on:</strong>
+                    <ul style="font-size:0.85rem; margin-top:0.5rem;">
+                        <li>Cost (-38% cheaper)</li>
+                        <li>Floor-to-floor height reading</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong>Both struggle with:</strong>
+                    <ul style="font-size:0.85rem; margin-top:0.5rem;">
+                        <li>Total door count (complex table)</li>
+                        <li>Fire rating identification</li>
+                        <li>Tier 3 spatial tasks overall</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

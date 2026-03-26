@@ -1,0 +1,179 @@
+document: A700_door_schedule.pdf
+
+# ============================================================
+# IMPORTANT: All expected answers need human verification.
+# These were read from a 300 DPI render and may contain errors.
+# Mark each answer as verified: true once confirmed.
+# ============================================================
+
+tasks:
+  # ----------------------------------------------------------
+  # TIER 1 — Text Extraction (direct reads from the schedule)
+  # ----------------------------------------------------------
+
+  - id: door-t1-001
+    page: 1
+    tier: 1
+    category: table
+    question: "What is the project name shown in the title block?"
+    expected: "The Wellington"
+    scoring: contains
+    verified: false
+
+  - id: door-t1-002
+    page: 1
+    tier: 1
+    category: table
+    question: "What is the project address shown in the title block?"
+    expected: "1290 Madison Ave, New York, NY 10128"
+    scoring: contains
+    verified: false
+
+  - id: door-t1-003
+    page: 1
+    tier: 1
+    category: table
+    question: "What is the sheet number of this drawing?"
+    expected: "A-700.00"
+    scoring: exact
+    verified: false
+
+  - id: door-t1-004
+    page: 1
+    tier: 1
+    category: table
+    question: "What is the title of this sheet?"
+    expected: "DOOR SCHEDULE"
+    scoring: exact
+    verified: false
+
+  - id: door-t1-005
+    page: 1
+    tier: 1
+    category: schedule
+    question: "How many total doors are listed in the door schedule?"
+    expected: "NEEDS VERIFICATION"
+    scoring: exact
+    verified: false
+    notes: "Count all rows in the schedule. Human must verify exact count."
+
+  - id: door-t1-006
+    page: 1
+    tier: 1
+    category: schedule
+    question: "What is the material of door C-01?"
+    expected: "HM"
+    scoring: exact
+    verified: false
+    notes: "HM = Hollow Metal"
+
+  - id: door-t1-007
+    page: 1
+    tier: 1
+    category: schedule
+    question: "What door materials are used in this project? List all unique material types."
+    expected: "HM, WOOD, WOOD / GLASS"
+    scoring: contains
+    verified: false
+
+  - id: door-t1-008
+    page: 1
+    tier: 1
+    category: schedule
+    question: "What is the fire rating of door C-01?"
+    expected: "NEEDS VERIFICATION"
+    scoring: exact
+    verified: false
+
+  - id: door-t1-009
+    page: 1
+    tier: 1
+    category: schedule
+    question: "What room number is door C-01 associated with?"
+    expected: "NEEDS VERIFICATION"
+    scoring: exact
+    verified: false
+
+  # ----------------------------------------------------------
+  # TIER 2 — Structured Understanding (relationships, grouping)
+  # ----------------------------------------------------------
+
+  - id: door-t2-001
+    page: 1
+    tier: 2
+    category: schedule
+    question: "How many floor levels are represented in the door schedule?"
+    expected: "NEEDS VERIFICATION"
+    scoring: exact
+    verified: false
+    notes: "Count distinct floor sections (e.g., CELLAR, 1ST FLOOR, etc.)"
+
+  - id: door-t2-002
+    page: 1
+    tier: 2
+    category: schedule
+    question: "Which floor has the most doors listed in the schedule?"
+    expected: "NEEDS VERIFICATION"
+    scoring: exact
+    verified: false
+
+  - id: door-t2-003
+    page: 1
+    tier: 2
+    category: schedule
+    question: "How many doors have a fire rating in the schedule?"
+    expected: "NEEDS VERIFICATION"
+    scoring: exact
+    verified: false
+
+  - id: door-t2-004
+    page: 1
+    tier: 2
+    category: schedule
+    question: "How many doors use WOOD / GLASS as their material?"
+    expected: "NEEDS VERIFICATION"
+    scoring: exact
+    verified: false
+
+  - id: door-t2-005
+    page: 1
+    tier: 2
+    category: schedule
+    question: "Which doors in the schedule require re-entry per the notes column?"
+    expected: "NEEDS VERIFICATION"
+    scoring: contains
+    verified: false
+    notes: "Look for 'RE-ENTRY REQUIRED' in the notes column."
+
+  - id: door-t2-006
+    page: 1
+    tier: 2
+    category: schedule
+    question: "How many distinct hardware groups are specified in the schedule?"
+    expected: "NEEDS VERIFICATION"
+    scoring: exact
+    verified: false
+
+  # ----------------------------------------------------------
+  # TIER 3 — Spatial / Visual Reasoning
+  # ----------------------------------------------------------
+
+  - id: door-t3-001
+    page: 1
+    tier: 3
+    category: schedule
+    question: "Based on the General Door Notes, what does note #1 state?"
+    expected: "NEEDS VERIFICATION"
+    scoring: semantic
+    verified: false
+    notes: "Read from the General Door Notes section in the upper right area."
+
+  - id: door-t3-002
+    page: 1
+    tier: 3
+    category: schedule
+    question: "What are the column headers of the door schedule from left to right?"
+    expected: "NEEDS VERIFICATION"
+    scoring: semantic
+    verified: false
+    notes: "List all column headers in order."

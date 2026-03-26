@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontier — Run #5 Detail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root { --nav-bg: #1a1a2e; --nav-text: #e0e0e0; --accent: #4a9eff; --pass: #22c55e; --fail: #ef4444; --warn: #f59e0b; }
+        nav.top-nav {
+            background: var(--nav-bg); padding: 0.75rem 2rem;
+            display: flex; align-items: center; gap: 2rem;
+            position: sticky; top: 0; z-index: 100;
+        }
+        nav.top-nav .brand { color: white; font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+        nav.top-nav .brand span { color: var(--accent); }
+        nav.top-nav a { color: var(--nav-text); text-decoration: none; padding: 0.5rem 0.75rem; border-radius: 4px; font-size: 0.9rem; }
+        nav.top-nav a:hover, nav.top-nav a.active { background: rgba(255,255,255,0.1); color: white; }
+        nav.top-nav a.active { border-bottom: 2px solid var(--accent); }
+        main { padding: 2rem; max-width: 1400px; margin: 0 auto; }
+        .breadcrumb { font-size: 0.85rem; color: #6b7280; margin-bottom: 1rem; }
+        .breadcrumb a { color: var(--accent); }
+        .run-header { display: flex; justify-content: space-between; margin-bottom: 1.5rem; }
+        .stat-row { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .stat-chip {
+            background: white; border: 1px solid #e5e7eb; border-radius: 8px;
+            padding: 0.75rem 1rem; font-size: 0.85rem;
+        }
+        .stat-chip .label { color: #6b7280; font-size: 0.75rem; }
+        .stat-chip .val { font-weight: 700; font-size: 1.1rem; }
+        .run-notes-box {
+            background: #fffbeb; border: 1px solid #fbbf24; border-radius: 8px;
+            padding: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem;
+        }
+        .run-notes-box textarea { font-size: 0.85rem; min-height: 60px; }
+        .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+        .badge-pass { background: #dcfce7; color: #166534; }
+        .badge-fail { background: #fee2e2; color: #991b1b; }
+        .conf { font-size: 0.75rem; color: #6b7280; }
+        .conf-high { color: var(--pass); }
+        .conf-low { color: var(--fail); }
+        table { font-size: 0.85rem; }
+        .result-row td { vertical-align: top; }
+        .model-answer { background: #f9fafb; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 0.8rem; }
+        .expected-answer { background: #f0fdf4; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 0.8rem; }
+        .comment-cell { font-size: 0.8rem; }
+        .comment-cell input { font-size: 0.8rem; padding: 0.25rem; width: 100%; }
+        .filter-bar { display: flex; gap: 0.75rem; margin-bottom: 1rem; align-items: center; }
+        .filter-bar select { font-size: 0.85rem; padding: 0.35rem; width: auto; }
+        .override-btn { font-size: 0.7rem; padding: 0.15rem 0.35rem; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="dashboard.html" class="brand"><span>F</span>rontier</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="documents.html">Documents</a>
+        <a href="ground-truth-editor.html">Ground Truth</a>
+        <a href="run-evaluation.html">Evaluate</a>
+        <a href="results.html" class="active">Results</a>
+        <a href="comparison.html">Comparison</a>
+    </nav>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="results.html">Results</a> / Run #5
+        </div>
+
+        <div class="run-header">
+            <div>
+                <h1 style="margin:0;">Run #5 — Claude Opus 4.6</h1>
+                <div style="font-size:0.85rem; color:#6b7280; margin-top:0.25rem;">March 24, 2026 at 2:15 PM</div>
+            </div>
+            <div style="display:flex; gap:0.5rem;">
+                <a href="comparison.html" role="button" class="outline" style="font-size:0.85rem;">Compare with Another Run</a>
+                <button class="outline" style="font-size:0.85rem;">Export HTML</button>
+                <button class="outline" style="font-size:0.85rem;">Export PDF</button>
+            </div>
+        </div>
+
+        <div class="stat-row">
+            <div class="stat-chip">
+                <div class="label">Overall Score</div>
+                <div class="val" style="color: var(--pass);">78% (42/54)</div>
+            </div>
+            <div class="stat-chip">
+                <div class="label">Tier 1</div>
+                <div class="val">92%</div>
+            </div>
+            <div class="stat-chip">
+                <div class="label">Tier 2</div>
+                <div class="val">76%</div>
+            </div>
+            <div class="stat-chip">
+                <div class="label">Tier 3</div>
+                <div class="val" style="color: var(--warn);">58%</div>
+            </div>
+            <div class="stat-chip">
+                <div class="label">Avg Confidence</div>
+                <div class="val">3.8 / 5</div>
+            </div>
+            <div class="stat-chip">
+                <div class="label">Total Cost</div>
+                <div class="val">$0.68</div>
+            </div>
+            <div class="stat-chip">
+                <div class="label">Avg Latency</div>
+                <div class="val">2.1s</div>
+            </div>
+            <div class="stat-chip">
+                <div class="label">GT Version</div>
+                <div class="val">v3</div>
+            </div>
+            <div class="stat-chip">
+                <div class="label">Prompt</div>
+                <div class="val">default v2</div>
+            </div>
+        </div>
+
+        <!-- Run Notes -->
+        <div class="run-notes-box">
+            <strong>Run Notes:</strong>
+            <textarea>Best score so far. Opus 4.6 handles door schedule extraction well. Struggles with spatial questions on elevations — consistently underestimates dimensions. Need to investigate if DPI affects spatial accuracy.</textarea>
+            <button class="outline" style="font-size:0.8rem; margin-top:0.5rem; padding:0.3rem 0.6rem;">Save Notes</button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-bar">
+            <select>
+                <option>All Results</option>
+                <option>Passed Only</option>
+                <option selected>Failed Only</option>
+            </select>
+            <select>
+                <option>All Tiers</option>
+                <option>Tier 1</option>
+                <option>Tier 2</option>
+                <option>Tier 3</option>
+            </select>
+            <select>
+                <option>All Categories</option>
+                <option>schedule</option>
+                <option>table</option>
+                <option>drawing</option>
+                <option>specification</option>
+            </select>
+            <select>
+                <option>All Documents</option>
+                <option>A700_door_schedule.pdf</option>
+                <option>A101_floor_plan_level1.pdf</option>
+                <option>A201_north_elevation.pdf</option>
+            </select>
+            <select>
+                <option>All Confidence</option>
+                <option>Low (1-2)</option>
+                <option>Medium (3)</option>
+                <option>High (4-5)</option>
+            </select>
+        </div>
+
+        <!-- Per-question results -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Document</th>
+                    <th>Tier</th>
+                    <th>Question</th>
+                    <th>Expected</th>
+                    <th>Model Answer</th>
+                    <th>Result</th>
+                    <th>Conf</th>
+                    <th>Latency</th>
+                    <th>Comment</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="result-row" style="background: #f0fdf4;">
+                    <td>door-t1-001</td>
+                    <td>A700</td>
+                    <td>T1</td>
+                    <td>What is the project name shown in the title block?</td>
+                    <td class="expected-answer">The Wellington</td>
+                    <td class="model-answer">The Wellington</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td><span class="conf conf-high">5</span></td>
+                    <td>1.2s</td>
+                    <td class="comment-cell"><input placeholder="Add comment..."></td>
+                    <td></td>
+                </tr>
+                <tr class="result-row" style="background: #f0fdf4;">
+                    <td>door-t1-004</td>
+                    <td>A700</td>
+                    <td>T1</td>
+                    <td>What is the title of this sheet?</td>
+                    <td class="expected-answer">DOOR SCHEDULE</td>
+                    <td class="model-answer">DOOR SCHEDULE</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td><span class="conf conf-high">5</span></td>
+                    <td>1.1s</td>
+                    <td class="comment-cell"><input placeholder="Add comment..."></td>
+                    <td></td>
+                </tr>
+                <tr class="result-row" style="background: #fef2f2;">
+                    <td>door-t1-005</td>
+                    <td>A700</td>
+                    <td>T1</td>
+                    <td>How many total doors are listed?</td>
+                    <td class="expected-answer">42</td>
+                    <td class="model-answer">38</td>
+                    <td><span class="badge badge-fail">FAIL</span></td>
+                    <td><span class="conf conf-low">2</span></td>
+                    <td>3.4s</td>
+                    <td class="comment-cell"><input value="Missed 4 doors in the cellar section"></td>
+                    <td><button class="outline override-btn">Override → Pass</button></td>
+                </tr>
+                <tr class="result-row" style="background: #fef2f2;">
+                    <td>door-t2-003</td>
+                    <td>A700</td>
+                    <td>T2</td>
+                    <td>How many doors have a fire rating?</td>
+                    <td class="expected-answer">12</td>
+                    <td class="model-answer">10</td>
+                    <td><span class="badge badge-fail">FAIL</span></td>
+                    <td><span class="conf conf-low">2</span></td>
+                    <td>2.8s</td>
+                    <td class="comment-cell"><input value="Missed 2 fire-rated doors on upper floors"></td>
+                    <td><button class="outline override-btn">Override → Pass</button></td>
+                </tr>
+                <tr class="result-row" style="background: #f0fdf4;">
+                    <td>door-t2-004</td>
+                    <td>A700</td>
+                    <td>T2</td>
+                    <td>How many doors use WOOD / GLASS?</td>
+                    <td class="expected-answer">5</td>
+                    <td class="model-answer">5</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td><span class="conf conf-high">4</span></td>
+                    <td>2.2s</td>
+                    <td class="comment-cell"><input placeholder="Add comment..."></td>
+                    <td></td>
+                </tr>
+                <tr class="result-row" style="background: #fef2f2;">
+                    <td>elev-t3-002</td>
+                    <td>A201</td>
+                    <td>T3</td>
+                    <td>What is the floor-to-floor height?</td>
+                    <td class="expected-answer">12'-6"</td>
+                    <td class="model-answer">11'-0"</td>
+                    <td><span class="badge badge-fail">FAIL</span></td>
+                    <td><span class="conf conf-low">1</span></td>
+                    <td>4.1s</td>
+                    <td class="comment-cell"><input value="Off by 1'-6&quot; — likely misread the scale"></td>
+                    <td><button class="outline override-btn">Override → Pass</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontier — Document Detail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root { --nav-bg: #1a1a2e; --nav-text: #e0e0e0; --accent: #4a9eff; }
+        nav.top-nav {
+            background: var(--nav-bg); padding: 0.75rem 2rem;
+            display: flex; align-items: center; gap: 2rem;
+            position: sticky; top: 0; z-index: 100;
+        }
+        nav.top-nav .brand { color: white; font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+        nav.top-nav .brand span { color: var(--accent); }
+        nav.top-nav a { color: var(--nav-text); text-decoration: none; padding: 0.5rem 0.75rem; border-radius: 4px; font-size: 0.9rem; }
+        nav.top-nav a:hover, nav.top-nav a.active { background: rgba(255,255,255,0.1); color: white; }
+        nav.top-nav a.active { border-bottom: 2px solid var(--accent); }
+        main { padding: 2rem; max-width: 1400px; margin: 0 auto; }
+        .breadcrumb { font-size: 0.85rem; color: #6b7280; margin-bottom: 1rem; }
+        .breadcrumb a { color: var(--accent); }
+        .doc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
+        .doc-meta { display: flex; gap: 1.5rem; font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem; }
+        .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; background: #dbeafe; color: #1e40af; }
+        .page-viewer {
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .page-viewer .placeholder {
+            background: white;
+            border: 1px solid #d1d5db;
+            width: 100%;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 1.1rem;
+            border-radius: 4px;
+        }
+        .page-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .page-nav button { font-size: 0.85rem; padding: 0.4rem 0.75rem; }
+        .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+        .info-card { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; }
+        .info-card .label { font-size: 0.8rem; color: #6b7280; }
+        .info-card .val { font-size: 1.5rem; font-weight: 700; }
+        .actions-bar { display: flex; gap: 0.75rem; }
+        .actions-bar button, .actions-bar a { font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="dashboard.html" class="brand"><span>F</span>rontier</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="documents.html" class="active">Documents</a>
+        <a href="ground-truth-editor.html">Ground Truth</a>
+        <a href="run-evaluation.html">Evaluate</a>
+        <a href="results.html">Results</a>
+        <a href="comparison.html">Comparison</a>
+    </nav>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="documents.html">Documents</a> / A700_door_schedule.pdf
+        </div>
+
+        <div class="doc-header">
+            <div>
+                <h1 style="margin:0;">A700_door_schedule.pdf</h1>
+                <div class="doc-meta">
+                    <span><span class="tag">schedule</span></span>
+                    <span>Uploaded: 2026-03-26</span>
+                    <span>1 page</span>
+                    <span>374 KB</span>
+                </div>
+            </div>
+            <div class="actions-bar">
+                <a href="ground-truth-editor.html" role="button">Edit Ground Truth</a>
+                <a href="run-evaluation.html" role="button" class="outline">Run Evaluation</a>
+                <button class="outline secondary">Delete</button>
+            </div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="label">Ground Truth Tasks</div>
+                <div class="val">18</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Verified</div>
+                <div class="val" style="color: #22c55e;">3</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Unverified</div>
+                <div class="val" style="color: #f59e0b;">15</div>
+            </div>
+            <div class="info-card">
+                <div class="label">GT Version</div>
+                <div class="val">v3</div>
+            </div>
+        </div>
+
+        <div class="page-viewer">
+            <div class="placeholder">
+                [ Rendered PDF Page 1 — A700 Door Schedule ]<br>
+                <small style="margin-top:0.5rem; display:block;">The Wellington — 1290 Madison Ave — Sheet A-700.00</small>
+            </div>
+            <div class="page-nav">
+                <button class="outline" disabled>← Previous</button>
+                <span>Page 1 of 1</span>
+                <button class="outline" disabled>Next →</button>
+            </div>
+        </div>
+
+        <h3>Evaluation History for This Document</h3>
+        <table style="font-size: 0.9rem;">
+            <thead>
+                <tr>
+                    <th>Run</th>
+                    <th>Model</th>
+                    <th>Date</th>
+                    <th>Score</th>
+                    <th>GT Version</th>
+                    <th>Prompt</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#5</td>
+                    <td>Claude Opus 4.6</td>
+                    <td>2026-03-24</td>
+                    <td>14/18 (78%)</td>
+                    <td>v3</td>
+                    <td>default v2</td>
+                    <td><a href="run-detail.html">View →</a></td>
+                </tr>
+                <tr>
+                    <td>#3</td>
+                    <td>GPT-5.4</td>
+                    <td>2026-03-18</td>
+                    <td>11/18 (61%)</td>
+                    <td>v2 <small style="color:#f59e0b;">⚠ outdated</small></td>
+                    <td>default v1</td>
+                    <td><a href="#">View →</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

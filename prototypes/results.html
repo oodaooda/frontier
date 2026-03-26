@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontier — Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root { --nav-bg: #1a1a2e; --nav-text: #e0e0e0; --accent: #4a9eff; --pass: #22c55e; --fail: #ef4444; --warn: #f59e0b; }
+        nav.top-nav {
+            background: var(--nav-bg); padding: 0.75rem 2rem;
+            display: flex; align-items: center; gap: 2rem;
+            position: sticky; top: 0; z-index: 100;
+        }
+        nav.top-nav .brand { color: white; font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+        nav.top-nav .brand span { color: var(--accent); }
+        nav.top-nav a { color: var(--nav-text); text-decoration: none; padding: 0.5rem 0.75rem; border-radius: 4px; font-size: 0.9rem; }
+        nav.top-nav a:hover, nav.top-nav a.active { background: rgba(255,255,255,0.1); color: white; }
+        nav.top-nav a.active { border-bottom: 2px solid var(--accent); }
+        main { padding: 2rem; max-width: 1400px; margin: 0 auto; }
+        .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .page-header h1 { margin: 0; }
+        table { font-size: 0.9rem; }
+        .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+        .badge-pass { background: #dcfce7; color: #166534; }
+        .badge-fail { background: #fee2e2; color: #991b1b; }
+        .badge-warn { background: #fef3c7; color: #92400e; }
+        .score-bar { width: 80px; height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden; display: inline-block; vertical-align: middle; }
+        .score-bar .fill { height: 100%; border-radius: 4px; }
+        .fill-high { background: var(--pass); }
+        .fill-mid { background: var(--warn); }
+        .fill-low { background: var(--fail); }
+        .filter-bar { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; align-items: center; flex-wrap: wrap; }
+        .filter-bar select, .filter-bar input { font-size: 0.85rem; padding: 0.4rem; width: auto; }
+        .run-notes { font-size: 0.8rem; color: #6b7280; font-style: italic; max-width: 200px; }
+        .gt-warn { color: var(--warn); font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="dashboard.html" class="brand"><span>F</span>rontier</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="documents.html">Documents</a>
+        <a href="ground-truth-editor.html">Ground Truth</a>
+        <a href="run-evaluation.html">Evaluate</a>
+        <a href="results.html" class="active">Results</a>
+        <a href="comparison.html">Comparison</a>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Evaluation Results</h1>
+            <div style="display:flex; gap:0.5rem;">
+                <button class="outline" style="font-size:0.85rem;">Export All as HTML</button>
+                <button class="outline" style="font-size:0.85rem;">Export All as PDF</button>
+            </div>
+        </div>
+
+        <div class="filter-bar">
+            <select>
+                <option>All Models</option>
+                <option>Claude Opus 4.6</option>
+                <option>GPT-5.4</option>
+            </select>
+            <select>
+                <option>All Documents</option>
+                <option>A700_door_schedule.pdf</option>
+                <option>A101_floor_plan_level1.pdf</option>
+                <option>A201_north_elevation.pdf</option>
+            </select>
+            <input type="date" value="2026-03-01"> to <input type="date" value="2026-03-26">
+            <button class="outline" style="font-size:0.85rem; padding:0.4rem 0.75rem;">Filter</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Run</th>
+                    <th>Model</th>
+                    <th>Documents</th>
+                    <th>Tasks</th>
+                    <th>Score</th>
+                    <th>T1</th>
+                    <th>T2</th>
+                    <th>T3</th>
+                    <th>Cost</th>
+                    <th>GT Ver</th>
+                    <th>Prompt</th>
+                    <th>Date</th>
+                    <th>Notes</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>#6</strong></td>
+                    <td>GPT-5.4</td>
+                    <td>3</td>
+                    <td>54</td>
+                    <td>
+                        71%
+                        <div class="score-bar"><div class="fill fill-mid" style="width:71%;"></div></div>
+                    </td>
+                    <td><span class="badge badge-pass">88%</span></td>
+                    <td><span class="badge badge-warn">68%</span></td>
+                    <td><span class="badge badge-fail">45%</span></td>
+                    <td>$0.42</td>
+                    <td>v3</td>
+                    <td>default v2</td>
+                    <td>Mar 25</td>
+                    <td class="run-notes">Testing GPT-5.4 with updated prompts</td>
+                    <td><a href="run-detail.html">Detail →</a></td>
+                </tr>
+                <tr style="background:#f0fdf4;">
+                    <td><strong>#5</strong></td>
+                    <td>Claude Opus 4.6</td>
+                    <td>3</td>
+                    <td>54</td>
+                    <td>
+                        <strong>78%</strong>
+                        <div class="score-bar"><div class="fill fill-high" style="width:78%;"></div></div>
+                    </td>
+                    <td><span class="badge badge-pass">92%</span></td>
+                    <td><span class="badge badge-pass">76%</span></td>
+                    <td><span class="badge badge-warn">58%</span></td>
+                    <td>$0.68</td>
+                    <td>v3</td>
+                    <td>default v2</td>
+                    <td>Mar 24</td>
+                    <td class="run-notes">Best score so far</td>
+                    <td><a href="run-detail.html">Detail →</a></td>
+                </tr>
+                <tr>
+                    <td><strong>#4</strong></td>
+                    <td>Claude Opus 4.6</td>
+                    <td>3</td>
+                    <td>54</td>
+                    <td>
+                        74%
+                        <div class="score-bar"><div class="fill fill-mid" style="width:74%;"></div></div>
+                    </td>
+                    <td><span class="badge badge-pass">90%</span></td>
+                    <td><span class="badge badge-pass">72%</span></td>
+                    <td><span class="badge badge-warn">52%</span></td>
+                    <td>$0.65</td>
+                    <td>v2 <span class="gt-warn">outdated</span></td>
+                    <td>default v1</td>
+                    <td>Mar 20</td>
+                    <td class="run-notes">Before prompt update</td>
+                    <td><a href="#">Detail →</a></td>
+                </tr>
+                <tr>
+                    <td><strong>#3</strong></td>
+                    <td>GPT-5.4</td>
+                    <td>2</td>
+                    <td>42</td>
+                    <td>
+                        65%
+                        <div class="score-bar"><div class="fill fill-low" style="width:65%;"></div></div>
+                    </td>
+                    <td><span class="badge badge-pass">82%</span></td>
+                    <td><span class="badge badge-warn">60%</span></td>
+                    <td><span class="badge badge-fail">38%</span></td>
+                    <td>$0.38</td>
+                    <td>v2 <span class="gt-warn">outdated</span></td>
+                    <td>default v1</td>
+                    <td>Mar 18</td>
+                    <td class="run-notes"></td>
+                    <td><a href="#">Detail →</a></td>
+                </tr>
+                <tr>
+                    <td><strong>#2</strong></td>
+                    <td>Claude Opus 4.6</td>
+                    <td>1</td>
+                    <td>18</td>
+                    <td>
+                        72%
+                        <div class="score-bar"><div class="fill fill-mid" style="width:72%;"></div></div>
+                    </td>
+                    <td><span class="badge badge-pass">89%</span></td>
+                    <td><span class="badge badge-warn">67%</span></td>
+                    <td><span class="badge badge-fail">40%</span></td>
+                    <td>$0.22</td>
+                    <td>v1 <span class="gt-warn">outdated</span></td>
+                    <td>default v1</td>
+                    <td>Mar 15</td>
+                    <td class="run-notes">First real run</td>
+                    <td><a href="#">Detail →</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top:2rem; display:flex; gap:0.75rem;">
+            <a href="comparison.html" role="button" class="outline">Compare Selected Runs →</a>
+        </div>
+    </main>
+</body>
+</html>
