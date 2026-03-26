@@ -55,6 +55,55 @@
         }
         .version-list .version-item:last-child { border-bottom: none; }
         .version-list .active-badge { background: var(--accent); color: white; padding: 0.1rem 0.4rem; border-radius: 8px; font-size: 0.7rem; }
+        [data-theme="dark"] .stat-card,
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .model-card,
+        [data-theme="dark"] .panel-card,
+        [data-theme="dark"] .config-section,
+        [data-theme="dark"] .news-entry,
+        [data-theme="dark"] .insight-card,
+        [data-theme="dark"] .chart-card,
+        [data-theme="dark"] .run-select-card,
+        [data-theme="dark"] .delta-card,
+        [data-theme="dark"] .info-card,
+        [data-theme="dark"] .task-card,
+        [data-theme="dark"] .history-item {
+            background: #1e1e2e;
+            border-color: #374151;
+        }
+        [data-theme="dark"] .upload-area,
+        [data-theme="dark"] .new-task-form,
+        [data-theme="dark"] .add-form {
+            background: #1a1a2e;
+            border-color: #4b5563;
+        }
+        [data-theme="dark"] .response-box,
+        [data-theme="dark"] .model-answer,
+        [data-theme="dark"] .page-viewer,
+        [data-theme="dark"] .pdf-panel {
+            background: #1a1a2e;
+            border-color: #374151;
+        }
+        [data-theme="dark"] .page-viewer .placeholder,
+        [data-theme="dark"] .page-thumb {
+            background: #262640;
+            border-color: #4b5563;
+            color: #9ca3af;
+        }
+        [data-theme="dark"] .cost-estimate,
+        [data-theme="dark"] .run-notes-box,
+        [data-theme="dark"] .note-entry,
+        [data-theme="dark"] .warn-banner {
+            background: #2a2215;
+            border-color: #78650d;
+        }
+        [data-theme="dark"] .progress-section {
+            background: #132a15;
+            border-color: #22663a;
+        }
+        [data-theme="dark"] .news-body .relevance {
+            background: #172036;
+        }
     </style>
 </head>
 <body>
@@ -70,6 +119,7 @@
         <a href="news.html">News</a>
         <a href="prompt-lab.html" class="active">Prompt Lab</a>
         <a href="trends.html">Trends</a>
+        <a href="#" onclick="toggleTheme(event)" id="theme-toggle" style="margin-left:auto;" title="Toggle dark mode">Light</a>
     </nav>
 
     <div class="lab-layout">
@@ -258,5 +308,25 @@ Question: {question}</textarea>
             </div>
         </div>
     </div>
+<script>
+function toggleTheme(e) {
+  e.preventDefault();
+  const html = document.documentElement;
+  const current = html.getAttribute("data-theme");
+  const next = current === "dark" ? "light" : "dark";
+  html.setAttribute("data-theme", next);
+  localStorage.setItem("frontier-theme", next);
+  document.getElementById("theme-toggle").textContent = next === "dark" ? "Dark" : "Light";
+}
+// Restore saved theme
+(function() {
+  const saved = localStorage.getItem("frontier-theme");
+  if (saved) {
+    document.documentElement.setAttribute("data-theme", saved);
+    const btn = document.getElementById("theme-toggle");
+    if (btn) btn.textContent = saved === "dark" ? "Dark" : "Light";
+  }
+})();
+</script>
 </body>
 </html>
