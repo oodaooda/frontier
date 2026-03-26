@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontier — Trends</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root { --nav-bg: #1a1a2e; --nav-text: #e0e0e0; --accent: #4a9eff; --pass: #22c55e; --fail: #ef4444; --warn: #f59e0b; }
+        nav.top-nav { background: var(--nav-bg); padding: 0.75rem 2rem; display: flex; align-items: center; gap: 2rem; position: sticky; top: 0; z-index: 100; }
+        nav.top-nav .brand { color: white; font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+        nav.top-nav .brand span { color: var(--accent); }
+        nav.top-nav a { color: var(--nav-text); text-decoration: none; padding: 0.5rem 0.75rem; border-radius: 4px; font-size: 0.9rem; }
+        nav.top-nav a:hover, nav.top-nav a.active { background: rgba(255,255,255,0.1); color: white; }
+        nav.top-nav a.active { border-bottom: 2px solid var(--accent); }
+        main { padding: 2rem; max-width: 1400px; margin: 0 auto; }
+        .filter-bar { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; align-items: center; }
+        .filter-bar select { font-size: 0.85rem; padding: 0.35rem; width: auto; }
+        .chart-card {
+            background: white; border: 1px solid #e5e7eb; border-radius: 8px;
+            padding: 1.5rem; margin-bottom: 1.5rem;
+        }
+        .chart-card h3 { margin-top: 0; }
+        .chart-placeholder {
+            background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 4px;
+            height: 300px; display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        /* Fake chart visualization */
+        .fake-chart { width: 100%; height: 100%; position: relative; padding: 2rem; }
+        .y-axis { position: absolute; left: 2rem; top: 2rem; bottom: 2rem; width: 1px; background: #d1d5db; }
+        .x-axis { position: absolute; left: 2rem; right: 2rem; bottom: 2rem; height: 1px; background: #d1d5db; }
+        .y-labels { position: absolute; left: 0; top: 2rem; bottom: 2rem; display: flex; flex-direction: column; justify-content: space-between; font-size: 0.7rem; color: #9ca3af; width: 2rem; text-align: right; }
+        .x-labels { position: absolute; left: 2rem; right: 2rem; bottom: 0.5rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: #9ca3af; }
+        .chart-line {
+            position: absolute; left: 2rem; right: 2rem; top: 2rem; bottom: 2rem;
+        }
+        .data-point {
+            position: absolute; width: 10px; height: 10px; border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .data-point.claude { background: var(--accent); }
+        .data-point.gpt { background: var(--warn); }
+        .line-segment {
+            position: absolute; height: 2px; transform-origin: left center;
+        }
+        .line-segment.claude { background: var(--accent); }
+        .line-segment.gpt { background: var(--warn); }
+        .chart-legend { display: flex; gap: 1.5rem; margin-top: 0.75rem; font-size: 0.85rem; }
+        .legend-item { display: flex; align-items: center; gap: 0.35rem; }
+        .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .grid-line {
+            position: absolute; left: 2rem; right: 2rem; height: 1px;
+            background: #f3f4f6;
+        }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .insight-card {
+            background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1.25rem;
+        }
+        .insight-card h4 { margin-top: 0; font-size: 0.95rem; }
+        .insight-list { font-size: 0.85rem; }
+        .insight-list li { margin-bottom: 0.5rem; }
+        .trend-up { color: var(--pass); font-weight: 600; }
+        .trend-down { color: var(--fail); font-weight: 600; }
+        .trend-flat { color: #9ca3af; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="dashboard.html" class="brand"><span>F</span>rontier</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="documents.html">Documents</a>
+        <a href="ground-truth-editor.html">Ground Truth</a>
+        <a href="run-evaluation.html">Evaluate</a>
+        <a href="results.html">Results</a>
+        <a href="comparison.html">Comparison</a>
+        <a href="models.html">Models</a>
+        <a href="news.html">News</a>
+        <a href="prompt-lab.html">Prompt Lab</a>
+        <a href="trends.html" class="active">Trends</a>
+    </nav>
+
+    <main>
+        <h1>Capability Trends</h1>
+        <p style="color:#6b7280; margin-top:-0.5rem; margin-bottom:1.5rem;">Track how model performance on construction documents evolves over time.</p>
+
+        <div class="filter-bar">
+            <select>
+                <option>All Models</option>
+                <option>Claude Opus 4.6</option>
+                <option>GPT-5.4</option>
+            </select>
+            <select>
+                <option>Overall Score</option>
+                <option>Tier 1 — Text Extraction</option>
+                <option>Tier 2 — Structured Understanding</option>
+                <option>Tier 3 — Spatial/Visual</option>
+            </select>
+            <select>
+                <option>All Categories</option>
+                <option>Schedules</option>
+                <option>Specifications</option>
+                <option>Plans</option>
+                <option>Elevations</option>
+            </select>
+            <select>
+                <option>Last 30 days</option>
+                <option>Last 90 days</option>
+                <option>Last 6 months</option>
+                <option>All time</option>
+            </select>
+        </div>
+
+        <!-- Overall Score Trend -->
+        <div class="chart-card">
+            <h3>Overall Score Over Time</h3>
+            <div class="chart-placeholder">
+                <div class="fake-chart">
+                    <div class="y-axis"></div>
+                    <div class="x-axis"></div>
+                    <div class="y-labels">
+                        <span>100%</span>
+                        <span>80%</span>
+                        <span>60%</span>
+                        <span>40%</span>
+                        <span>20%</span>
+                    </div>
+                    <div class="x-labels">
+                        <span>Mar 12</span>
+                        <span>Mar 15</span>
+                        <span>Mar 18</span>
+                        <span>Mar 20</span>
+                        <span>Mar 24</span>
+                        <span>Mar 25</span>
+                    </div>
+                    <!-- Grid lines -->
+                    <div class="grid-line" style="top: 20%;"></div>
+                    <div class="grid-line" style="top: 40%;"></div>
+                    <div class="grid-line" style="top: 60%;"></div>
+                    <div class="grid-line" style="top: 80%;"></div>
+                    <!-- Claude data points (72% → 74% → 78%) -->
+                    <div class="data-point claude" style="left: 20%; top: 35%;" title="Run #2: 72%"></div>
+                    <div class="data-point claude" style="left: 55%; top: 33%;" title="Run #4: 74%"></div>
+                    <div class="data-point claude" style="left: 80%; top: 28%;" title="Run #5: 78%"></div>
+                    <!-- GPT data points (65% → 71%) -->
+                    <div class="data-point gpt" style="left: 40%; top: 44%;" title="Run #3: 65%"></div>
+                    <div class="data-point gpt" style="left: 90%; top: 37%;" title="Run #6: 71%"></div>
+                </div>
+            </div>
+            <div class="chart-legend">
+                <div class="legend-item"><div class="legend-dot" style="background:var(--accent);"></div> Claude Opus 4.6</div>
+                <div class="legend-item"><div class="legend-dot" style="background:var(--warn);"></div> GPT-5.4</div>
+            </div>
+            <p style="font-size:0.8rem; color:#9ca3af; margin-top:0.5rem;">
+                Note: Runs scored against different GT versions are marked. Hover over data points for details.
+                Charts will use Chart.js in production for interactive tooltips and zoom.
+            </p>
+        </div>
+
+        <!-- Tier Breakdown -->
+        <div class="two-col">
+            <div class="chart-card">
+                <h3>Score by Tier — Claude Opus 4.6</h3>
+                <div class="chart-placeholder" style="height:200px;">
+                    <div style="display:flex; gap:2rem; align-items:flex-end; height:80%; padding:1rem;">
+                        <div style="text-align:center;">
+                            <div style="background:var(--pass); width:50px; height:92%; border-radius:4px 4px 0 0;"></div>
+                            <div style="font-size:0.75rem; margin-top:0.25rem;">T1: 92%</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="background:var(--accent); width:50px; height:76%; border-radius:4px 4px 0 0;"></div>
+                            <div style="font-size:0.75rem; margin-top:0.25rem;">T2: 76%</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="background:var(--warn); width:50px; height:58%; border-radius:4px 4px 0 0;"></div>
+                            <div style="font-size:0.75rem; margin-top:0.25rem;">T3: 58%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3>Score by Tier — GPT-5.4</h3>
+                <div class="chart-placeholder" style="height:200px;">
+                    <div style="display:flex; gap:2rem; align-items:flex-end; height:80%; padding:1rem;">
+                        <div style="text-align:center;">
+                            <div style="background:var(--pass); width:50px; height:88%; border-radius:4px 4px 0 0;"></div>
+                            <div style="font-size:0.75rem; margin-top:0.25rem;">T1: 88%</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="background:var(--warn); width:50px; height:68%; border-radius:4px 4px 0 0;"></div>
+                            <div style="font-size:0.75rem; margin-top:0.25rem;">T2: 68%</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="background:var(--fail); width:50px; height:45%; border-radius:4px 4px 0 0;"></div>
+                            <div style="font-size:0.75rem; margin-top:0.25rem;">T3: 45%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insights -->
+        <div class="two-col" style="margin-top:1.5rem;">
+            <div class="insight-card">
+                <h4>Trend Insights</h4>
+                <ul class="insight-list">
+                    <li><span class="trend-up">+6%</span> Claude Opus 4.6 overall improvement (72% → 78%) over 3 runs</li>
+                    <li><span class="trend-up">+6%</span> GPT-5.4 overall improvement (65% → 71%) over 2 runs</li>
+                    <li><span class="trend-up">+18%</span> Largest single improvement: Claude T3 (40% → 58%) after prompt update to v2</li>
+                    <li><span class="trend-flat">~0%</span> Both models plateau on Tier 1 text extraction (~90%)</li>
+                    <li><span class="trend-down">Gap widening</span> Claude's Tier 3 lead over GPT growing: 2% → 13%</li>
+                </ul>
+            </div>
+
+            <div class="insight-card">
+                <h4>The Frontier</h4>
+                <table style="font-size:0.85rem;">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Best Model</th>
+                            <th>Score</th>
+                            <th>Trend</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Text Extraction</td>
+                            <td>Claude Opus 4.6</td>
+                            <td>92%</td>
+                            <td><span class="trend-flat">Stable</span></td>
+                        </tr>
+                        <tr>
+                            <td>Structured Understanding</td>
+                            <td>Claude Opus 4.6</td>
+                            <td>76%</td>
+                            <td><span class="trend-up">Improving</span></td>
+                        </tr>
+                        <tr>
+                            <td>Spatial/Visual</td>
+                            <td>Claude Opus 4.6</td>
+                            <td>58%</td>
+                            <td><span class="trend-up">Improving</span></td>
+                        </tr>
+                        <tr>
+                            <td>Schedule Reading</td>
+                            <td>Claude Opus 4.6</td>
+                            <td>85%</td>
+                            <td><span class="trend-up">Improving</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dimension Reading</td>
+                            <td>GPT-5.4</td>
+                            <td>62%</td>
+                            <td><span class="trend-flat">Stable</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cost Efficiency</td>
+                            <td>GPT-5.4</td>
+                            <td>$0.40/run</td>
+                            <td><span class="trend-up">Cheaper</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

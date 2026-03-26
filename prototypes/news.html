@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontier — Model Intel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root { --nav-bg: #1a1a2e; --nav-text: #e0e0e0; --accent: #4a9eff; --pass: #22c55e; --fail: #ef4444; --warn: #f59e0b; }
+        nav.top-nav { background: var(--nav-bg); padding: 0.75rem 2rem; display: flex; align-items: center; gap: 2rem; position: sticky; top: 0; z-index: 100; }
+        nav.top-nav .brand { color: white; font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+        nav.top-nav .brand span { color: var(--accent); }
+        nav.top-nav a { color: var(--nav-text); text-decoration: none; padding: 0.5rem 0.75rem; border-radius: 4px; font-size: 0.9rem; }
+        nav.top-nav a:hover, nav.top-nav a.active { background: rgba(255,255,255,0.1); color: white; }
+        nav.top-nav a.active { border-bottom: 2px solid var(--accent); }
+        main { padding: 2rem; max-width: 1000px; margin: 0 auto; }
+        .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .page-header h1 { margin: 0; }
+        .news-entry {
+            background: white; border: 1px solid #e5e7eb; border-radius: 8px;
+            padding: 1.25rem; margin-bottom: 1rem;
+        }
+        .news-entry.action-needed { border-left: 4px solid var(--warn); }
+        .news-entry.evaluated { border-left: 4px solid var(--pass); }
+        .news-entry.info { border-left: 4px solid var(--accent); }
+        .news-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
+        .news-header h3 { margin: 0; font-size: 1rem; }
+        .news-meta { display: flex; gap: 1rem; font-size: 0.8rem; color: #6b7280; margin-bottom: 0.5rem; }
+        .news-body { font-size: 0.9rem; line-height: 1.5; }
+        .news-body .relevance { margin-top: 0.5rem; padding: 0.5rem; background: #f0f9ff; border-radius: 4px; font-size: 0.85rem; }
+        .news-actions { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
+        .news-actions button, .news-actions a { font-size: 0.8rem; padding: 0.3rem 0.6rem; }
+        .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; }
+        .badge-new { background: #fee2e2; color: #991b1b; }
+        .badge-evaluated { background: #dcfce7; color: #166534; }
+        .badge-watching { background: #fef3c7; color: #92400e; }
+        .badge-provider { background: #e0e7ff; color: #3730a3; }
+        .add-form { background: #f9fafb; border: 2px dashed #d1d5db; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem; }
+        .add-form h3 { margin-top: 0; font-size: 1rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+        .filter-bar { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .filter-bar select { font-size: 0.85rem; padding: 0.35rem; width: auto; }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="dashboard.html" class="brand"><span>F</span>rontier</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="documents.html">Documents</a>
+        <a href="ground-truth-editor.html">Ground Truth</a>
+        <a href="run-evaluation.html">Evaluate</a>
+        <a href="results.html">Results</a>
+        <a href="comparison.html">Comparison</a>
+        <a href="models.html">Models</a>
+        <a href="news.html" class="active">News</a>
+        <a href="prompt-lab.html">Prompt Lab</a>
+        <a href="trends.html">Trends</a>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Model Intel</h1>
+            <button style="font-size:0.85rem;">+ Add Entry</button>
+        </div>
+
+        <div class="filter-bar">
+            <select>
+                <option>All Providers</option>
+                <option>Anthropic</option>
+                <option>OpenAI</option>
+                <option>Google</option>
+            </select>
+            <select>
+                <option>All Types</option>
+                <option>New Model Release</option>
+                <option>Model Update</option>
+                <option>Capability Announcement</option>
+                <option>Pricing Change</option>
+                <option>Deprecation</option>
+            </select>
+            <select>
+                <option>All Status</option>
+                <option>Needs Evaluation</option>
+                <option>Evaluated</option>
+                <option>Watching</option>
+            </select>
+        </div>
+
+        <!-- Needs evaluation -->
+        <div class="news-entry action-needed">
+            <div class="news-header">
+                <h3>Gemini 2.5 Pro Released with Enhanced Vision</h3>
+                <span class="badge badge-new">Needs Evaluation</span>
+            </div>
+            <div class="news-meta">
+                <span><span class="badge badge-provider">Google</span></span>
+                <span>Mar 22, 2026</span>
+                <span>New Model Release</span>
+            </div>
+            <div class="news-body">
+                Google released Gemini 2.5 Pro with claimed improvements in document understanding, table extraction, and spatial reasoning. Supports up to 2M token context.
+                <div class="relevance">
+                    <strong>Relevance to Frontier:</strong> Claims improved table extraction and document OCR. The 2M context could help with multi-page spec reading. Should add to model registry and run baseline evaluation.
+                </div>
+            </div>
+            <div class="news-actions">
+                <a href="run-evaluation.html" role="button">Run Evaluation →</a>
+                <button class="outline">Mark as Evaluated</button>
+                <button class="outline secondary">Dismiss</button>
+            </div>
+        </div>
+
+        <!-- Watching -->
+        <div class="news-entry action-needed">
+            <div class="news-header">
+                <h3>Claude Sonnet 4.6 — Faster, Cheaper Alternative?</h3>
+                <span class="badge badge-watching">Watching</span>
+            </div>
+            <div class="news-meta">
+                <span><span class="badge badge-provider">Anthropic</span></span>
+                <span>Mar 18, 2026</span>
+                <span>New Model Release</span>
+            </div>
+            <div class="news-body">
+                Anthropic released Sonnet 4.6 at $3/$15 per 1M tokens. Same architecture as Opus 4.6 but optimized for speed. Vision capabilities included.
+                <div class="relevance">
+                    <strong>Relevance to Frontier:</strong> If Sonnet 4.6 scores within 5% of Opus on construction docs, it could be the default model for high-volume evaluation (40% cheaper). Worth benchmarking.
+                </div>
+            </div>
+            <div class="news-actions">
+                <a href="run-evaluation.html" role="button" class="outline">Run Evaluation →</a>
+                <button class="outline">Mark as Evaluated</button>
+            </div>
+        </div>
+
+        <!-- Evaluated -->
+        <div class="news-entry evaluated">
+            <div class="news-header">
+                <h3>Claude Opus 4.6 — Adaptive Thinking, 128K Output</h3>
+                <span class="badge badge-evaluated">Evaluated</span>
+            </div>
+            <div class="news-meta">
+                <span><span class="badge badge-provider">Anthropic</span></span>
+                <span>Feb 15, 2026</span>
+                <span>New Model Release</span>
+            </div>
+            <div class="news-body">
+                Major release from Anthropic. Adaptive thinking replaces fixed budget_tokens. 128K max output. 1M context in beta.
+                <div class="relevance">
+                    <strong>Evaluation result:</strong> Best performing model on Frontier benchmark — 78% overall. Strongest on schedules (85%) and specs (82%). Tier 3 spatial still weak at 58%.
+                </div>
+            </div>
+            <div class="news-actions">
+                <a href="results.html" role="button" class="outline">View Results →</a>
+                <a href="models.html" role="button" class="outline">Model Profile →</a>
+            </div>
+        </div>
+
+        <!-- Info -->
+        <div class="news-entry info">
+            <div class="news-header">
+                <h3>GPT-5.4 Vision API Update — Improved PDF Handling</h3>
+                <span class="badge badge-watching">Watching</span>
+            </div>
+            <div class="news-meta">
+                <span><span class="badge badge-provider">OpenAI</span></span>
+                <span>Mar 10, 2026</span>
+                <span>Model Update</span>
+            </div>
+            <div class="news-body">
+                OpenAI announced improved vision capabilities for GPT-5.4, specifically targeting document understanding. Claims 15% improvement on DocVQA benchmark.
+                <div class="relevance">
+                    <strong>Relevance to Frontier:</strong> DocVQA is general-purpose, but if the improvements transfer to construction docs it could close the gap with Claude. Re-evaluation recommended.
+                </div>
+            </div>
+            <div class="news-actions">
+                <a href="run-evaluation.html" role="button" class="outline">Re-evaluate →</a>
+            </div>
+        </div>
+
+        <div class="news-entry info">
+            <div class="news-header">
+                <h3>OpenAI Announces GPT-5.4 Pricing Reduction</h3>
+                <span class="badge badge-evaluated">Noted</span>
+            </div>
+            <div class="news-meta">
+                <span><span class="badge badge-provider">OpenAI</span></span>
+                <span>Feb 28, 2026</span>
+                <span>Pricing Change</span>
+            </div>
+            <div class="news-body">
+                Input pricing reduced from $5.00 to $3.00 per 1M tokens. Output remains $15.00 per 1M.
+                <div class="relevance">
+                    <strong>Impact:</strong> GPT-5.4 is now the cheapest model in our benchmark. Updated model pricing in config.
+                </div>
+            </div>
+        </div>
+
+        <!-- Add new entry form -->
+        <div class="add-form">
+            <h3>Add Intel Entry</h3>
+            <label>Headline
+                <input type="text" placeholder="e.g., Gemini 2.5 Flash released with improved vision">
+            </label>
+            <div class="form-row">
+                <label>Provider
+                    <select>
+                        <option>Anthropic</option>
+                        <option>OpenAI</option>
+                        <option>Google</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+                <label>Type
+                    <select>
+                        <option>New Model Release</option>
+                        <option>Model Update</option>
+                        <option>Capability Announcement</option>
+                        <option>Pricing Change</option>
+                        <option>Deprecation</option>
+                    </select>
+                </label>
+            </div>
+            <label>Details
+                <textarea placeholder="What happened and why it matters..."></textarea>
+            </label>
+            <label>Relevance to Construction Docs
+                <textarea placeholder="How does this affect our benchmark? Should we evaluate?"></textarea>
+            </label>
+            <label>Source URL (optional)
+                <input type="url" placeholder="https://...">
+            </label>
+            <button style="margin-top:0.5rem;">Save Entry</button>
+        </div>
+    </main>
+</body>
+</html>
