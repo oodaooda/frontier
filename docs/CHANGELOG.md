@@ -4,6 +4,14 @@ All notable milestone completions for Frontier are documented here.
 
 ## [Unreleased]
 
+### M003 — Ground Truth Editor & Versioning (2026-03-26)
+- Side-by-side PDF viewer + Q&A editor with inline editing
+- Task CRUD: create, edit, verify, delete ground truth tasks
+- GT versioning: auto-increment on any edit, snapshot for evaluation runs
+- YAML import/export backward compatible with existing schema
+- Bulk verify all tasks on a page
+- 43 automated tests (17 task model + 16 database + 10 app)
+
 ### M002 — Database Layer & Document Management UI (2026-03-26)
 - SQLite database with 10 tables covering full data model
 - FastAPI web app serving on 0.0.0.0:8000
