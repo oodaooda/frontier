@@ -162,3 +162,4 @@ Branch: `feature/<slug>`
 | M004 | Model runners & evaluation engine          | planned |
 | M005 | Scoring, results & comparison dashboard    | planned |
 | M006 | Annotations, export & visual testing       | planned |
+| M007 | RSS feeds, settings & backup               | planned |
