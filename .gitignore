@@ -29,6 +29,9 @@ datasets/pdfs/*.pdf
 # Rendered images from PDFs (large, regenerable)
 datasets/rendered/
 
+# Application data (database, uploaded files, rendered pages)
+data/
+
 # Reports (generated output)
 reports/
 
