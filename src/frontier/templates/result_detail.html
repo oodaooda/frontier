@@ -34,6 +34,14 @@
         <h1 style="margin:0;">Run #{{ evaluation.id }} — {{ evaluation.model_name or evaluation.model_id }}</h1>
         <div style="font-size:0.85rem; opacity:0.7;">{{ evaluation.started_date }}</div>
     </div>
+    <div style="display:flex; gap:0.5rem;">
+        <a href="/results/{{ evaluation.id }}/export" role="button" class="outline" style="font-size:0.85rem;">Export HTML</a>
+        <a href="/comparison?run_a={{ evaluation.id }}" role="button" class="outline" style="font-size:0.85rem;">Compare</a>
+        <form action="/results/{{ evaluation.id }}/delete" method="post" style="display:inline;"
+              onsubmit="return confirm('Delete this evaluation run and all its results?');">
+            <button type="submit" class="outline secondary" style="font-size:0.85rem;">Delete</button>
+        </form>
+    </div>
 </div>
 
 <div class="stat-row">

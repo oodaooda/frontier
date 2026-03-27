@@ -10,35 +10,110 @@
 <div class="stat-grid">
     <div class="stat-card">
         <div class="label">Documents</div>
-        <div class="value">{{ stats.total_docs }}</div>
-        <div class="subtext">{{ stats.total_pages }} total pages</div>
+        <div class="value">{{ doc_stats.total_docs }}</div>
+        <div class="subtext">{{ doc_stats.total_pages }} pages</div>
     </div>
     <div class="stat-card">
-        <div class="label">By Type</div>
-        <div class="value" style="font-size:1rem;">
-            {% if stats.by_type %}
-                {% for type, count in stats.by_type.items() %}
-                    <span class="tag tag-{{ type }}">{{ type }}: {{ count }}</span>
-                {% endfor %}
+        <div class="label">Ground Truth Tasks</div>
+        <div class="value">{{ task_total }}</div>
+        <div class="subtext">
+            {% if task_total > 0 %}
+                {{ task_verified }} verified, {{ task_total - task_verified }} unverified
             {% else %}
-                <span style="opacity:0.5;">No documents yet</span>
+                No tasks yet
             {% endif %}
         </div>
     </div>
     <div class="stat-card">
-        <div class="label">Ground Truth Tasks</div>
-        <div class="value">—</div>
-        <div class="subtext">Coming in M003</div>
+        <div class="label">Evaluation Runs</div>
+        <div class="value">{{ recent_evals|length }}</div>
+        <div class="subtext">
+            {% if best_scores %}
+                {{ best_scores|length }} model{{ "s" if best_scores|length != 1 }} tested
+            {% endif %}
+        </div>
     </div>
     <div class="stat-card">
-        <div class="label">Evaluation Runs</div>
-        <div class="value">—</div>
-        <div class="subtext">Coming in M004</div>
+        <div class="label">Best Score</div>
+        <div class="value" style="color: var(--pass);">
+            {% if best_scores %}
+                {{ best_scores[0].best_pct|round(0)|int }}%
+            {% else %}
+                —
+            {% endif %}
+        </div>
+        <div class="subtext">
+            {% if best_scores %}{{ best_scores[0].display_name or best_scores[0].model_id }}{% endif %}
+        </div>
     </div>
 </div>
 
-{% if stats.total_docs == 0 %}
-<div style="text-align:center; padding:3rem; opacity:0.6;">
+{% if doc_stats.by_type %}
+<div style="margin-bottom:1.5rem;">
+    <strong>Documents by type:</strong>
+    {% for type, count in doc_stats.by_type.items() %}
+    <span class="tag tag-{{ type }}" style="margin-left:0.25rem;">{{ type }}: {{ count }}</span>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+    <!-- Recent evaluations -->
+    <div>
+        <h3>Recent Evaluations</h3>
+        {% if recent_evals %}
+        <table style="font-size:0.85rem;">
+            <thead>
+                <tr><th>Run</th><th>Model</th><th>Score</th><th>Cost</th><th>Date</th><th></th></tr>
+            </thead>
+            <tbody>
+                {% for e in recent_evals %}
+                <tr>
+                    <td>#{{ e.id }}</td>
+                    <td>{{ e.model_name or e.model_id }}</td>
+                    <td>
+                        {% if e.total_tasks > 0 %}
+                        {{ (e.passed_tasks / e.total_tasks * 100)|round(0)|int }}%
+                        {% else %}—{% endif %}
+                    </td>
+                    <td>${{ "%.2f"|format(e.total_cost) }}</td>
+                    <td>{{ e.started_date[:10] if e.started_date else "" }}</td>
+                    <td><a href="/results/{{ e.id }}" style="font-size:0.8rem;">View →</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p style="opacity:0.5;">No evaluations yet. <a href="/evaluate">Run your first evaluation →</a></p>
+        {% endif %}
+    </div>
+
+    <!-- Best scores per model -->
+    <div>
+        <h3>Model Leaderboard</h3>
+        {% if best_scores %}
+        <table style="font-size:0.85rem;">
+            <thead>
+                <tr><th>Model</th><th>Best Score</th><th>Runs</th></tr>
+            </thead>
+            <tbody>
+                {% for s in best_scores %}
+                <tr>
+                    <td>{{ s.display_name or s.model_id }}</td>
+                    <td style="font-weight:700; color:var(--pass);">{{ s.best_pct|round(0)|int }}%</td>
+                    <td>{{ s.run_count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p style="opacity:0.5;">Run evaluations to see the leaderboard.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% if doc_stats.total_docs == 0 %}
+<div style="text-align:center; padding:3rem; opacity:0.6; margin-top:2rem;">
     <h2>Get started</h2>
     <p>Upload your first construction document to begin building your benchmark dataset.</p>
     <a href="/documents" role="button">Go to Documents →</a>
