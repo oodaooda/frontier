@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% set active_nav = "ground-truth" %}
+{% block title_suffix %} — Ground Truth{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Ground Truth</h1>
+</div>
+<p style="opacity:0.7;">Select a document to edit its ground truth tasks.</p>
+
+{% if documents %}
+<table>
+    <thead>
+        <tr>
+            <th>Document</th>
+            <th>Type</th>
+            <th>Tasks</th>
+            <th>Verified</th>
+            <th>GT Version</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in documents %}
+        <tr>
+            <td><strong>{{ d.doc.original_filename }}</strong></td>
+            <td>
+                {% if d.doc.doc_type %}
+                <span class="tag tag-{{ d.doc.doc_type }}">{{ d.doc.doc_type }}</span>
+                {% endif %}
+            </td>
+            <td>{{ d.total }}</td>
+            <td>
+                {% if d.total > 0 %}
+                    {% if d.verified == d.total %}
+                    <span style="color:var(--pass);">{{ d.verified }}/{{ d.total }}</span>
+                    {% else %}
+                    <span style="color:var(--warn);">{{ d.verified }}/{{ d.total }}</span>
+                    {% endif %}
+                {% else %}
+                <span style="opacity:0.5;">0</span>
+                {% endif %}
+            </td>
+            <td>v{{ d.gt_version }}</td>
+            <td><a href="/ground-truth/{{ d.doc.id }}" role="button" class="outline" style="font-size:0.85rem;">Edit →</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p style="text-align:center; opacity:0.5; padding:2rem;">No documents uploaded yet. <a href="/documents">Upload documents first →</a></p>
+{% endif %}
+{% endblock %}

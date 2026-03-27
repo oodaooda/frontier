@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% set active_nav = "news" %}
+{% block title_suffix %} — Model Intel{% endblock %}
+
+{% block head %}
+<style>
+    .news-entry {
+        border: 1px solid var(--pico-muted-border-color);
+        border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem;
+    }
+    .news-entry.status-new { border-left: 4px solid var(--warn); }
+    .news-entry.status-evaluated { border-left: 4px solid var(--pass); }
+    .news-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+    .news-meta { font-size: 0.8rem; opacity: 0.7; margin-bottom: 0.5rem; display: flex; gap: 1rem; }
+    .news-body { font-size: 0.9rem; }
+    .relevance { margin-top: 0.5rem; padding: 0.5rem; border-radius: 4px; font-size: 0.85rem; background: rgba(74,158,255,0.05); }
+    .badge-status { padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; }
+    .badge-new { background: #fef3c7; color: #92400e; }
+    .badge-evaluated { background: #dcfce7; color: #166534; }
+    .badge-watching { background: #dbeafe; color: #1e40af; }
+    .add-form { border: 2px dashed var(--pico-muted-border-color); border-radius: 8px; padding: 1.25rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Model Intel</h1>
+</div>
+
+{% for e in entries %}
+<div class="news-entry status-{{ e.status }}">
+    <div class="news-header">
+        <h3 style="margin:0; font-size:1rem;">{{ e.headline }}</h3>
+        <span class="badge-status badge-{{ e.status }}">{{ e.status }}</span>
+    </div>
+    <div class="news-meta">
+        <span>{{ e.provider }}</span>
+        <span>{{ e.entry_type }}</span>
+        <span>{{ e.created_date[:10] }}</span>
+        {% if e.source_url %}<a href="{{ e.source_url }}" target="_blank">Source</a>{% endif %}
+    </div>
+    {% if e.body %}
+    <div class="news-body">{{ e.body }}</div>
+    {% endif %}
+    {% if e.relevance %}
+    <div class="relevance"><strong>Relevance:</strong> {{ e.relevance }}</div>
+    {% endif %}
+    <div style="margin-top:0.75rem; display:flex; gap:0.5rem;">
+        <form action="/news/{{ e.id }}/status" method="post" style="display:inline;">
+            <input type="hidden" name="status" value="evaluated">
+            <button type="submit" class="outline" style="font-size:0.75rem; padding:0.2rem 0.5rem;">Mark Evaluated</button>
+        </form>
+        <form action="/news/{{ e.id }}/status" method="post" style="display:inline;">
+            <input type="hidden" name="status" value="watching">
+            <button type="submit" class="outline" style="font-size:0.75rem; padding:0.2rem 0.5rem;">Watching</button>
+        </form>
+    </div>
+</div>
+{% endfor %}
+
+{% if not entries %}
+<p style="text-align:center; opacity:0.5; padding:2rem;">No entries yet. Add model release news below or wait for RSS feeds (M007).</p>
+{% endif %}
+
+<details style="margin-top:1.5rem;">
+    <summary style="cursor:pointer; font-weight:600;">Add Intel Entry</summary>
+    <form action="/news/add" method="post" class="add-form" style="margin-top:0.75rem;">
+        <label>Headline <input type="text" name="headline" required placeholder="e.g., Gemini 2.5 Pro released"></label>
+        <div class="form-row">
+            <label>Provider
+                <select name="provider">
+                    <option value="anthropic">Anthropic</option>
+                    <option value="openai">OpenAI</option>
+                    <option value="google">Google</option>
+                    <option value="other">Other</option>
+                </select>
+            </label>
+            <label>Type
+                <select name="entry_type">
+                    <option value="release">New Model Release</option>
+                    <option value="update">Model Update</option>
+                    <option value="capability">Capability Announcement</option>
+                    <option value="pricing">Pricing Change</option>
+                    <option value="deprecation">Deprecation</option>
+                </select>
+            </label>
+        </div>
+        <label>Details <textarea name="body" placeholder="What happened..."></textarea></label>
+        <label>Relevance <textarea name="relevance" placeholder="How does this affect our benchmark?"></textarea></label>
+        <label>Source URL <input type="url" name="source_url" placeholder="https://..."></label>
+        <button type="submit">Save Entry</button>
+    </form>
+</details>
+{% endblock %}

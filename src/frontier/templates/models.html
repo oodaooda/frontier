@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% set active_nav = "models" %}
+{% block title_suffix %} — Models{% endblock %}
+
+{% block head %}
+<style>
+    .model-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .model-card {
+        border: 1px solid var(--pico-muted-border-color);
+        border-radius: 8px; padding: 1.5rem;
+    }
+    .model-card h3 { margin-top: 0; }
+    .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem; font-size: 0.85rem; margin: 0.75rem 0; }
+    .meta-grid .lbl { opacity: 0.7; }
+    .meta-grid .val { font-weight: 600; }
+    .note-entry {
+        font-size: 0.8rem; padding: 0.5rem; border-radius: 4px;
+        border-left: 3px solid var(--warn); margin-bottom: 0.5rem;
+        background: rgba(245, 158, 11, 0.05);
+    }
+    .note-entry .date { opacity: 0.5; font-size: 0.75rem; }
+    .note-form { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+    .note-form input { font-size: 0.8rem; flex: 1; margin: 0; }
+    .note-form button { font-size: 0.8rem; padding: 0.3rem 0.6rem; white-space: nowrap; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Model Profiles</h1>
+</div>
+
+<div class="model-grid">
+    {% for m in models %}
+    {% set stats = model_stats[m.id] %}
+    <div class="model-card">
+        <h3>{{ m.display_name }}
+            <span style="font-size:0.75rem; opacity:0.5; font-weight:400;">{{ m.provider }}</span>
+        </h3>
+        <div class="meta-grid">
+            <span class="lbl">Model ID:</span><span class="val">{{ m.model_id }}</span>
+            <span class="lbl">Input Cost:</span><span class="val">${{ "%.2f"|format(m.input_cost_per_m) }} / 1M</span>
+            <span class="lbl">Output Cost:</span><span class="val">${{ "%.2f"|format(m.output_cost_per_m) }} / 1M</span>
+            <span class="lbl">Eval Runs:</span><span class="val">{{ stats.runs }}</span>
+            <span class="lbl">Best Score:</span><span class="val">{% if stats.best_score > 0 %}{{ stats.best_score }}%{% else %}—{% endif %}</span>
+            <span class="lbl">Total Cost:</span><span class="val">${{ "%.2f"|format(stats.total_cost) }}</span>
+        </div>
+
+        {% if stats.notes %}
+        <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Notes</h4>
+        {% for n in stats.notes[:5] %}
+        <div class="note-entry">
+            <div class="date">{{ n.created_date[:10] }}</div>
+            {{ n.note }}
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <form action="/models/{{ m.id }}/notes" method="post" class="note-form">
+            <input type="text" name="note" placeholder="Add a note about this model..." required>
+            <button type="submit" class="outline">Add</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

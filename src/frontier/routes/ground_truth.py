@@ -4,7 +4,7 @@ from fastapi import APIRouter, Form, Request, UploadFile, File
 from fastapi.responses import HTMLResponse, RedirectResponse, Response
 
 from frontier.database import get_db
-from frontier.models.document import get_document, get_pages
+from frontier.models.document import get_document, get_pages, list_documents
 from frontier.models.task import (
     bulk_verify,
     delete_task,
@@ -20,6 +20,29 @@ from frontier.models.task import (
 )
 
 router = APIRouter(prefix="/ground-truth")
+
+
+@router.get("", response_class=HTMLResponse)
+async def ground_truth_select(request: Request):
+    conn = get_db()
+    docs = list_documents(conn)
+    doc_list = []
+    for doc in docs:
+        stats = get_task_stats(conn, doc.id)
+        gt_ver = get_gt_version(conn, doc.id)
+        doc_list.append({
+            "doc": doc,
+            "total": stats["total"],
+            "verified": stats["verified"],
+            "gt_version": gt_ver,
+        })
+    conn.close()
+
+    from frontier.app import templates
+    return templates.TemplateResponse(
+        request, "ground_truth_select.html",
+        {"documents": doc_list},
+    )
 
 
 @router.get("/{doc_id}", response_class=HTMLResponse)

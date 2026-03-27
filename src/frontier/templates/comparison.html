@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% set active_nav = "comparison" %}
+{% block title_suffix %} — Comparison{% endblock %}
+
+{% block head %}
+<style>
+    .compare-selector {
+        display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem;
+        align-items: center; margin-bottom: 2rem;
+    }
+    .vs { font-size: 1.5rem; font-weight: 700; opacity: 0.3; text-align: center; }
+    .run-select {
+        border: 1px solid var(--pico-muted-border-color); border-radius: 8px; padding: 1rem;
+    }
+    .delta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .delta-card {
+        border: 1px solid var(--pico-muted-border-color); border-radius: 8px;
+        padding: 1rem; text-align: center;
+    }
+    .delta-card .label { font-size: 0.8rem; opacity: 0.7; }
+    .delta-card .values { display: flex; justify-content: center; gap: 0.5rem; align-items: baseline; margin: 0.5rem 0; }
+    .delta-card .val { font-size: 1.2rem; font-weight: 700; }
+    .delta-up { color: var(--pass); }
+    .delta-down { color: var(--fail); }
+    .badge-pass { background: #dcfce7; color: #166534; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; }
+    .badge-fail { background: #fee2e2; color: #991b1b; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.75rem; }
+    .badge-improved { background: #dcfce7; color: #166534; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.7rem; }
+    .badge-regressed { background: #fee2e2; color: #991b1b; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.7rem; }
+    .badge-same { background: var(--pico-muted-border-color); padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.7rem; opacity: 0.6; }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Run Comparison</h1>
+
+<form method="get" action="/comparison">
+    <div class="compare-selector">
+        <div class="run-select">
+            <label style="font-size:0.85rem; font-weight:600;">Run A (Baseline)</label>
+            <select name="run_a" onchange="this.form.submit()">
+                <option value="">Select run...</option>
+                {% for e in evals %}
+                <option value="{{ e.id }}" {% if e.id == run_a %}selected{% endif %}>
+                    #{{ e.id }} — {{ e.model_name or e.model_id }} — {{ e.started_date[:10] }}
+                    ({{ e.passed_tasks }}/{{ e.total_tasks }})
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="vs">VS</div>
+        <div class="run-select">
+            <label style="font-size:0.85rem; font-weight:600;">Run B (Comparison)</label>
+            <select name="run_b" onchange="this.form.submit()">
+                <option value="">Select run...</option>
+                {% for e in evals %}
+                <option value="{{ e.id }}" {% if e.id == run_b %}selected{% endif %}>
+                    #{{ e.id }} — {{ e.model_name or e.model_id }} — {{ e.started_date[:10] }}
+                    ({{ e.passed_tasks }}/{{ e.total_tasks }})
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</form>
+
+{% if eval_a and eval_b %}
+<!-- Delta summary -->
+<div class="delta-grid">
+    <div class="delta-card">
+        <div class="label">Overall Score</div>
+        <div class="values">
+            <span class="val">{% if eval_a.total_tasks %}{{ (eval_a.passed_tasks / eval_a.total_tasks * 100)|round(0)|int }}%{% endif %}</span>
+            <span style="opacity:0.3;">→</span>
+            <span class="val">{% if eval_b.total_tasks %}{{ (eval_b.passed_tasks / eval_b.total_tasks * 100)|round(0)|int }}%{% endif %}</span>
+        </div>
+        {% set diff = ((eval_b.passed_tasks / eval_b.total_tasks) - (eval_a.passed_tasks / eval_a.total_tasks)) * 100 if eval_a.total_tasks and eval_b.total_tasks else 0 %}
+        <div class="{% if diff > 0 %}delta-up{% elif diff < 0 %}delta-down{% endif %}">
+            {{ "%+.0f"|format(diff) }}%
+        </div>
+    </div>
+    <div class="delta-card">
+        <div class="label">Cost</div>
+        <div class="values">
+            <span class="val">${{ "%.2f"|format(eval_a.total_cost) }}</span>
+            <span style="opacity:0.3;">→</span>
+            <span class="val">${{ "%.2f"|format(eval_b.total_cost) }}</span>
+        </div>
+    </div>
+</div>
+
+<!-- Per-question comparison -->
+{% if comparisons %}
+<table style="font-size:0.85rem;">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Tier</th>
+            <th>Question</th>
+            <th>Expected</th>
+            <th>Run A</th>
+            <th>Run B</th>
+            <th>Change</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in comparisons %}
+        <tr>
+            <td>{{ c.a.task_key }}</td>
+            <td>T{{ c.a.tier }}</td>
+            <td style="max-width:200px;">{{ c.a.question }}</td>
+            <td style="font-size:0.8rem;">{{ c.a.expected_answer }}</td>
+            <td>
+                {% if c.a.passed %}<span class="badge-pass">PASS</span>{% else %}<span class="badge-fail">FAIL</span>{% endif %}
+                <span style="font-size:0.75rem;">{{ c.a.model_answer or "" }}</span>
+            </td>
+            <td>
+                {% if c.b %}
+                    {% if c.b.passed %}<span class="badge-pass">PASS</span>{% else %}<span class="badge-fail">FAIL</span>{% endif %}
+                    <span style="font-size:0.75rem;">{{ c.b.model_answer or "" }}</span>
+                {% else %}
+                    <span style="opacity:0.5;">—</span>
+                {% endif %}
+            </td>
+            <td>
+                {% if c.change == "improvement" %}<span class="badge-improved">Improved</span>
+                {% elif c.change == "regression" %}<span class="badge-regressed">Regressed</span>
+                {% elif c.change == "both_pass" %}<span class="badge-same">Both pass</span>
+                {% elif c.change == "both_fail" %}<span class="badge-same">Both fail</span>
+                {% else %}<span class="badge-same">—</span>{% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% elif evals|length < 2 %}
+<p style="text-align:center; opacity:0.5; padding:2rem;">Need at least 2 completed evaluation runs to compare. <a href="/evaluate">Run an evaluation →</a></p>
+{% else %}
+<p style="text-align:center; opacity:0.5; padding:2rem;">Select two runs above to compare.</p>
+{% endif %}
+{% endblock %}
