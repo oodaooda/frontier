@@ -8,25 +8,29 @@
 </div>
 
 <form action="/documents/upload" method="post" enctype="multipart/form-data">
-    <div class="upload-area" onclick="this.querySelector('input[type=file]').click()">
-        <strong>Upload Construction Documents</strong>
-        <p>Click to browse or drag &amp; drop PDF files. Supports plans, elevations, schedules, specifications, and lookaheads.</p>
-        <input type="file" name="file" accept=".pdf" required style="display:none"
-               onchange="this.form.querySelector('.upload-info').textContent = this.files[0].name; this.form.querySelector('.upload-submit').style.display = 'inline-block';">
-        <div class="upload-info" style="margin-top:0.5rem; font-weight:600;"></div>
-    </div>
-    <div style="display:flex; gap:0.75rem; margin-top:-1rem; margin-bottom:1.5rem;">
-        <select name="doc_type" style="width:auto; font-size:0.85rem;">
-            <option value="">Select document type...</option>
-            <option value="plan">Plan</option>
-            <option value="elevation">Elevation</option>
-            <option value="schedule">Schedule</option>
-            <option value="specification">Specification</option>
-            <option value="lookahead">Lookahead</option>
-            <option value="table">Table</option>
-        </select>
-        <button type="submit" class="upload-submit" style="display:none; font-size:0.85rem;">Upload</button>
-    </div>
+    <article style="margin-bottom:1.5rem;">
+        <header><strong>Upload Construction Documents</strong></header>
+        <p style="font-size:0.9rem; opacity:0.7; margin-bottom:1rem;">Select a PDF file — plans, elevations, schedules, specifications, or lookaheads.</p>
+        <div style="display:flex; gap:0.75rem; align-items:flex-end; flex-wrap:wrap;">
+            <label style="flex:1; min-width:200px;">
+                PDF File
+                <input type="file" name="file" accept=".pdf" required>
+            </label>
+            <label style="width:200px;">
+                Document Type
+                <select name="doc_type">
+                    <option value="">Select type...</option>
+                    <option value="plan">Plan</option>
+                    <option value="elevation">Elevation</option>
+                    <option value="schedule">Schedule</option>
+                    <option value="specification">Specification</option>
+                    <option value="lookahead">Lookahead</option>
+                    <option value="table">Table</option>
+                </select>
+            </label>
+            <button type="submit" style="margin-bottom:0.25rem;">Upload</button>
+        </div>
+    </article>
 </form>
 
 {% if documents %}
