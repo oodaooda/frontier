@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Upload Test</title></head>
+<body>
+<h1>Minimal Upload Test</h1>
+<p>If the file picker doesn't open below, the issue is browser/network level, not our code.</p>
+
+<h2>Test 1: Bare input</h2>
+<input type="file">
+
+<h2>Test 2: In a form</h2>
+<form action="/documents/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".pdf">
+    <select name="doc_type"><option value="schedule">schedule</option></select>
+    <button type="submit">Upload</button>
+</form>
+
+<h2>Test 3: With Pico CSS</h2>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+<form action="/documents/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".pdf">
+    <select name="doc_type"><option value="schedule">schedule</option></select>
+    <button type="submit">Upload</button>
+</form>
+</body>
+</html>
