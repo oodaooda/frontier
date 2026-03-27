@@ -69,6 +69,7 @@ async def run_evaluation(
     verified_only: bool = True,
     notes: str = "",
     on_progress=None,
+    eval_id: int | None = None,
 ) -> int:
     """Run evaluation and return evaluation ID.
 
@@ -79,6 +80,7 @@ async def run_evaluation(
         verified_only: Only evaluate verified tasks.
         notes: Run notes.
         on_progress: Callback(completed, total, passed, cost) for progress updates.
+        eval_id: Existing evaluation record ID (if created by caller).
 
     Returns:
         Evaluation ID.
@@ -141,14 +143,23 @@ async def run_evaluation(
         if row:
             gt_version_id = row["id"]
 
-    # Create evaluation record
-    cur = conn.execute(
-        """INSERT INTO evaluations
-           (model_id, prompt_id, gt_version_id, status, total_tasks, notes)
-           VALUES (?, ?, ?, 'running', ?, ?)""",
-        (model_row["model_id"], prompt_id, gt_version_id, len(all_tasks), notes),
-    )
-    eval_id = cur.lastrowid
+    # Create or update evaluation record
+    if eval_id:
+        conn.execute(
+            """UPDATE evaluations
+               SET model_id=?, prompt_id=?, gt_version_id=?, status='running',
+                   total_tasks=?, notes=?
+               WHERE id=?""",
+            (model_row["model_id"], prompt_id, gt_version_id, len(all_tasks), notes, eval_id),
+        )
+    else:
+        cur = conn.execute(
+            """INSERT INTO evaluations
+               (model_id, prompt_id, gt_version_id, status, total_tasks, notes)
+               VALUES (?, ?, ?, 'running', ?, ?)""",
+            (model_row["model_id"], prompt_id, gt_version_id, len(all_tasks), notes),
+        )
+        eval_id = cur.lastrowid
     conn.commit()
 
     # Get runner

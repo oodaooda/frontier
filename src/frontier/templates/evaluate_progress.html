@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% set active_nav = "evaluate" %}
+{% block title_suffix %} — Evaluation Running{% endblock %}
+
+{% block head %}
+<style>
+    .progress-card {
+        border: 1px solid var(--pico-muted-border-color);
+        border-radius: 8px;
+        padding: 2rem;
+        text-align: center;
+        max-width: 600px;
+        margin: 2rem auto;
+    }
+    .progress-bar {
+        width: 100%;
+        height: 16px;
+        background: var(--pico-muted-border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 1.5rem 0;
+    }
+    .progress-bar .fill {
+        height: 100%;
+        background: var(--pass);
+        border-radius: 8px;
+        transition: width 0.5s ease;
+    }
+    .progress-stats {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+    .progress-stats .stat-label { opacity: 0.7; font-size: 0.8rem; }
+    .progress-stats .stat-val { font-weight: 700; font-size: 1.2rem; }
+    .status-text { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .spinner { display: inline-block; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="progress-card">
+    <h2 style="margin-top:0;">Evaluation in Progress</h2>
+    <p style="opacity:0.7;">{{ evaluation.model_name or evaluation.model_id }}</p>
+
+    <div class="status-text" id="status-text">
+        <span class="spinner">&#9881;</span> Starting...
+    </div>
+
+    <div class="progress-bar">
+        <div class="fill" id="progress-fill" style="width: 0%;"></div>
+    </div>
+
+    <div class="progress-stats">
+        <div>
+            <div class="stat-label">Completed</div>
+            <div class="stat-val" id="completed-count">0 / 0</div>
+        </div>
+        <div>
+            <div class="stat-label">Passed</div>
+            <div class="stat-val" id="passed-count" style="color: var(--pass);">0</div>
+        </div>
+        <div>
+            <div class="stat-label">Cost</div>
+            <div class="stat-val" id="cost-val">$0.00</div>
+        </div>
+    </div>
+
+    <div style="margin-top:2rem;">
+        <a href="/results/{{ eval_id }}" role="button" class="outline" id="view-results" style="display:none;">View Results</a>
+        <a href="/evaluate" role="button" class="outline secondary" style="font-size:0.85rem; margin-top:0.5rem;">Back to Evaluate</a>
+    </div>
+</div>
+
+<script>
+var evalId = {{ eval_id }};
+var pollInterval = null;
+
+function pollProgress() {
+    fetch('/evaluate/progress/' + evalId + '/status')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            var pct = data.total > 0 ? Math.round(data.completed / data.total * 100) : 0;
+            document.getElementById('progress-fill').style.width = pct + '%';
+            document.getElementById('completed-count').textContent = data.completed + ' / ' + data.total;
+            document.getElementById('passed-count').textContent = data.passed;
+            document.getElementById('cost-val').textContent = '$' + data.cost.toFixed(2);
+
+            if (data.status === 'running') {
+                document.getElementById('status-text').innerHTML =
+                    '<span class="spinner">&#9881;</span> Running... ' + pct + '%';
+            } else if (data.status === 'complete') {
+                document.getElementById('status-text').innerHTML =
+                    '&#10003; Evaluation Complete';
+                document.getElementById('status-text').style.color = 'var(--pass)';
+                document.getElementById('view-results').style.display = 'inline-block';
+                clearInterval(pollInterval);
+            } else if (data.status.startsWith('error')) {
+                document.getElementById('status-text').innerHTML =
+                    '&#10007; ' + data.status;
+                document.getElementById('status-text').style.color = 'var(--fail)';
+                clearInterval(pollInterval);
+            }
+        })
+        .catch(function(err) {
+            console.error('Poll error:', err);
+        });
+}
+
+pollInterval = setInterval(pollProgress, 1500);
+pollProgress();
+</script>
+{% endblock %}
