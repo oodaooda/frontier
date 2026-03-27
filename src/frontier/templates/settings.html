@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% set active_nav = "settings" %}
+{% block title_suffix %} — Settings{% endblock %}
+
+{% block content %}
+<h1>Settings</h1>
+
+{% if request.query_params.get('msg') %}
+<div class="flash flash-success">{{ request.query_params.get('msg') }}</div>
+{% endif %}
+
+<!-- API Keys -->
+<article>
+    <header><strong>API Keys</strong></header>
+    <p style="font-size:0.85rem; opacity:0.7;">API keys are loaded from <code>.env</code> file. Edit the file to change keys, then restart the server.</p>
+    <table style="font-size:0.9rem;">
+        <tr>
+            <td><strong>ANTHROPIC_API_KEY</strong></td>
+            <td>
+                {% if anthropic_key_set %}
+                <span style="color:var(--pass);">{{ anthropic_key_masked }}</span>
+                {% else %}
+                <span style="color:var(--fail);">Not set</span>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td><strong>OPENAI_API_KEY</strong></td>
+            <td>
+                {% if openai_key_set %}
+                <span style="color:var(--pass);">{{ openai_key_masked }}</span>
+                {% else %}
+                <span style="color:var(--fail);">Not set</span>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+</article>
+
+<!-- Models -->
+<article>
+    <header><strong>Models</strong></header>
+    <table style="font-size:0.85rem;">
+        <thead>
+            <tr><th>Model ID</th><th>Display Name</th><th>Provider</th><th>Input $/1M</th><th>Output $/1M</th></tr>
+        </thead>
+        <tbody>
+            {% for m in models %}
+            <tr>
+                <td><code>{{ m.model_id }}</code></td>
+                <td>{{ m.display_name }}</td>
+                <td>{{ m.provider }}</td>
+                <td>${{ "%.2f"|format(m.input_cost_per_m) }}</td>
+                <td>${{ "%.2f"|format(m.output_cost_per_m) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <details style="margin-top:0.75rem;">
+        <summary style="cursor:pointer; font-size:0.85rem;">Add Model</summary>
+        <form action="/settings/models/add" method="post" style="margin-top:0.5rem;">
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem;">
+                <input name="model_id" placeholder="e.g., gemini-2.5-pro" required style="font-size:0.85rem;">
+                <input name="display_name" placeholder="Display name" required style="font-size:0.85rem;">
+                <select name="provider" style="font-size:0.85rem;">
+                    <option value="anthropic">Anthropic</option>
+                    <option value="openai">OpenAI</option>
+                    <option value="google">Google</option>
+                </select>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr auto; gap:0.5rem; margin-top:0.5rem;">
+                <input name="input_cost_per_m" type="number" step="0.01" placeholder="Input $/1M" style="font-size:0.85rem;">
+                <input name="output_cost_per_m" type="number" step="0.01" placeholder="Output $/1M" style="font-size:0.85rem;">
+                <button type="submit" style="font-size:0.85rem;">Add</button>
+            </div>
+        </form>
+    </details>
+</article>
+
+<!-- RSS Feeds -->
+<article>
+    <header><strong>RSS Feeds</strong></header>
+    <table style="font-size:0.85rem;">
+        <thead>
+            <tr><th>Name</th><th>Provider</th><th>URL</th><th>Last Polled</th></tr>
+        </thead>
+        <tbody>
+            {% for f in feeds %}
+            <tr>
+                <td>{{ f.name }}</td>
+                <td>{{ f.provider }}</td>
+                <td style="font-size:0.75rem; max-width:300px; overflow:hidden;">{{ f.url }}</td>
+                <td>{{ f.last_polled or "Never" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div style="display:flex; gap:0.5rem; margin-top:0.75rem;">
+        <form action="/settings/rss/poll" method="post">
+            <button type="submit" class="outline" style="font-size:0.85rem;">Poll All Feeds Now</button>
+        </form>
+    </div>
+    <details style="margin-top:0.75rem;">
+        <summary style="cursor:pointer; font-size:0.85rem;">Add Feed</summary>
+        <form action="/settings/feeds/add" method="post" style="margin-top:0.5rem; display:flex; gap:0.5rem;">
+            <input name="name" placeholder="Feed name" required style="font-size:0.85rem;">
+            <input name="url" type="url" placeholder="https://..." required style="font-size:0.85rem; flex:2;">
+            <select name="provider" style="font-size:0.85rem;">
+                <option value="anthropic">Anthropic</option>
+                <option value="openai">OpenAI</option>
+                <option value="google">Google</option>
+            </select>
+            <button type="submit" style="font-size:0.85rem;">Add</button>
+        </form>
+    </details>
+</article>
+
+<!-- Database Backup -->
+<article>
+    <header><strong>Database Backup</strong></header>
+    <p style="font-size:0.85rem; opacity:0.7;">Database: <code>{{ db_path }}</code></p>
+    <form action="/settings/backup" method="post" style="margin-bottom:1rem;">
+        <button type="submit" style="font-size:0.85rem;">Create Backup Now</button>
+    </form>
+    {% if backups %}
+    <table style="font-size:0.85rem;">
+        <thead><tr><th>Backup File</th><th>Size</th></tr></thead>
+        <tbody>
+            {% for b in backups[:10] %}
+            <tr>
+                <td><code>{{ b.name }}</code></td>
+                <td>{{ "%.0f"|format(b.stat().st_size / 1024) }} KB</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p style="font-size:0.85rem; opacity:0.5;">No backups yet.</p>
+    {% endif %}
+</article>
+{% endblock %}
