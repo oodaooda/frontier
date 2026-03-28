@@ -7,45 +7,26 @@
     <h1>Documents</h1>
 </div>
 
-<!-- Upload form using native form submission - no JS, no tricks -->
-<iframe name="upload-target" style="display:none;"></iframe>
-<div style="border:1px solid var(--pico-muted-border-color); border-radius:8px; padding:1.5rem; margin-bottom:1.5rem;">
-    <h3 style="margin-top:0;">Upload Construction Documents</h3>
-    <form id="upload-form" action="/documents/upload" method="post" enctype="multipart/form-data">
-        <table style="border:none; margin-bottom:1rem;">
-            <tr style="border:none;">
-                <td style="border:none; padding:0.5rem 0; font-weight:600; width:120px;">PDF File:</td>
-                <td style="border:none; padding:0.5rem 0;">
-                    <!-- Completely unstyled native file input -->
-                    <input type="file" name="file" accept="application/pdf,.pdf" required
-                           style="all:revert; display:inline-block;">
-                </td>
-            </tr>
-            <tr style="border:none;">
-                <td style="border:none; padding:0.5rem 0; font-weight:600;">Type:</td>
-                <td style="border:none; padding:0.5rem 0;">
-                    <select name="doc_type" style="width:200px;">
-                        <option value="">Select type...</option>
-                        <option value="plan">Plan</option>
-                        <option value="elevation">Elevation</option>
-                        <option value="schedule">Schedule</option>
-                        <option value="specification">Specification</option>
-                        <option value="lookahead">Lookahead</option>
-                        <option value="table">Table</option>
-                    </select>
-                </td>
-            </tr>
-        </table>
+<div style="border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; margin-bottom:1.5rem;">
+    <h3>Upload Construction Documents</h3>
+    <form action="/documents/upload" method="post" enctype="multipart/form-data">
+        <label>PDF File
+            <input type="file" name="file" accept=".pdf" required>
+        </label>
+        <label>Document Type
+            <select name="doc_type" style="width:220px;">
+                <option value="">Select type...</option>
+                <option value="plan">Plan</option>
+                <option value="elevation">Elevation</option>
+                <option value="schedule">Schedule</option>
+                <option value="specification">Specification</option>
+                <option value="lookahead">Lookahead</option>
+                <option value="table">Table</option>
+            </select>
+        </label>
         <button type="submit">Upload PDF</button>
-        <span id="upload-status" style="margin-left:1rem; font-size:0.9rem;"></span>
     </form>
 </div>
-
-<script>
-document.getElementById('upload-form').addEventListener('submit', function() {
-    document.getElementById('upload-status').textContent = 'Uploading and rendering pages... please wait.';
-});
-</script>
 
 {% if documents %}
 <table>
