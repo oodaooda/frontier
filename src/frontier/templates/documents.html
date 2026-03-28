@@ -7,80 +7,44 @@
     <h1>Documents</h1>
 </div>
 
-<div id="upload-section" style="border:1px solid var(--pico-muted-border-color); border-radius:8px; padding:1.5rem; margin-bottom:1.5rem;">
+<!-- Upload form using native form submission - no JS, no tricks -->
+<iframe name="upload-target" style="display:none;"></iframe>
+<div style="border:1px solid var(--pico-muted-border-color); border-radius:8px; padding:1.5rem; margin-bottom:1.5rem;">
     <h3 style="margin-top:0;">Upload Construction Documents</h3>
-    <p style="font-size:0.9rem; opacity:0.7;">Select a PDF file — plans, elevations, schedules, specifications, or lookaheads.</p>
-
-    <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap; margin-bottom:1rem;">
-        <button type="button" id="pick-file-btn" onclick="document.getElementById('hidden-file').click();">
-            Select PDF File
-        </button>
-        <span id="file-name" style="font-size:0.9rem; opacity:0.7;">No file selected</span>
-    </div>
-
-    <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
-        <select id="upload-doc-type" style="width:200px; margin:0;">
-            <option value="">Select type...</option>
-            <option value="plan">Plan</option>
-            <option value="elevation">Elevation</option>
-            <option value="schedule">Schedule</option>
-            <option value="specification">Specification</option>
-            <option value="lookahead">Lookahead</option>
-            <option value="table">Table</option>
-        </select>
-        <button type="button" id="upload-btn" onclick="doUpload();" disabled style="opacity:0.5;">
-            Upload PDF
-        </button>
-    </div>
-
-    <div id="upload-status" style="margin-top:0.75rem; font-size:0.9rem;"></div>
+    <form id="upload-form" action="/documents/upload" method="post" enctype="multipart/form-data">
+        <table style="border:none; margin-bottom:1rem;">
+            <tr style="border:none;">
+                <td style="border:none; padding:0.5rem 0; font-weight:600; width:120px;">PDF File:</td>
+                <td style="border:none; padding:0.5rem 0;">
+                    <!-- Completely unstyled native file input -->
+                    <input type="file" name="file" accept="application/pdf,.pdf" required
+                           style="all:revert; display:inline-block;">
+                </td>
+            </tr>
+            <tr style="border:none;">
+                <td style="border:none; padding:0.5rem 0; font-weight:600;">Type:</td>
+                <td style="border:none; padding:0.5rem 0;">
+                    <select name="doc_type" style="width:200px;">
+                        <option value="">Select type...</option>
+                        <option value="plan">Plan</option>
+                        <option value="elevation">Elevation</option>
+                        <option value="schedule">Schedule</option>
+                        <option value="specification">Specification</option>
+                        <option value="lookahead">Lookahead</option>
+                        <option value="table">Table</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Upload PDF</button>
+        <span id="upload-status" style="margin-left:1rem; font-size:0.9rem;"></span>
+    </form>
 </div>
 
-<!-- Hidden file input outside of any styled container -->
-<input type="file" id="hidden-file" accept=".pdf" style="position:fixed; top:-9999px; left:-9999px;">
-
 <script>
-document.getElementById('hidden-file').addEventListener('change', function() {
-    if (this.files.length > 0) {
-        document.getElementById('file-name').textContent = this.files[0].name;
-        document.getElementById('file-name').style.opacity = '1';
-        document.getElementById('file-name').style.fontWeight = '600';
-        document.getElementById('upload-btn').disabled = false;
-        document.getElementById('upload-btn').style.opacity = '1';
-    }
+document.getElementById('upload-form').addEventListener('submit', function() {
+    document.getElementById('upload-status').textContent = 'Uploading and rendering pages... please wait.';
 });
-
-function doUpload() {
-    var fileInput = document.getElementById('hidden-file');
-    if (!fileInput.files.length) {
-        alert('Please select a file first.');
-        return;
-    }
-
-    var formData = new FormData();
-    formData.append('file', fileInput.files[0]);
-    formData.append('doc_type', document.getElementById('upload-doc-type').value);
-
-    document.getElementById('upload-status').innerHTML = '<em>Uploading and rendering pages... please wait.</em>';
-    document.getElementById('upload-btn').disabled = true;
-
-    fetch('/documents/upload', {
-        method: 'POST',
-        body: formData
-    }).then(function(response) {
-        if (response.redirected) {
-            window.location.href = response.url;
-        } else if (response.ok) {
-            window.location.href = '/documents';
-        } else {
-            document.getElementById('upload-status').innerHTML = '<span style="color:var(--fail);">Upload failed: ' + response.statusText + '</span>';
-            document.getElementById('upload-btn').disabled = false;
-        }
-    }).catch(function(err) {
-        document.getElementById('upload-status').innerHTML = '<span style="color:var(--fail);">Upload error: ' + err + '</span>';
-        document.getElementById('upload-btn').disabled = false;
-    });
-}
 </script>
 
 {% if documents %}
