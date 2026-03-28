@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="actions">
-        <a href="/ground-truth/{{ doc.id }}" role="button" style="font-size:0.85rem;">Edit Ground Truth</a>
+        <a href="/ground-truth/{{ doc.id }}" class="btn-primary btn">Edit Ground Truth</a>
         <form action="/documents/{{ doc.id }}/delete" method="post" style="display:inline;"
               onsubmit="return confirm('Delete this document and all associated data?');">
             <button type="submit" class="outline secondary" style="font-size:0.85rem;">Delete</button>
@@ -57,13 +57,13 @@
     {% if doc.page_count > 1 %}
     <div class="page-nav">
         {% if page_num > 1 %}
-            <a href="/documents/{{ doc.id }}?page={{ page_num - 1 }}" role="button" class="outline" style="font-size:0.85rem;">← Previous</a>
+            <a href="/documents/{{ doc.id }}?page={{ page_num - 1 }}"  style="font-size:0.85rem;">← Previous</a>
         {% else %}
             <button class="outline" disabled style="font-size:0.85rem;">← Previous</button>
         {% endif %}
         <span>Page {{ page_num }} of {{ doc.page_count }}</span>
         {% if page_num < doc.page_count %}
-            <a href="/documents/{{ doc.id }}?page={{ page_num + 1 }}" role="button" class="outline" style="font-size:0.85rem;">Next →</a>
+            <a href="/documents/{{ doc.id }}?page={{ page_num + 1 }}"  style="font-size:0.85rem;">Next →</a>
         {% else %}
             <button class="outline" disabled style="font-size:0.85rem;">Next →</button>
         {% endif %}

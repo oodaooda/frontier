@@ -161,6 +161,30 @@ main.content {
 /* Tables */
 table { font-size: 0.9rem; }
 
+/* Action links styled as buttons (but remain <a> tags for click reliability) */
+a.btn {
+    display: inline-block;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+a.btn:hover {
+    background: rgba(74, 158, 255, 0.1);
+    border-color: var(--accent);
+}
+a.btn-primary {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+a.btn-primary:hover {
+    opacity: 0.9;
+}
+
 /* Flash messages */
 .flash {
     padding: 0.75rem 1rem;

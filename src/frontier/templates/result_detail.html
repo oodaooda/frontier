@@ -35,8 +35,8 @@
         <div style="font-size:0.85rem; opacity:0.7;">{{ evaluation.started_date }}</div>
     </div>
     <div style="display:flex; gap:0.5rem;">
-        <a href="/results/{{ evaluation.id }}/export" role="button" class="outline" style="font-size:0.85rem;">Export HTML</a>
-        <a href="/comparison?run_a={{ evaluation.id }}" role="button" class="outline" style="font-size:0.85rem;">Compare</a>
+        <a href="/results/{{ evaluation.id }}/export" class="btn">Export HTML</a>
+        <a href="/comparison?run_a={{ evaluation.id }}" class="btn">Compare</a>
         <form action="/results/{{ evaluation.id }}/delete" method="post" style="display:inline;"
               onsubmit="return confirm('Delete this evaluation run and all its results?');">
             <button type="submit" class="outline secondary" style="font-size:0.85rem;">Delete</button>
