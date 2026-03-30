@@ -1,0 +1,349 @@
+{
+  "_meta": {
+    "document": "A-701.pdf",
+    "sheet_number": "A-701.00",
+    "sheet_title": "DOOR SCHEDULE",
+    "project": "The Wellington",
+    "address": "1290 Madison Ave, New York, NY 10128",
+    "block": "1503",
+    "status": "DRAFT — Needs human verification",
+    "confidence_key": "Values marked [?] need verification. Values marked [??] are best guesses."
+  },
+  "columns": [
+    "door_no",
+    "room_no",
+    "material",
+    "qty",
+    "width",
+    "height",
+    "frame_width",
+    "frame_height",
+    "type",
+    "fire_rating",
+    "finish",
+    "hardware_group",
+    "manufacturer_model",
+    "notes"
+  ],
+  "floors": [
+    {
+      "floor": "CELLAR",
+      "doors": [
+        {
+          "door_no": "1-01",
+          "room_no": "B",
+          "material": "HM",
+          "qty": 1,
+          "width": "3'-0\"",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "37",
+          "notes": "FPIC, RE-ENTRY REQUIRED"
+        },
+        {
+          "door_no": "1-02",
+          "room_no": "[?]",
+          "material": "HM",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "MASTER KEYED, STILE & RAIL RESIDENTIAL ENTRY DOOR, PEEP HOLE"
+        },
+        {
+          "door_no": "1-03",
+          "room_no": "[?]",
+          "material": "HM",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "STILE & RAIL SINGLE PANEL, POCKET BATHROOM DOOR, PRIVACY LOCK"
+        },
+        {
+          "door_no": "1-04",
+          "room_no": "[?]",
+          "material": "HM",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "DOUBLE CLOSET DOOR, STILE & RAIL [?]"
+        },
+        {
+          "door_no": "1-05",
+          "room_no": "HM CLSD",
+          "material": "HM",
+          "qty": 1,
+          "width": "[?]",
+          "height": "[?]",
+          "type": "NR",
+          "fire_rating": "NR",
+          "finish": "[?]",
+          "hardware_group": "[?]",
+          "notes": "[?]"
+        },
+        {
+          "door_no": "1-06",
+          "room_no": "[?]",
+          "material": "HM",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "DOUBLE POCKET DOOR, STILE & RAIL [?]"
+        },
+        {
+          "door_no": "A-01",
+          "room_no": "[?]",
+          "material": "HM",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "STILE & RAIL SINGLE PANEL, BEDROOM DOOR, PRIVACY LOCK"
+        },
+        {
+          "door_no": "A-02",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "STILE & RAIL, SINGLE PANEL, BEDROOM DOOR, PRIVACY LOCK"
+        },
+        {
+          "door_no": "A-03",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "[?]"
+        }
+      ]
+    },
+    {
+      "floor": "1ST FLOOR",
+      "doors": [
+        {
+          "door_no": "A-10",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "STILE & RAIL SINGLE PANEL, CLOSET DOOR, NO LOCK"
+        },
+        {
+          "door_no": "A-11",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "STILE & RAIL SINGLE PANEL, CLOSET DOOR, NO LOCK"
+        },
+        {
+          "door_no": "A-12",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "STILE & RAIL SINGLE PANEL, BATHROOM DOOR, PRIVACY LOCK"
+        },
+        {
+          "door_no": "A-13",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "[?]"
+        },
+        {
+          "door_no": "A-14",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "DOUBLE CLOSET DOOR, STILE & RAIL SINGLE PANEL, CLOSET DOOR, NO LOCK"
+        },
+        {
+          "door_no": "A-15",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "7'-0\"",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "[?]",
+          "notes": "DOUBLE CLOSET DOOR/UTIL & RAIL SINGLE POCKET DOOR, NO LOCK"
+        },
+        {
+          "door_no": "B",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "[?]",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "[?]",
+          "hardware_group": "[?]",
+          "notes": "FPIC, MASTER KEYED, STILE & RAIL RESIDENTIAL EXPRESS DOOR"
+        }
+      ]
+    },
+    {
+      "floor": "TYPICAL (2ND-13TH)",
+      "doors": [
+        {
+          "door_no": "[??]",
+          "room_no": "[??]",
+          "material": "WOOD/GLASS",
+          "qty": "[??]",
+          "width": "[??]",
+          "height": "[??]",
+          "type": "[??]",
+          "fire_rating": "[??]",
+          "finish": "[??]",
+          "hardware_group": "[??]",
+          "notes": "HINGED FIXED DOOR [?]"
+        }
+      ],
+      "_note": "TYPICAL FLOOR SECTION — multiple doors per unit, repeated across floors 2-13. Need human verification of all entries."
+    },
+    {
+      "floor": "PH FLOOR",
+      "doors": [
+        {
+          "door_no": "PH-01",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "[?]",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "[?]",
+          "hardware_group": "[?]",
+          "notes": "FPIC, MASTER KEYED, STILE & RAIL RESIDENTIAL ENTRY DOOR, PEEP HOLE"
+        },
+        {
+          "door_no": "PH-02",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "[?]",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "[?]",
+          "hardware_group": "[?]",
+          "notes": "DOUBLE CLOSET DOOR [?]"
+        },
+        {
+          "door_no": "PH-03",
+          "room_no": "[?]",
+          "material": "WOOD",
+          "qty": 1,
+          "width": "[?]",
+          "height": "[?]",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "[?]",
+          "hardware_group": "[?]",
+          "notes": "[?]"
+        }
+      ],
+      "_note": "Penthouse floor section — more entries exist. Needs full verification."
+    },
+    {
+      "floor": "PENTHOUSE",
+      "doors": [
+        {
+          "door_no": "PH-10",
+          "room_no": "[?]",
+          "material": "WOOD/GLASS",
+          "qty": 1,
+          "width": "[?]",
+          "height": "[?]",
+          "type": "[?]",
+          "fire_rating": "[?]",
+          "finish": "PAINT",
+          "hardware_group": "SPC",
+          "notes": "[?]"
+        }
+      ],
+      "_note": "Penthouse section — more entries exist. Needs full verification."
+    }
+  ],
+  "_summary": {
+    "total_doors_estimated": "50-60 [NEEDS VERIFICATION — count all rows]",
+    "materials_observed": ["HM", "WOOD", "WOOD/GLASS"],
+    "common_notes_patterns": [
+      "FPIC, RE-ENTRY REQUIRED",
+      "MASTER KEYED",
+      "STILE & RAIL SINGLE PANEL",
+      "POCKET DOOR",
+      "CLOSET DOOR, NO LOCK",
+      "BATHROOM DOOR, PRIVACY LOCK",
+      "BEDROOM DOOR, PRIVACY LOCK",
+      "RESIDENTIAL ENTRY DOOR, PEEP HOLE",
+      "DOUBLE CLOSET DOOR",
+      "HINGED FIXED DOOR",
+      "SLIDING FIXED DOOR"
+    ],
+    "floor_sections": ["CELLAR", "1ST FLOOR", "TYPICAL (2ND-13TH)", "PH FLOOR", "PENTHOUSE"]
+  }
+}
