@@ -6,80 +6,64 @@
 <style>
     .editor-layout {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
         gap: 1rem;
         min-height: calc(100vh - 120px);
     }
     .pdf-panel {
         border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 1rem;
-        overflow-y: auto;
-    }
-    .pdf-panel img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 4px;
-    }
-    .gt-panel {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
+        border-radius: var(--radius);
+        padding: 0.75rem;
         overflow-y: auto;
         max-height: calc(100vh - 120px);
-    }
-    .gt-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid var(--border);
         position: sticky;
-        top: 0;
-        z-index: 10;
+        top: 60px;
     }
-    .task-card {
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 1rem;
+    .pdf-panel img { max-width: 100%; height: auto; border-radius: 4px; }
+    .gt-panel { overflow-x: auto; }
+
+    .gt-table { font-size: 0.8rem; border-collapse: collapse; width: 100%; }
+    .gt-table th {
+        position: sticky; top: 0; z-index: 5;
+        background: var(--bg-secondary);
+        font-size: 0.75rem; padding: 0.4rem 0.5rem;
+        white-space: nowrap; border-bottom: 2px solid var(--border);
     }
-    .task-card.unverified { border-left: 3px solid var(--warn); }
-    .task-card.verified { border-left: 3px solid var(--pass); }
-    .task-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 0.5rem;
+    .gt-table td {
+        padding: 0.3rem 0.5rem; border-bottom: 1px solid var(--border);
+        vertical-align: top;
     }
-    .task-id { font-weight: 600; font-size: 0.85rem; }
-    .task-tier {
-        font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 8px;
-        background: #e0e7ff; color: #3730a3;
-    }
-    .task-question { font-size: 0.9rem; margin-bottom: 0.5rem; }
-    .task-answer { display: flex; gap: 0.5rem; font-size: 0.85rem; }
-    .task-answer .label { font-weight: 600; opacity: 0.7; min-width: 70px; }
-    .task-meta { display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6; }
-    .task-actions {
-        display: flex; gap: 0.5rem; margin-top: 0.75rem; padding-top: 0.5rem;
-        border-top: 1px solid var(--border);
-    }
-    .task-actions button, .task-actions a { font-size: 0.75rem; padding: 0.25rem 0.5rem; }
-    .badge-v { background: #dcfce7; color: #166534; padding: 0.1rem 0.4rem; border-radius: 8px; font-size: 0.7rem; }
-    .badge-uv { background: #fef3c7; color: #92400e; padding: 0.1rem 0.4rem; border-radius: 8px; font-size: 0.7rem; }
+    .gt-table tr:hover { background: rgba(74,158,255,0.05); }
+    .gt-table tr.verified { background: rgba(34,197,94,0.04); }
+    .gt-table tr.verified td:first-child { border-left: 3px solid var(--pass); }
+    .gt-table tr:not(.verified) td:first-child { border-left: 3px solid var(--warn); }
+    .gt-table .needs-verify { color: var(--fail); font-style: italic; }
+
+    .cell-value { cursor: pointer; padding: 0.1rem 0.2rem; border-radius: 3px; display: block; min-height: 1.2em; }
+    .cell-value:hover { background: rgba(74,158,255,0.1); }
+    .cell-edit { display: none; }
+    .cell-edit.active { display: flex; gap: 0.2rem; }
+    .cell-edit input, .cell-edit select { font-size: 0.75rem; padding: 0.15rem 0.25rem; margin: 0; }
+    .cell-edit button { font-size: 0.65rem; padding: 0.1rem 0.25rem; white-space: nowrap; }
+
+    .row-actions { white-space: nowrap; }
+    .row-actions form { display: inline; }
+    .row-actions button { font-size: 0.7rem; padding: 0.15rem 0.35rem; }
+
+    .badge-v { background: #dcfce7; color: #166534; padding: 0.1rem 0.35rem; border-radius: 6px; font-size: 0.65rem; }
+    .badge-uv { background: #fef3c7; color: #92400e; padding: 0.1rem 0.35rem; border-radius: 6px; font-size: 0.65rem; }
+    .tier-badge { font-size: 0.65rem; padding: 0.1rem 0.3rem; border-radius: 6px; background: #e0e7ff; color: #3730a3; }
+
+    .toolbar { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; align-items: center; }
+    .toolbar button, .toolbar a { font-size: 0.8rem; padding: 0.3rem 0.6rem; }
+
     .new-task-form {
-        border: 2px dashed var(--border);
-        border-radius: 8px;
-        padding: 1rem;
+        border: 2px dashed var(--border); border-radius: var(--radius);
+        padding: 1rem; margin-top: 1rem;
     }
     .new-task-form h4 { margin-top: 0; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-    .toolbar { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
-    .toolbar button, .toolbar a { font-size: 0.8rem; padding: 0.35rem 0.6rem; }
-    .edit-form { display: none; }
-    .edit-form.active { display: block; }
-    .task-display.hidden { display: none; }
-    .needs-verify { color: var(--fail); font-style: italic; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .form-row label { font-size: 0.8rem; }
 </style>
 {% endblock %}
 
@@ -87,17 +71,17 @@
 <div class="breadcrumb">
     <a href="/documents">Documents</a> /
     <a href="/documents/{{ doc.id }}">{{ doc.original_filename }}</a> /
-    Ground Truth Editor
+    Q&A Ground Truth
 </div>
 
 <div class="editor-layout">
     <!-- LEFT: PDF Viewer -->
     <div class="pdf-panel">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-            <strong style="font-size:0.9rem;">{{ doc.original_filename }}</strong>
+            <strong style="font-size:0.85rem;">{{ doc.original_filename }}</strong>
             {% if doc.page_count > 1 %}
             <select onchange="window.location.href='/ground-truth/{{ doc.id }}?page=' + this.value"
-                    style="width:auto; font-size:0.8rem; padding:0.3rem; margin:0;">
+                    style="width:auto; font-size:0.8rem; padding:0.2rem; margin:0;">
                 {% for p in pages %}
                 <option value="{{ p.page_number }}" {% if p.page_number == page_num %}selected{% endif %}>
                     Page {{ p.page_number }}
@@ -109,184 +93,157 @@
         {% if current_page %}
         <img src="/rendered/{{ current_page.image_path }}" alt="Page {{ page_num }}">
         {% else %}
-        <p style="text-align:center; opacity:0.5; padding:2rem;">No rendered page available.</p>
+        <p style="text-align:center; opacity:0.5; padding:2rem;">No rendered page.</p>
         {% endif %}
         {% if doc.page_count > 1 %}
-        <div class="page-nav" style="margin-top:0.75rem;">
+        <div style="display:flex; justify-content:center; gap:0.75rem; margin-top:0.5rem;">
             {% if page_num > 1 %}
-            <a href="/ground-truth/{{ doc.id }}?page={{ page_num - 1 }}"  style="font-size:0.8rem;">← Prev</a>
+            <a href="/ground-truth/{{ doc.id }}?page={{ page_num - 1 }}" style="font-size:0.8rem;">← Prev</a>
             {% endif %}
-            <span style="font-size:0.85rem;">Page {{ page_num }} / {{ doc.page_count }}</span>
+            <span style="font-size:0.8rem;">Page {{ page_num }} / {{ doc.page_count }}</span>
             {% if page_num < doc.page_count %}
-            <a href="/ground-truth/{{ doc.id }}?page={{ page_num + 1 }}"  style="font-size:0.8rem;">Next →</a>
+            <a href="/ground-truth/{{ doc.id }}?page={{ page_num + 1 }}" style="font-size:0.8rem;">Next →</a>
             {% endif %}
         </div>
         {% endif %}
     </div>
 
-    <!-- RIGHT: Ground Truth Tasks -->
+    <!-- RIGHT: Tasks Table -->
     <div class="gt-panel">
-        <div class="gt-header">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
             <div>
-                <h2 style="margin:0; font-size:1.1rem;">Ground Truth Tasks</h2>
-                <div style="font-size:0.8rem; opacity:0.7;">
+                <h2 style="margin:0; font-size:1.1rem;">Q&A Ground Truth</h2>
+                <span style="font-size:0.8rem; opacity:0.7;">
                     {{ stats.total }} tasks ({{ stats.verified }} verified, {{ stats.unverified }} unverified) — GT Version: v{{ gt_version }}
-                </div>
+                </span>
             </div>
             <div style="display:flex; gap:0.5rem;">
                 <form action="/ground-truth/{{ doc.id }}/import" method="post" enctype="multipart/form-data" style="display:inline;">
-                    <label style="font-size:0.8rem; cursor:pointer; padding:0.35rem 0.6rem; border:1px solid var(--border); border-radius:4px;">
+                    <label style="font-size:0.8rem; cursor:pointer; padding:0.3rem 0.6rem; border:1px solid var(--border); border-radius:4px;">
                         Import YAML
                         <input type="file" name="file" accept=".yaml,.yml" style="display:none;" onchange="this.form.submit();">
                     </label>
                 </form>
-                <a href="/ground-truth/{{ doc.id }}/export"  style="font-size:0.8rem; padding:0.35rem 0.6rem;">Export YAML</a>
+                <a href="/ground-truth/{{ doc.id }}/export" class="btn" style="font-size:0.8rem;">Export YAML</a>
             </div>
         </div>
 
         <div class="toolbar">
             <form action="/ground-truth/{{ doc.id }}/bulk-verify" method="post" style="display:inline;">
                 <input type="hidden" name="page" value="{{ page_num }}">
-                <button type="submit" class="outline" style="font-size:0.8rem; padding:0.35rem 0.6rem;">Verify All on Page</button>
+                <button type="submit" class="outline" style="font-size:0.8rem;">Verify All on Page</button>
             </form>
         </div>
 
-        <!-- Existing tasks -->
-        {% for task in tasks %}
-        <div class="task-card {{ 'verified' if task.verified else 'unverified' }}" id="task-{{ task.id }}">
-            <!-- Display mode -->
-            <div class="task-display" id="display-{{ task.id }}">
-                <div class="task-header">
-                    <span class="task-id">
-                        {{ task.task_key }}
+        {% if tasks %}
+        <table class="gt-table">
+            <thead>
+                <tr>
+                    <th>Task ID</th>
+                    <th>Status</th>
+                    <th>Tier</th>
+                    <th>Category</th>
+                    <th>Question</th>
+                    <th>Expected Answer</th>
+                    <th>Scoring</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr id="task-{{ task.id }}" class="{{ 'verified' if task.verified else '' }}">
+                    <td style="font-weight:600; font-size:0.75rem;">{{ task.task_key }}</td>
+                    <td>
                         {% if task.verified %}
                         <span class="badge-v">verified</span>
                         {% else %}
                         <span class="badge-uv">unverified</span>
                         {% endif %}
-                    </span>
-                    <span class="task-tier">Tier {{ task.tier }} —
-                        {% if task.tier == 1 %}Text Extraction
-                        {% elif task.tier == 2 %}Structured Understanding
-                        {% else %}Spatial/Visual{% endif %}
-                    </span>
-                </div>
-                <div class="task-question"><strong>Q:</strong> {{ task.question }}</div>
-                <div class="task-answer">
-                    <span class="label">Expected:</span>
-                    {% if task.expected_answer == "NEEDS VERIFICATION" %}
-                    <span class="needs-verify">{{ task.expected_answer }}</span>
-                    {% else %}
-                    <span>{{ task.expected_answer }}</span>
-                    {% endif %}
-                </div>
-                <div class="task-meta">
-                    <span>Scoring: {{ task.scoring_method }}</span>
-                    <span>Category: {{ task.category }}</span>
-                    {% if task.tolerance is not none %}<span>Tolerance: {{ task.tolerance }}</span>{% endif %}
-                    {% if task.notes %}<span>Notes: {{ task.notes }}</span>{% endif %}
-                </div>
-                <div class="task-actions">
-                    <button class="outline" onclick="toggleEdit({{ task.id }})">Edit</button>
-                    <form action="/ground-truth/{{ doc.id }}/tasks/{{ task.id }}/toggle-verify" method="post" style="display:inline;">
-                        <button type="submit" class="outline">{{ "Unverify" if task.verified else "Verify" }}</button>
-                    </form>
-                    <form action="/ground-truth/{{ doc.id }}/tasks/{{ task.id }}/delete" method="post" style="display:inline;"
-                          onsubmit="return confirm('Delete this task?');">
-                        <button type="submit" class="outline secondary">Delete</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Edit mode -->
-            <div class="edit-form" id="edit-{{ task.id }}">
-                <form action="/ground-truth/{{ doc.id }}/tasks/{{ task.id }}/update" method="post">
-                    <label style="font-size:0.85rem;">Question
-                        <input type="text" name="question" value="{{ task.question }}" required>
-                    </label>
-                    <label style="font-size:0.85rem;">Expected Answer
-                        <input type="text" name="expected_answer" value="{{ task.expected_answer }}" required>
-                    </label>
-                    <div class="form-row">
-                        <label style="font-size:0.85rem;">Tier
-                            <select name="tier">
-                                <option value="1" {% if task.tier == 1 %}selected{% endif %}>Tier 1 — Text Extraction</option>
-                                <option value="2" {% if task.tier == 2 %}selected{% endif %}>Tier 2 — Structured Understanding</option>
-                                <option value="3" {% if task.tier == 3 %}selected{% endif %}>Tier 3 — Spatial/Visual</option>
-                            </select>
-                        </label>
-                        <label style="font-size:0.85rem;">Category
-                            <select name="category">
-                                {% for cat in ["schedule", "table", "specification", "drawing", "lookahead", "plan", "elevation"] %}
-                                <option value="{{ cat }}" {% if task.category == cat %}selected{% endif %}>{{ cat }}</option>
-                                {% endfor %}
-                            </select>
-                        </label>
-                    </div>
-                    <div class="form-row">
-                        <label style="font-size:0.85rem;">Scoring
-                            <select name="scoring_method">
-                                {% for sm in ["exact", "contains", "numeric_tolerance", "semantic"] %}
-                                <option value="{{ sm }}" {% if task.scoring_method == sm %}selected{% endif %}>{{ sm }}</option>
-                                {% endfor %}
-                            </select>
-                        </label>
-                        <label style="font-size:0.85rem;">Tolerance
-                            <input type="number" name="tolerance" value="{{ task.tolerance or '' }}" step="0.1" placeholder="For numeric scoring">
-                        </label>
-                    </div>
-                    <label style="font-size:0.85rem;">Notes
-                        <input type="text" name="notes" value="{{ task.notes }}">
-                    </label>
-                    <div style="display:flex; gap:0.5rem;">
-                        <button type="submit" style="font-size:0.8rem; padding:0.35rem 0.6rem;">Save</button>
-                        <button type="button" class="outline secondary" style="font-size:0.8rem; padding:0.35rem 0.6rem;" onclick="toggleEdit({{ task.id }})">Cancel</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        {% endfor %}
-
-        {% if not tasks %}
-        <p style="text-align:center; opacity:0.5; padding:1rem;">No tasks for this page yet. Add one below or import from YAML.</p>
+                    </td>
+                    <td><span class="tier-badge">T{{ task.tier }}</span></td>
+                    <td style="font-size:0.75rem;">{{ task.category }}</td>
+                    <td style="max-width:250px;">
+                        <span class="cell-value" onclick="startEdit({{ task.id }}, 'question', this)">{{ task.question }}</span>
+                        <form action="/ground-truth/{{ doc.id }}/tasks/{{ task.id }}/update" method="post"
+                              class="cell-edit" id="edit-{{ task.id }}-question">
+                            <input type="hidden" name="expected_answer" value="{{ task.expected_answer }}">
+                            <input type="hidden" name="scoring_method" value="{{ task.scoring_method }}">
+                            <input type="hidden" name="tier" value="{{ task.tier }}">
+                            <input type="hidden" name="category" value="{{ task.category }}">
+                            <input type="hidden" name="tolerance" value="{{ task.tolerance or '' }}">
+                            <input type="hidden" name="notes" value="{{ task.notes }}">
+                            <input type="text" name="question" value="{{ task.question }}" style="width:100%;">
+                            <button type="submit">OK</button>
+                            <button type="button" onclick="cancelEdit({{ task.id }}, 'question')">X</button>
+                        </form>
+                    </td>
+                    <td style="max-width:200px;">
+                        {% if task.expected_answer == "NEEDS VERIFICATION" %}
+                        <span class="cell-value needs-verify" onclick="startEdit({{ task.id }}, 'expected', this)">{{ task.expected_answer }}</span>
+                        {% else %}
+                        <span class="cell-value" onclick="startEdit({{ task.id }}, 'expected', this)">{{ task.expected_answer }}</span>
+                        {% endif %}
+                        <form action="/ground-truth/{{ doc.id }}/tasks/{{ task.id }}/update" method="post"
+                              class="cell-edit" id="edit-{{ task.id }}-expected">
+                            <input type="hidden" name="question" value="{{ task.question }}">
+                            <input type="hidden" name="scoring_method" value="{{ task.scoring_method }}">
+                            <input type="hidden" name="tier" value="{{ task.tier }}">
+                            <input type="hidden" name="category" value="{{ task.category }}">
+                            <input type="hidden" name="tolerance" value="{{ task.tolerance or '' }}">
+                            <input type="hidden" name="notes" value="{{ task.notes }}">
+                            <input type="text" name="expected_answer" value="{{ task.expected_answer }}" style="width:100%;">
+                            <button type="submit">OK</button>
+                            <button type="button" onclick="cancelEdit({{ task.id }}, 'expected')">X</button>
+                        </form>
+                    </td>
+                    <td style="font-size:0.75rem;">{{ task.scoring_method }}</td>
+                    <td style="font-size:0.75rem; max-width:150px; opacity:0.7;">{{ task.notes }}</td>
+                    <td class="row-actions">
+                        <form action="/ground-truth/{{ doc.id }}/tasks/{{ task.id }}/toggle-verify" method="post">
+                            <button type="submit" class="{% if task.verified %}outline secondary{% else %}outline{% endif %}">
+                                {{ "Unverify" if task.verified else "Verify" }}
+                            </button>
+                        </form>
+                        <form action="/ground-truth/{{ doc.id }}/tasks/{{ task.id }}/delete" method="post"
+                              onsubmit="return confirm('Delete?');">
+                            <button type="submit" class="outline secondary">Del</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p style="text-align:center; opacity:0.5; padding:1rem;">No tasks for this page. Add one below or import from YAML.</p>
         {% endif %}
 
         <!-- Add new task form -->
-        <div class="new-task-form">
-            <h4>Add New Task</h4>
-            <form action="/ground-truth/{{ doc.id }}/tasks/create" method="post">
+        <details class="new-task-form">
+            <summary style="cursor:pointer; font-weight:600;">Add New Task</summary>
+            <form action="/ground-truth/{{ doc.id }}/tasks/create" method="post" style="margin-top:0.75rem;">
                 <input type="hidden" name="page_number" value="{{ page_num }}">
                 <div class="form-row">
-                    <label style="font-size:0.85rem;">Task ID
-                        <input type="text" name="task_key" placeholder="e.g., door-t1-001" required>
-                    </label>
-                    <label style="font-size:0.85rem;">Tier
+                    <label>Task ID <input type="text" name="task_key" placeholder="e.g., door-t1-001" required></label>
+                    <label>Tier
                         <select name="tier">
-                            <option value="1">Tier 1 — Text Extraction</option>
-                            <option value="2">Tier 2 — Structured Understanding</option>
-                            <option value="3">Tier 3 — Spatial/Visual</option>
+                            <option value="1">T1 — Text Extraction</option>
+                            <option value="2">T2 — Structured</option>
+                            <option value="3">T3 — Spatial/Visual</option>
                         </select>
                     </label>
                 </div>
-                <label style="font-size:0.85rem;">Question
-                    <input type="text" name="question" placeholder="What is the fire rating of door C-01?" required>
-                </label>
-                <label style="font-size:0.85rem;">Expected Answer
-                    <input type="text" name="expected_answer" placeholder="1.5 HR" required>
-                </label>
+                <label>Question <input type="text" name="question" placeholder="What is the fire rating of door C-01?" required></label>
+                <label>Expected Answer <input type="text" name="expected_answer" placeholder="1.5 HR" required></label>
                 <div class="form-row">
-                    <label style="font-size:0.85rem;">Category
+                    <label>Category
                         <select name="category">
-                            <option value="schedule">schedule</option>
-                            <option value="table">table</option>
-                            <option value="specification">specification</option>
-                            <option value="drawing">drawing</option>
-                            <option value="lookahead">lookahead</option>
-                            <option value="plan">plan</option>
-                            <option value="elevation">elevation</option>
+                            {% for cat in ["schedule", "table", "specification", "drawing", "lookahead", "plan", "elevation"] %}
+                            <option value="{{ cat }}">{{ cat }}</option>
+                            {% endfor %}
                         </select>
                     </label>
-                    <label style="font-size:0.85rem;">Scoring
+                    <label>Scoring
                         <select name="scoring_method">
                             <option value="exact">exact</option>
                             <option value="contains">contains</option>
@@ -296,27 +253,37 @@
                     </label>
                 </div>
                 <div class="form-row">
-                    <label style="font-size:0.85rem;">Tolerance (if numeric)
-                        <input type="number" name="tolerance" step="0.1" placeholder="0.5">
-                    </label>
-                    <label style="font-size:0.85rem;">Notes (optional)
-                        <input type="text" name="notes" placeholder="Additional context...">
-                    </label>
+                    <label>Tolerance <input type="number" name="tolerance" step="0.1" placeholder="For numeric"></label>
+                    <label>Notes <input type="text" name="notes" placeholder="Optional"></label>
                 </div>
                 <button type="submit" style="margin-top:0.5rem;">Save Task</button>
             </form>
-        </div>
+        </details>
     </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
 <script>
-function toggleEdit(taskId) {
-    const display = document.getElementById('display-' + taskId);
-    const edit = document.getElementById('edit-' + taskId);
-    display.classList.toggle('hidden');
-    edit.classList.toggle('active');
+function startEdit(taskId, field, el) {
+    el.style.display = 'none';
+    var form = document.getElementById('edit-' + taskId + '-' + field);
+    form.classList.add('active');
+    form.querySelector('input[name="' + (field === 'expected' ? 'expected_answer' : field) + '"]').focus();
 }
+function cancelEdit(taskId, field) {
+    var form = document.getElementById('edit-' + taskId + '-' + field);
+    form.classList.remove('active');
+    form.previousElementSibling.style.display = '';
+}
+document.querySelectorAll('.cell-edit input[type="text"]').forEach(function(input) {
+    input.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            var form = input.closest('.cell-edit');
+            form.classList.remove('active');
+            form.previousElementSibling.style.display = '';
+        }
+    });
+});
 </script>
 {% endblock %}
