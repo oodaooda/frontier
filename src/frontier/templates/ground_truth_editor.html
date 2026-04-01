@@ -4,25 +4,9 @@
 
 {% block head %}
 <style>
-    .editor-layout {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 1rem;
-        min-height: calc(100vh - 120px);
-    }
-    .pdf-panel {
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 0.75rem;
-        overflow-y: auto;
-        max-height: calc(100vh - 120px);
-        position: sticky;
-        top: 60px;
-    }
-    .pdf-panel img { max-width: 100%; height: auto; border-radius: 4px; }
     .gt-panel { overflow-x: auto; }
 
-    .gt-table { font-size: 0.8rem; border-collapse: collapse; width: 100%; }
+    .gt-table { font-size: 0.8rem; border-collapse: collapse; width: auto; }
     .gt-table th {
         position: sticky; top: 0; z-index: 5;
         background: var(--bg-secondary);
@@ -32,7 +16,9 @@
     .gt-table td {
         padding: 0.3rem 0.5rem; border-bottom: 1px solid var(--border);
         vertical-align: top;
+        white-space: nowrap;
     }
+    .gt-table td.wrap { white-space: normal; }
     .gt-table tr:hover { background: rgba(74,158,255,0.05); }
     .gt-table tr.verified { background: rgba(34,197,94,0.04); }
     .gt-table tr.verified td:first-child { border-left: 3px solid var(--pass); }
@@ -64,6 +50,12 @@
     .new-task-form h4 { margin-top: 0; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
     .form-row label { font-size: 0.8rem; }
+    .view-drawing-btn {
+        font-size: 0.8rem; padding: 0.3rem 0.6rem;
+        border: 1px solid var(--border); border-radius: var(--radius);
+        text-decoration: none; color: var(--text); cursor: pointer; display: inline-block;
+    }
+    .view-drawing-btn:hover { border-color: var(--accent); background: rgba(74,158,255,0.05); text-decoration: none; }
 </style>
 {% endblock %}
 
@@ -74,41 +66,7 @@
     Q&A Ground Truth
 </div>
 
-<div class="editor-layout">
-    <!-- LEFT: PDF Viewer -->
-    <div class="pdf-panel">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-            <strong style="font-size:0.85rem;">{{ doc.original_filename }}</strong>
-            {% if doc.page_count > 1 %}
-            <select onchange="window.location.href='/ground-truth/{{ doc.id }}?page=' + this.value"
-                    style="width:auto; font-size:0.8rem; padding:0.2rem; margin:0;">
-                {% for p in pages %}
-                <option value="{{ p.page_number }}" {% if p.page_number == page_num %}selected{% endif %}>
-                    Page {{ p.page_number }}
-                </option>
-                {% endfor %}
-            </select>
-            {% endif %}
-        </div>
-        {% if current_page %}
-        <img src="/rendered/{{ current_page.image_path }}" alt="Page {{ page_num }}">
-        {% else %}
-        <p style="text-align:center; opacity:0.5; padding:2rem;">No rendered page.</p>
-        {% endif %}
-        {% if doc.page_count > 1 %}
-        <div style="display:flex; justify-content:center; gap:0.75rem; margin-top:0.5rem;">
-            {% if page_num > 1 %}
-            <a href="/ground-truth/{{ doc.id }}?page={{ page_num - 1 }}" style="font-size:0.8rem;">← Prev</a>
-            {% endif %}
-            <span style="font-size:0.8rem;">Page {{ page_num }} / {{ doc.page_count }}</span>
-            {% if page_num < doc.page_count %}
-            <a href="/ground-truth/{{ doc.id }}?page={{ page_num + 1 }}" style="font-size:0.8rem;">Next →</a>
-            {% endif %}
-        </div>
-        {% endif %}
-    </div>
-
-    <!-- RIGHT: Tasks Table -->
+<div>
     <div class="gt-panel">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
             <div>
@@ -117,7 +75,10 @@
                     {{ stats.total }} tasks ({{ stats.verified }} verified, {{ stats.unverified }} unverified) — GT Version: v{{ gt_version }}
                 </span>
             </div>
-            <div style="display:flex; gap:0.5rem;">
+            <div style="display:flex; gap:0.5rem; align-items:center;">
+                {% if current_page %}
+                <a href="/rendered/{{ current_page.image_path }}" target="_blank" class="view-drawing-btn">View Drawing</a>
+                {% endif %}
                 <form action="/ground-truth/{{ doc.id }}/import" method="post" enctype="multipart/form-data" style="display:inline;">
                     <label style="font-size:0.8rem; cursor:pointer; padding:0.3rem 0.6rem; border:1px solid var(--border); border-radius:4px;">
                         Import YAML
@@ -125,6 +86,16 @@
                     </label>
                 </form>
                 <a href="/ground-truth/{{ doc.id }}/export" class="btn" style="font-size:0.8rem;">Export YAML</a>
+                {% if doc.page_count > 1 %}
+                <select onchange="window.location.href='/ground-truth/{{ doc.id }}?page=' + this.value"
+                        style="width:auto; font-size:0.8rem; padding:0.2rem; margin:0;">
+                    {% for p in pages %}
+                    <option value="{{ p.page_number }}" {% if p.page_number == page_num %}selected{% endif %}>
+                        Page {{ p.page_number }}
+                    </option>
+                    {% endfor %}
+                </select>
+                {% endif %}
             </div>
         </div>
 
@@ -163,7 +134,7 @@
                     </td>
                     <td><span class="tier-badge">T{{ task.tier }}</span></td>
                     <td style="font-size:0.75rem;">{{ task.category }}</td>
-                    <td style="max-width:250px;">
+                    <td class="wrap">
                         <span class="cell-value" onclick="startEdit({{ task.id }}, 'question', this)">{{ task.question }}</span>
                         <form action="/ground-truth/{{ doc.id }}/tasks/{{ task.id }}/update" method="post"
                               class="cell-edit" id="edit-{{ task.id }}-question">
@@ -178,7 +149,7 @@
                             <button type="button" onclick="cancelEdit({{ task.id }}, 'question')">X</button>
                         </form>
                     </td>
-                    <td style="max-width:200px;">
+                    <td class="wrap">
                         {% if task.expected_answer == "NEEDS VERIFICATION" %}
                         <span class="cell-value needs-verify" onclick="startEdit({{ task.id }}, 'expected', this)">{{ task.expected_answer }}</span>
                         {% else %}
@@ -198,7 +169,7 @@
                         </form>
                     </td>
                     <td style="font-size:0.75rem;">{{ task.scoring_method }}</td>
-                    <td style="font-size:0.75rem; max-width:150px; opacity:0.7;">{{ task.notes }}</td>
+                    <td style="font-size:0.75rem; opacity:0.7;">{{ task.notes }}</td>
                     <td class="row-actions">
                         <form action="/ground-truth/{{ doc.id }}/tasks/{{ task.id }}/toggle-verify" method="post">
                             <button type="submit" class="{% if task.verified %}outline secondary{% else %}outline{% endif %}">
