@@ -150,6 +150,28 @@ CREATE TABLE IF NOT EXISTS rss_feeds (
     last_polled TEXT,
     poll_interval_hours INTEGER NOT NULL DEFAULT 6
 );
+
+-- Table ground truth: full table extractions stored as rows with dynamic columns
+CREATE TABLE IF NOT EXISTS table_ground_truth (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    document_id INTEGER NOT NULL REFERENCES documents(id) ON DELETE CASCADE,
+    table_name TEXT NOT NULL DEFAULT '',
+    columns_json TEXT NOT NULL DEFAULT '[]',
+    source TEXT DEFAULT '',
+    verified INTEGER NOT NULL DEFAULT 0,
+    created_date TEXT NOT NULL DEFAULT (datetime('now')),
+    updated_date TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+-- Table ground truth rows: individual entries in a table extraction
+CREATE TABLE IF NOT EXISTS table_gt_rows (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    table_gt_id INTEGER NOT NULL REFERENCES table_ground_truth(id) ON DELETE CASCADE,
+    row_index INTEGER NOT NULL,
+    data_json TEXT NOT NULL DEFAULT '{}',
+    verified INTEGER NOT NULL DEFAULT 0,
+    notes TEXT DEFAULT ''
+);
 """
 
 

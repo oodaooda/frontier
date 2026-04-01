@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% set active_nav = "ground-truth" %}
+{% block title_suffix %} — Table Ground Truth{% endblock %}
+
+{% block content %}
+<div class="breadcrumb">
+    <a href="/documents">Documents</a> /
+    <a href="/documents/{{ doc.id }}">{{ doc.original_filename }}</a> /
+    Table Ground Truth
+</div>
+
+<div class="page-header">
+    <h1>Table Ground Truth — {{ doc.original_filename }}</h1>
+</div>
+
+{% if request.query_params.get('error') %}
+<div class="flash flash-error">{{ request.query_params.get('error') }}</div>
+{% endif %}
+
+<!-- Import JSON -->
+<div style="border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-bottom:1.5rem;">
+    <h3>Import Table Extraction (JSON)</h3>
+    <form action="/table-gt/{{ doc.id }}/import" method="post" enctype="multipart/form-data">
+        <div style="display:flex; gap:0.75rem; align-items:flex-end; flex-wrap:wrap;">
+            <label style="flex:1; min-width:200px;">JSON File
+                <input type="file" name="file" accept=".json" required>
+            </label>
+            <label style="width:250px;">Table Name (optional)
+                <input type="text" name="table_name" placeholder="e.g., Door Schedule">
+            </label>
+            <button type="submit" style="margin-bottom:0.25rem;">Import</button>
+        </div>
+    </form>
+</div>
+
+{% if table_info %}
+<table>
+    <thead>
+        <tr>
+            <th>Table Name</th>
+            <th>Source</th>
+            <th>Columns</th>
+            <th>Rows</th>
+            <th>Verified</th>
+            <th>Created</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ti in table_info %}
+        <tr>
+            <td><strong>{{ ti.table.table_name or "Untitled" }}</strong></td>
+            <td style="font-size:0.8rem; opacity:0.7;">{{ ti.table.source }}</td>
+            <td>{{ ti.table.columns|length }}</td>
+            <td>{{ ti.stats.total }}</td>
+            <td>
+                {% if ti.stats.total > 0 %}
+                    {% if ti.stats.verified == ti.stats.total %}
+                    <span style="color:var(--pass);">{{ ti.stats.verified }}/{{ ti.stats.total }}</span>
+                    {% else %}
+                    <span style="color:var(--warn);">{{ ti.stats.verified }}/{{ ti.stats.total }}</span>
+                    {% endif %}
+                {% else %}0{% endif %}
+            </td>
+            <td>{{ ti.table.created_date[:10] }}</td>
+            <td style="display:flex; gap:0.5rem;">
+                <a href="/table-gt/{{ doc.id }}/view/{{ ti.table.id }}" class="btn">View/Edit</a>
+                <a href="/table-gt/{{ doc.id }}/export/{{ ti.table.id }}" class="btn">Export</a>
+                <form action="/table-gt/{{ doc.id }}/delete/{{ ti.table.id }}" method="post" style="display:inline;"
+                      onsubmit="return confirm('Delete this table ground truth?');">
+                    <button type="submit" class="outline secondary" style="font-size:0.8rem;">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p style="text-align:center; opacity:0.5; padding:2rem;">No table ground truth imported yet. Upload a JSON file above.</p>
+{% endif %}
+{% endblock %}

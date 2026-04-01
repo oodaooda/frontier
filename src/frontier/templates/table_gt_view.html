@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% set active_nav = "ground-truth" %}
+{% block title_suffix %} — {{ tgt.table_name or "Table" }}{% endblock %}
+
+{% block head %}
+<style>
+    .viewer-layout {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1rem;
+        min-height: calc(100vh - 120px);
+    }
+    .pdf-side {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 0.75rem;
+        overflow-y: auto;
+        max-height: calc(100vh - 120px);
+        position: sticky;
+        top: 60px;
+    }
+    .pdf-side img { max-width: 100%; height: auto; }
+    .table-side { overflow-x: auto; }
+    .gt-table {
+        font-size: 0.8rem;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    .gt-table th {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: var(--bg-secondary);
+        font-size: 0.75rem;
+        padding: 0.4rem 0.5rem;
+        white-space: nowrap;
+        border-bottom: 2px solid var(--border);
+    }
+    .gt-table td {
+        padding: 0.3rem 0.5rem;
+        border-bottom: 1px solid var(--border);
+        max-width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .gt-table tr:hover { background: rgba(74,158,255,0.05); }
+    .gt-table tr.verified { background: rgba(34,197,94,0.04); }
+    .gt-table tr.verified td:first-child { border-left: 3px solid var(--pass); }
+    .gt-table tr:not(.verified) td:first-child { border-left: 3px solid var(--warn); }
+
+    /* Editable cell */
+    .cell-value {
+        cursor: pointer;
+        padding: 0.15rem 0.25rem;
+        border-radius: 3px;
+        min-height: 1.2em;
+        display: block;
+    }
+    .cell-value:hover { background: rgba(74,158,255,0.1); }
+    .cell-edit {
+        display: none;
+    }
+    .cell-edit.active {
+        display: flex;
+        gap: 0.25rem;
+    }
+    .cell-edit input {
+        font-size: 0.78rem;
+        padding: 0.2rem 0.3rem;
+        width: 100%;
+        margin: 0;
+    }
+    .cell-edit button {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.3rem;
+        white-space: nowrap;
+    }
+
+    .row-actions { white-space: nowrap; }
+    .row-actions button, .row-actions a { font-size: 0.7rem; padding: 0.15rem 0.35rem; }
+
+    .stats-bar {
+        display: flex; gap: 1.5rem; align-items: center;
+        margin-bottom: 1rem; font-size: 0.85rem;
+    }
+    .level-header {
+        background: var(--bg-secondary);
+        font-weight: 600;
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+    .level-header td { border-bottom: 2px solid var(--accent) !important; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="breadcrumb">
+    <a href="/documents">Documents</a> /
+    <a href="/documents/{{ doc.id }}">{{ doc.original_filename }}</a> /
+    <a href="/table-gt/{{ doc.id }}">Table GT</a> /
+    {{ tgt.table_name or "Table" }}
+</div>
+
+<div class="page-header">
+    <h1>{{ tgt.table_name or "Table Ground Truth" }}</h1>
+    <div style="display:flex; gap:0.5rem;">
+        <a href="/table-gt/{{ doc.id }}/export/{{ tgt.id }}" class="btn">Export JSON</a>
+    </div>
+</div>
+
+<div class="stats-bar">
+    <span><strong>{{ stats.total }}</strong> rows</span>
+    <span><span style="color:var(--pass);">{{ stats.verified }}</span> verified</span>
+    <span><span style="color:var(--warn);">{{ stats.total - stats.verified }}</span> unverified</span>
+    <span>{{ columns|length }} columns</span>
+    <span style="opacity:0.6;">Source: {{ tgt.source }}</span>
+</div>
+
+<div class="viewer-layout">
+    <!-- LEFT: PDF -->
+    <div class="pdf-side">
+        {% if current_page %}
+        <img src="/rendered/{{ current_page.image_path }}" alt="Page 1">
+        {% else %}
+        <p style="opacity:0.5; text-align:center;">No rendered page</p>
+        {% endif %}
+    </div>
+
+    <!-- RIGHT: Table -->
+    <div class="table-side">
+        <p style="font-size:0.8rem; opacity:0.6; margin-bottom:0.5rem;">Click any cell to edit. Green rows are verified.</p>
+        <table class="gt-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    {% for col in columns %}
+                    <th>{{ col }}</th>
+                    {% endfor %}
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set current_level = namespace(value="") %}
+                {% for row in rows %}
+                    {# Show level separator if level column changes #}
+                    {% set row_data = row.data %}
+                    {% if "level" in row_data and row_data["level"] != current_level.value and row_data["level"] %}
+                        {% set current_level.value = row_data["level"] %}
+                        <tr class="level-header">
+                            <td colspan="{{ columns|length + 2 }}">{{ current_level.value }}</td>
+                        </tr>
+                    {% endif %}
+
+                    <tr id="row-{{ row.id }}" class="{{ 'verified' if row.verified else '' }}">
+                        <td style="font-size:0.7rem; opacity:0.5;">{{ row.row_index + 1 }}</td>
+                        {% for col in columns %}
+                        <td>
+                            <span class="cell-value" onclick="startEdit({{ row.id }}, '{{ col }}', this)"
+                                  title="Click to edit">{{ row_data.get(col, "") }}</span>
+                            <form action="/table-gt/{{ doc.id }}/view/{{ tgt.id }}/cell" method="post"
+                                  class="cell-edit" id="edit-{{ row.id }}-{{ col }}">
+                                <input type="hidden" name="row_id" value="{{ row.id }}">
+                                <input type="hidden" name="column" value="{{ col }}">
+                                <input type="text" name="value" value="{{ row_data.get(col, '') }}">
+                                <button type="submit">OK</button>
+                                <button type="button" onclick="cancelEdit('{{ row.id }}', '{{ col }}')">X</button>
+                            </form>
+                        </td>
+                        {% endfor %}
+                        <td class="row-actions">
+                            <form action="/table-gt/{{ doc.id }}/view/{{ tgt.id }}/row/{{ row.id }}/verify"
+                                  method="post" style="display:inline;">
+                                <button type="submit" class="{% if row.verified %}outline secondary{% else %}outline{% endif %}">
+                                    {{ "Unverify" if row.verified else "Verify" }}
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function startEdit(rowId, col, el) {
+    // Hide the value, show the form
+    el.style.display = 'none';
+    var form = document.getElementById('edit-' + rowId + '-' + col);
+    form.classList.add('active');
+    form.querySelector('input[name="value"]').focus();
+}
+
+function cancelEdit(rowId, col) {
+    var form = document.getElementById('edit-' + rowId + '-' + col);
+    form.classList.remove('active');
+    // Show the value span again
+    form.previousElementSibling.style.display = '';
+}
+
+// Allow Enter to submit, Escape to cancel
+document.querySelectorAll('.cell-edit input[name="value"]').forEach(function(input) {
+    input.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            var form = input.closest('.cell-edit');
+            var ids = form.id.replace('edit-', '').split('-');
+            cancelEdit(ids[0], ids.slice(1).join('-'));
+        }
+    });
+});
+</script>
+{% endblock %}

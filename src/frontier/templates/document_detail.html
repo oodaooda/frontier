@@ -15,7 +15,8 @@
         </div>
     </div>
     <div class="actions">
-        <a href="/ground-truth/{{ doc.id }}" class="btn-primary btn">Edit Ground Truth</a>
+        <a href="/ground-truth/{{ doc.id }}" class="btn-primary btn">Q&A Ground Truth</a>
+        <a href="/table-gt/{{ doc.id }}" class="btn">Table Ground Truth</a>
         <form action="/documents/{{ doc.id }}/delete" method="post" style="display:inline;"
               onsubmit="return confirm('Delete this document and all associated data?');">
             <button type="submit" class="outline secondary" style="font-size:0.85rem;">Delete</button>
