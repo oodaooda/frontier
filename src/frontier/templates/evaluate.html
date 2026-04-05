@@ -3,7 +3,10 @@
 {% block title_suffix %} — Run Evaluation{% endblock %}
 
 {% block content %}
-<h1>Run Evaluation</h1>
+<div class="page-header">
+    <h1>Run Evaluation</h1>
+    <a href="/table-eval" class="btn">Table Extraction Eval →</a>
+</div>
 
 {% if request.query_params.get('error') %}
 <div class="flash flash-error">{{ request.query_params.get('error') }}</div>

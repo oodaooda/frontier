@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% set active_nav = "evaluate" %}
+{% block title_suffix %} — Extracting...{% endblock %}
+
+{% block head %}
+<style>
+    .progress-card {
+        border: 1px solid var(--border); border-radius: var(--radius);
+        padding: 2rem; text-align: center; max-width: 500px; margin: 3rem auto;
+    }
+    .spinner { display: inline-block; animation: spin 1s linear infinite; font-size: 1.5rem; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="progress-card">
+    <h2 style="margin-top:0;">Table Extraction Running</h2>
+    <div id="status" style="margin:1.5rem 0;">
+        <span class="spinner">&#9881;</span> Sending drawing to model...
+    </div>
+    <div id="result" style="display:none; margin:1.5rem 0;"></div>
+    <a href="/table-eval" style="font-size:0.85rem;">Back to Table Eval</a>
+</div>
+
+<script>
+var key = "{{ key }}";
+var poll = setInterval(function() {
+    fetch('/table-eval/progress/status?key=' + key)
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (data.status === 'complete') {
+                clearInterval(poll);
+                if (data.error) {
+                    document.getElementById('status').innerHTML =
+                        '<span style="color:var(--fail);">Error: ' + data.error + '</span>';
+                } else {
+                    document.getElementById('status').innerHTML =
+                        '<span style="color:var(--pass); font-size:2rem; font-weight:700;">' +
+                        data.accuracy + '%</span><br>' +
+                        '<span>' + data.matched + ' / ' + data.total + ' cells matched</span><br>' +
+                        '<span style="opacity:0.7;">Cost: $' + data.cost.toFixed(2) + '</span>';
+                    document.getElementById('result').style.display = 'block';
+                    document.getElementById('result').innerHTML =
+                        '<a href="/table-eval/result/' + data.eval_id + '" style="font-size:1rem; font-weight:600;">View Full Diff →</a>';
+                }
+            } else if (data.status.startsWith('error')) {
+                clearInterval(poll);
+                document.getElementById('status').innerHTML =
+                    '<span style="color:var(--fail);">' + data.status + '</span>';
+            }
+        });
+}, 2000);
+</script>
+{% endblock %}

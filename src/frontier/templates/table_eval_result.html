@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% set active_nav = "results" %}
+{% block title_suffix %} — Table Extraction Result{% endblock %}
+
+{% block head %}
+<style>
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .summary-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; text-align: center; }
+    .summary-card .label { font-size: 0.8rem; opacity: 0.7; }
+    .summary-card .val { font-size: 1.5rem; font-weight: 700; }
+
+    .col-accuracy { margin-bottom: 1.5rem; }
+    .col-bar { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem; font-size: 0.8rem; }
+    .col-bar .bar-bg { flex: 1; height: 14px; background: var(--border); border-radius: 4px; overflow: hidden; max-width: 200px; }
+    .col-bar .bar-fill { height: 100%; border-radius: 4px; }
+    .bar-high { background: var(--pass); }
+    .bar-mid { background: var(--warn); }
+    .bar-low { background: var(--fail); }
+
+    .diff-table { font-size: 0.75rem; border-collapse: collapse; width: auto; }
+    .diff-table th {
+        position: sticky; top: 0; z-index: 5;
+        background: var(--bg-secondary); font-size: 0.7rem; padding: 0.3rem 0.4rem;
+        white-space: nowrap; border-bottom: 2px solid var(--border);
+    }
+    .diff-table td {
+        padding: 0.2rem 0.4rem; border-bottom: 1px solid var(--border);
+        white-space: nowrap; max-width: 200px; overflow: hidden; text-overflow: ellipsis;
+    }
+    .diff-table .cell-match { background: rgba(34,197,94,0.06); }
+    .diff-table .cell-mismatch { background: rgba(239,68,68,0.08); }
+    .diff-table .cell-mismatch .expected { color: var(--pass); font-size: 0.65rem; display: block; }
+    .diff-table .cell-mismatch .actual { color: var(--fail); font-weight: 600; }
+    .diff-table tr:hover { background: rgba(74,158,255,0.05); }
+
+    .filter-bar { display: flex; gap: 0.75rem; margin-bottom: 1rem; align-items: center; }
+    .filter-bar select { font-size: 0.85rem; width: auto; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="breadcrumb">
+    <a href="/table-eval">Table Eval</a> / Run #{{ evaluation.id }}
+</div>
+
+<h1>Table Extraction Result — {{ result.model_name or result.model_id }}</h1>
+<p style="opacity:0.7;">{{ result.table_name }} · {{ evaluation.started_date }}</p>
+
+<!-- Summary -->
+<div class="summary-grid">
+    <div class="summary-card">
+        <div class="label">Accuracy</div>
+        <div class="val" style="color: {% if result.accuracy >= 90 %}var(--pass){% elif result.accuracy >= 70 %}var(--warn){% else %}var(--fail){% endif %};">
+            {{ result.accuracy }}%
+        </div>
+    </div>
+    <div class="summary-card">
+        <div class="label">Cells Matched</div>
+        <div class="val">{{ result.matched_cells }} / {{ result.total_cells }}</div>
+    </div>
+    <div class="summary-card">
+        <div class="label">Rows (Model / Expected)</div>
+        <div class="val">{{ result.model_row_count }} / {{ result.expected_row_count }}</div>
+    </div>
+    <div class="summary-card">
+        <div class="label">Cost</div>
+        <div class="val">${{ "%.2f"|format(result.cost) }}</div>
+    </div>
+    <div class="summary-card">
+        <div class="label">Latency</div>
+        <div class="val">{{ "%.1f"|format(result.latency_ms / 1000) }}s</div>
+    </div>
+    <div class="summary-card">
+        <div class="label">Tokens (in/out)</div>
+        <div class="val" style="font-size:1rem;">{{ result.input_tokens }} / {{ result.output_tokens }}</div>
+    </div>
+</div>
+
+<!-- Column accuracy bars -->
+<h3>Accuracy by Column</h3>
+<div class="col-accuracy">
+    {% for col, stats in result.column_accuracy.items() %}
+    <div class="col-bar">
+        <span style="min-width:180px; font-weight:600;">{{ col }}</span>
+        <div class="bar-bg">
+            <div class="bar-fill {% if stats.pct >= 90 %}bar-high{% elif stats.pct >= 70 %}bar-mid{% else %}bar-low{% endif %}"
+                 style="width: {{ stats.pct }}%;"></div>
+        </div>
+        <span>{{ stats.pct }}% ({{ stats.matched }}/{{ stats.total }})</span>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Cell-by-cell diff -->
+<h3>Cell-by-Cell Diff</h3>
+<div class="filter-bar">
+    <select id="diff-filter" onchange="filterDiff(this.value)">
+        <option value="all">All Cells</option>
+        <option value="mismatches">Mismatches Only</option>
+        <option value="matches">Matches Only</option>
+    </select>
+    <span style="font-size:0.85rem; opacity:0.7;">
+        Green = match, Red = mismatch (shows expected below actual)
+    </span>
+</div>
+
+<div style="overflow-x:auto;">
+<table class="diff-table" id="diff-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            {% for col in columns %}
+            <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in range(max_rows) %}
+        <tr data-row="{{ i }}">
+            <td style="opacity:0.5;">{{ i + 1 }}</td>
+            {% for col in columns %}
+            {% set cell = cell_map.get(i, {}).get(col, {}) %}
+            {% if cell %}
+                {% if cell.match %}
+                <td class="cell-match" data-match="match">{{ cell.actual }}</td>
+                {% else %}
+                <td class="cell-mismatch" data-match="mismatch">
+                    <span class="actual">{{ cell.actual or "(empty)" }}</span>
+                    <span class="expected">expected: {{ cell.expected }}</span>
+                </td>
+                {% endif %}
+            {% else %}
+            <td style="opacity:0.3;">—</td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function filterDiff(mode) {
+    var rows = document.querySelectorAll('#diff-table tbody tr');
+    rows.forEach(function(row) {
+        var cells = row.querySelectorAll('td[data-match]');
+        if (mode === 'all') {
+            row.style.display = '';
+        } else if (mode === 'mismatches') {
+            var hasMismatch = Array.from(cells).some(function(c) { return c.dataset.match === 'mismatch'; });
+            row.style.display = hasMismatch ? '' : 'none';
+        } else if (mode === 'matches') {
+            var allMatch = Array.from(cells).every(function(c) { return c.dataset.match === 'match'; });
+            row.style.display = allMatch ? '' : 'none';
+        }
+    });
+}
+</script>
+{% endblock %}
