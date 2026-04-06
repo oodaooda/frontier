@@ -6,16 +6,17 @@
 <style>
     /* Override main content max-width for full-width table */
     main.content { max-width: none; padding: 1rem 1.5rem; }
-    .table-side { overflow-x: auto; }
+    .table-side { }
     .gt-table {
         font-size: 0.8rem;
-        border-collapse: collapse;
+        border-collapse: separate;
+        border-spacing: 0;
         width: 100%;
         table-layout: auto;
     }
     .gt-table th {
         position: sticky;
-        top: 0;
+        top: 42px; /* below nav bar */
         z-index: 5;
         background: var(--bg-secondary);
         font-size: 0.75rem;
