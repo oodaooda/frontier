@@ -145,6 +145,30 @@ async def verify_row(request: Request, doc_id: int, table_gt_id: int, row_id: in
     )
 
 
+@router.post("/{doc_id}/view/{table_gt_id}/bulk-verify")
+async def bulk_verify_rows(request: Request, doc_id: int, table_gt_id: int, row_ids: str = Form("")):
+    conn = get_db()
+    for rid in row_ids.split(","):
+        rid = rid.strip()
+        if rid.isdigit():
+            conn.execute("UPDATE table_gt_rows SET verified = 1 WHERE id = ?", (int(rid),))
+    conn.commit()
+    conn.close()
+    return RedirectResponse(url=f"/table-gt/{doc_id}/view/{table_gt_id}", status_code=303)
+
+
+@router.post("/{doc_id}/view/{table_gt_id}/bulk-unverify")
+async def bulk_unverify_rows(request: Request, doc_id: int, table_gt_id: int, row_ids: str = Form("")):
+    conn = get_db()
+    for rid in row_ids.split(","):
+        rid = rid.strip()
+        if rid.isdigit():
+            conn.execute("UPDATE table_gt_rows SET verified = 0 WHERE id = ?", (int(rid),))
+    conn.commit()
+    conn.close()
+    return RedirectResponse(url=f"/table-gt/{doc_id}/view/{table_gt_id}", status_code=303)
+
+
 @router.post("/{doc_id}/delete/{table_gt_id}")
 async def delete_table(request: Request, doc_id: int, table_gt_id: int):
     conn = get_db()

@@ -117,7 +117,10 @@
                     {% for col in columns %}
                     <th>{{ col }}</th>
                     {% endfor %}
-                    <th>Actions</th>
+                    <th style="text-align:center;">
+                        <input type="checkbox" id="select-all" onclick="toggleAll(this)" style="width:auto; cursor:pointer;"
+                               title="Select all">
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -148,18 +151,30 @@
                             </form>
                         </td>
                         {% endfor %}
-                        <td class="row-actions">
-                            <form action="/table-gt/{{ doc.id }}/view/{{ tgt.id }}/row/{{ row.id }}/verify"
-                                  method="post" style="display:inline;">
-                                <button type="submit" class="{% if row.verified %}outline secondary{% else %}outline{% endif %}">
-                                    {{ "Unverify" if row.verified else "Verify" }}
-                                </button>
-                            </form>
+                        <td style="text-align:center;">
+                            <input type="checkbox" name="row_ids" value="{{ row.id }}" class="row-check"
+                                   style="width:auto; cursor:pointer;" {% if row.verified %}checked{% endif %}>
                         </td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
+
+        <div style="position:sticky; bottom:0; background:var(--bg); border-top:1px solid var(--border); padding:0.75rem 0; display:flex; gap:0.75rem; align-items:center; z-index:5;">
+            <span id="selected-count" style="font-size:0.85rem; opacity:0.7;">0 selected</span>
+            <form action="/table-gt/{{ doc.id }}/view/{{ tgt.id }}/bulk-verify" method="post" id="bulk-verify-form">
+                <input type="hidden" name="row_ids" id="bulk-verify-ids">
+                <button type="submit" class="outline" style="font-size:0.85rem;" onclick="return prepareBulk('verify')">
+                    Verify Selected
+                </button>
+            </form>
+            <form action="/table-gt/{{ doc.id }}/view/{{ tgt.id }}/bulk-unverify" method="post" id="bulk-unverify-form">
+                <input type="hidden" name="row_ids" id="bulk-unverify-ids">
+                <button type="submit" class="outline secondary" style="font-size:0.85rem;" onclick="return prepareBulk('unverify')">
+                    Unverify Selected
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
@@ -173,6 +188,41 @@
         document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
     }
 })();
+
+// Checkbox management
+function toggleAll(master) {
+    document.querySelectorAll('.row-check').forEach(function(cb) {
+        cb.checked = master.checked;
+    });
+    updateCount();
+}
+
+function updateCount() {
+    var checked = document.querySelectorAll('.row-check:checked').length;
+    document.getElementById('selected-count').textContent = checked + ' selected';
+}
+
+function prepareBulk(action) {
+    var ids = [];
+    document.querySelectorAll('.row-check:checked').forEach(function(cb) {
+        ids.push(cb.value);
+    });
+    if (ids.length === 0) {
+        alert('No rows selected.');
+        return false;
+    }
+    if (action === 'verify') {
+        document.getElementById('bulk-verify-ids').value = ids.join(',');
+    } else {
+        document.getElementById('bulk-unverify-ids').value = ids.join(',');
+    }
+    return true;
+}
+
+// Update count when individual checkboxes change
+document.addEventListener('change', function(e) {
+    if (e.target.classList.contains('row-check')) updateCount();
+});
 
 function startEdit(rowId, col, el) {
     // Hide the value, show the form
