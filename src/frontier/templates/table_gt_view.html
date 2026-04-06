@@ -6,6 +6,8 @@
 <style>
     /* Override main content max-width for full-width table */
     main.content { max-width: none; padding: 1rem 1.5rem; }
+    /* Measure nav height dynamically */
+    :root { --nav-height: 48px; }
     .table-side { }
     .gt-table {
         font-size: 0.8rem;
@@ -16,7 +18,7 @@
     }
     .gt-table th {
         position: sticky;
-        top: 42px; /* below nav bar */
+        top: var(--nav-height); /* below sticky nav bar */
         z-index: 5;
         background: var(--bg-secondary);
         font-size: 0.75rem;
@@ -164,6 +166,14 @@
 
 {% block scripts %}
 <script>
+// Set nav height CSS variable from actual nav element
+(function() {
+    var nav = document.querySelector('nav.top-nav');
+    if (nav) {
+        document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+    }
+})();
+
 function startEdit(rowId, col, el) {
     // Hide the value, show the form
     el.style.display = 'none';
