@@ -4,11 +4,14 @@
 
 {% block head %}
 <style>
+    /* Override main content max-width for full-width table */
+    main.content { max-width: none; padding: 1rem 1.5rem; }
     .table-side { overflow-x: auto; }
     .gt-table {
         font-size: 0.8rem;
         border-collapse: collapse;
-        width: auto;
+        width: 100%;
+        table-layout: auto;
     }
     .gt-table th {
         position: sticky;
@@ -23,7 +26,7 @@
     .gt-table td {
         padding: 0.3rem 0.5rem;
         border-bottom: 1px solid var(--border);
-        white-space: nowrap;
+        word-break: break-word;
     }
     .gt-table tr:hover { background: rgba(74,158,255,0.05); }
     .gt-table tr.verified { background: rgba(34,197,94,0.04); }
