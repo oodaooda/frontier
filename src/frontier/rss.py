@@ -88,8 +88,69 @@ def poll_feed(feed_url: str, provider: str, feed_id: int) -> int:
     return count
 
 
+def scrape_anthropic_news() -> int:
+    """Scrape Anthropic's /news page for model announcements. Returns count of new entries."""
+    import httpx
+
+    try:
+        r = httpx.get("https://www.anthropic.com/news", follow_redirects=True, timeout=15)
+        r.raise_for_status()
+    except Exception:
+        return 0
+
+    # Extract article links: <a href="/news/slug">...Category...Date...Title...Description...</a>
+    pattern = r'<a[^>]*href="(/news/[^"]+)"[^>]*>(.*?)</a>'
+    matches = re.findall(pattern, r.text, re.DOTALL)
+
+    conn = get_db()
+    count = 0
+
+    for href, inner in matches:
+        # Clean HTML tags from inner text
+        clean = re.sub(r'<[^>]+>', ' ', inner).strip()
+        clean = re.sub(r'\s+', ' ', clean)
+
+        if not clean or len(clean) < 10:
+            continue
+
+        # Extract title — usually the longest meaningful segment after date
+        # The format is roughly: "Category Date Title Description"
+        # Try to find "Introducing..." or the main title
+        title_match = re.search(r'(Introducing [^.]+|Claude [^.]+|Announcing [^.]+)', clean)
+        if title_match:
+            title = title_match.group(1).strip()[:120]
+        else:
+            # Use the full cleaned text, truncated
+            title = clean[:120]
+
+        url = f"https://www.anthropic.com{href}"
+
+        # Check duplicate
+        existing = conn.execute(
+            "SELECT id FROM news WHERE source_url = ? OR (headline = ? AND provider = 'anthropic')",
+            (url, title),
+        ).fetchone()
+        if existing:
+            continue
+
+        # Apply keyword filter
+        if not matches_keywords(clean):
+            continue
+
+        conn.execute(
+            """INSERT INTO news (headline, provider, entry_type, body, source_url, status, from_rss)
+               VALUES (?, 'anthropic', 'release', ?, ?, 'new', 1)""",
+            (title, clean[:500], url),
+        )
+        count += 1
+
+    conn.commit()
+    conn.close()
+    return count
+
+
 def poll_all_feeds() -> dict[str, int]:
-    """Poll all enabled RSS feeds. Returns {feed_name: count_new}."""
+    """Poll all RSS feeds and scrape Anthropic. Returns {source: count_new}."""
     conn = get_db()
     feeds = conn.execute(
         "SELECT * FROM rss_feeds WHERE enabled = 1"
@@ -103,5 +164,12 @@ def poll_all_feeds() -> dict[str, int]:
             results[feed["name"]] = count
         except Exception as e:
             results[feed["name"]] = f"error: {e}"
+
+    # Scrape Anthropic (no RSS)
+    try:
+        count = scrape_anthropic_news()
+        results["Anthropic Blog (scraped)"] = count
+    except Exception as e:
+        results["Anthropic Blog (scraped)"] = f"error: {e}"
 
     return results
