@@ -156,3 +156,58 @@ class TestImportExport:
     def test_import_empty_raises(self, conn, doc_id):
         with pytest.raises(ValueError):
             import_json(conn, doc_id, "[]")
+
+    def test_import_hierarchical_schedule(self, conn, doc_id):
+        """Test importing a construction schedule with nested headers/subheaders."""
+        data = json.dumps({
+            "project": {"title": "Demo Project Schedule"},
+            "columns": ["Activity ID", "Activity Name", "Original Duration",
+                        "Early Start", "Early Finish", "Total Float"],
+            "structure": [
+                {
+                    "header": "MILESTONES",
+                    "activities": [
+                        {"id": "A1000", "name": "Notice to Proceed",
+                         "original_duration": 0, "early_start": "9/23/24",
+                         "early_finish": "9/23/24", "total_float": 0}
+                    ]
+                },
+                {
+                    "header": "PRE-CONSTRUCTION",
+                    "subheaders": [
+                        {
+                            "subheader": "PERMITS",
+                            "activities": [
+                                {"id": "A3020", "name": "Submit Safety Plan",
+                                 "original_duration": 10, "early_start": "9/23/24",
+                                 "early_finish": "10/4/24", "total_float": 0}
+                            ]
+                        },
+                        {
+                            "subheader": "SURVEYS",
+                            "activities": [
+                                {"id": "A3350", "name": "Perform Soil Sampling",
+                                 "original_duration": 3, "early_start": "9/25/24",
+                                 "early_finish": "9/27/24", "total_float": 20}
+                            ]
+                        }
+                    ]
+                }
+            ]
+        })
+        tgt_id = import_json(conn, doc_id, data)
+        tgt = get_table_gt(conn, tgt_id)
+        assert tgt.table_name == "Demo Project Schedule"
+        assert "header" in tgt.columns
+        assert "path" in tgt.columns
+        assert "Activity ID" in tgt.columns
+
+        rows = get_rows(conn, tgt_id)
+        assert len(rows) == 3  # 1 milestone + 1 permit + 1 survey
+
+        # Check hierarchy is preserved
+        assert rows[0].data["header"] == "MILESTONES"
+        assert rows[0].data["Activity ID"] == "A1000"
+        assert rows[1].data["header"] == "PERMITS"
+        assert rows[1].data["path"] == "PRE-CONSTRUCTION > PERMITS"
+        assert rows[2].data["Activity ID"] == "A3350"

@@ -161,6 +161,50 @@ def get_table_gt_stats(conn: sqlite3.Connection, table_gt_id: int) -> dict:
 
 # ── JSON Import/Export ────────────────────────────────────
 
+def _flatten_structure(structure: list, columns: list[str], path: str = "") -> list[dict]:
+    """Recursively flatten a hierarchical structure into flat rows.
+
+    Handles nested headers/subheaders with activities, as found in
+    construction schedules (Gantt charts, CPM bar charts).
+    Each activity gets a 'header' and 'subheader' field prepended.
+    """
+    rows = []
+    for section in structure:
+        header = section.get("header", section.get("subheader", ""))
+        current_path = f"{path} > {header}" if path else header
+
+        # Collect activities at this level
+        for activity in section.get("activities", []):
+            row = {"header": header, "path": current_path}
+            # Map activity fields to columns
+            field_map = {
+                "id": "Activity ID",
+                "name": "Activity Name",
+                "original_duration": "Original Duration",
+                "remaining_duration": "Remaining Duration",
+                "actual_duration": "Actual Duration",
+                "early_start": "Early Start",
+                "early_finish": "Early Finish",
+                "late_start": "Late Start",
+                "late_finish": "Late Finish",
+                "total_float": "Total Float",
+            }
+            for key, col_name in field_map.items():
+                if col_name in columns:
+                    row[col_name] = str(activity.get(key, ""))
+            # Also try direct column name match
+            for col in columns:
+                if col not in row:
+                    row[col] = str(activity.get(col, ""))
+            rows.append(row)
+
+        # Recurse into subheaders
+        if "subheaders" in section:
+            rows.extend(_flatten_structure(section["subheaders"], columns, current_path))
+
+    return rows
+
+
 def import_json(
     conn: sqlite3.Connection,
     document_id: int,
@@ -168,25 +212,53 @@ def import_json(
     table_name: str = "",
     source: str = "",
 ) -> int:
-    """Import a JSON array of objects as table ground truth. Returns table_gt_id."""
+    """Import a JSON array or structured object as table ground truth. Returns table_gt_id.
+
+    Supports:
+    - Flat array: [{"col": "val"}, ...]
+    - Structured with entries: {"_meta": {...}, "columns": [...], "entries": [...]}
+    - Hierarchical schedule: {"columns": [...], "structure": [{header, activities, subheaders}]}
+    """
     data = json.loads(json_content)
 
-    # Handle both flat array and structured format with _meta
     entries = []
     columns = []
 
     if isinstance(data, dict):
-        # Structured format: {"_meta": {...}, "columns": [...], "entries": [...]}
-        entries = data.get("entries", [])
-        columns = data.get("columns", [])
-        if not table_name and "_meta" in data:
-            table_name = data["_meta"].get("sheet_title", "")
-        if not source and "_meta" in data:
-            source = data["_meta"].get("source", "")
+        # Check for hierarchical structure (construction schedules)
+        if "structure" in data:
+            columns = data.get("columns", [])
+            # Add header/path columns for hierarchy
+            if "header" not in columns:
+                columns = ["header", "path"] + columns
+            elif "path" not in columns:
+                columns = columns[:1] + ["path"] + columns[1:]
+
+            if not table_name and "project" in data:
+                table_name = data["project"].get("title", data["project"].get("document_title", ""))
+            if not source:
+                source = data.get("source_file", "")
+
+            entries = _flatten_structure(data["structure"], columns)
+
+        # Standard structured format
+        elif "entries" in data:
+            entries = data["entries"]
+            columns = data.get("columns", [])
+            if not table_name and "_meta" in data:
+                table_name = data["_meta"].get("sheet_title", "")
+            if not source and "_meta" in data:
+                source = data["_meta"].get("source", "")
+
+        else:
+            raise ValueError(
+                "JSON object must have 'entries', 'structure', or be a flat array"
+            )
+
     elif isinstance(data, list):
         entries = data
     else:
-        raise ValueError("JSON must be an array or object with 'entries' key")
+        raise ValueError("JSON must be an array or object")
 
     if not entries:
         raise ValueError("No entries found in JSON")
@@ -198,8 +270,7 @@ def import_json(
     table_gt_id = create_table_gt(conn, document_id, table_name, columns, source)
 
     for i, entry in enumerate(entries):
-        # Only keep columns that are in the schema
-        row_data = {k: entry.get(k, "") for k in columns}
+        row_data = {k: str(entry.get(k, "")) for k in columns}
         add_row(conn, table_gt_id, i, row_data)
 
     return table_gt_id
