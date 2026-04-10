@@ -203,11 +203,15 @@ class TestImportExport:
         assert "Activity ID" in tgt.columns
 
         rows = get_rows(conn, tgt_id)
-        assert len(rows) == 3  # 1 milestone + 1 permit + 1 survey
+        assert len(rows) == 4  # 1 milestone + 1 marker for PRE-CONSTRUCTION + 1 permit + 1 survey
 
         # Check hierarchy is preserved
         assert rows[0].data["header"] == "MILESTONES"
         assert rows[0].data["Activity ID"] == "A1000"
-        assert rows[1].data["header"] == "PERMITS"
-        assert rows[1].data["path"] == "PRE-CONSTRUCTION > PERMITS"
-        assert rows[2].data["Activity ID"] == "A3350"
+        # Row 1 is the PRE-CONSTRUCTION section marker
+        assert rows[1].data["header"] == "PRE-CONSTRUCTION"
+        assert rows[1].data["_section_marker"] == "true"
+        # Actual activities
+        assert rows[2].data["header"] == "PERMITS"
+        assert rows[2].data["path"] == "PRE-CONSTRUCTION > PERMITS"
+        assert rows[3].data["Activity ID"] == "A3350"

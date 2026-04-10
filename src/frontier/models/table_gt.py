@@ -166,17 +166,28 @@ def _flatten_structure(structure: list, columns: list[str], path: str = "") -> l
 
     Handles nested headers/subheaders with activities, as found in
     construction schedules (Gantt charts, CPM bar charts).
-    Each activity gets a 'header' and 'subheader' field prepended.
+    Each activity gets 'header' and 'path' fields.
+    Parent headers with no activities get a section marker row.
     """
     rows = []
     for section in structure:
         header = section.get("header", section.get("subheader", ""))
         current_path = f"{path} > {header}" if path else header
 
+        has_activities = bool(section.get("activities"))
+        has_subheaders = bool(section.get("subheaders"))
+
+        # Insert a section marker for parent headers that only contain subheaders
+        if has_subheaders and not has_activities:
+            marker = {"header": header, "path": current_path, "_section_marker": "true"}
+            for col in columns:
+                if col not in marker:
+                    marker[col] = ""
+            rows.append(marker)
+
         # Collect activities at this level
         for activity in section.get("activities", []):
             row = {"header": header, "path": current_path}
-            # Map activity fields to columns
             field_map = {
                 "id": "Activity ID",
                 "name": "Activity Name",
@@ -192,14 +203,13 @@ def _flatten_structure(structure: list, columns: list[str], path: str = "") -> l
             for key, col_name in field_map.items():
                 if col_name in columns:
                     row[col_name] = str(activity.get(key, ""))
-            # Also try direct column name match
             for col in columns:
                 if col not in row:
                     row[col] = str(activity.get(col, ""))
             rows.append(row)
 
         # Recurse into subheaders
-        if "subheaders" in section:
+        if has_subheaders:
             rows.extend(_flatten_structure(section["subheaders"], columns, current_path))
 
     return rows
@@ -271,6 +281,9 @@ def import_json(
 
     for i, entry in enumerate(entries):
         row_data = {k: str(entry.get(k, "")) for k in columns}
+        # Preserve section markers for hierarchical display
+        if entry.get("_section_marker"):
+            row_data["_section_marker"] = "true"
         add_row(conn, table_gt_id, i, row_data)
 
     return table_gt_id

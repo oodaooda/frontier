@@ -137,13 +137,14 @@
                     {% set path_val = row_data.get("path", row_data.get("level", "")) %}
                     {% set header_val = row_data.get("header", "") %}
 
+                    {% set is_marker = row_data.get("_section_marker", "") == "true" %}
+
                     {% if path_val and path_val != current_path.value %}
                         {% set current_path.value = path_val %}
-                        {# Split path into levels and show each level that changed #}
                         {% set parts = path_val.split(" > ") %}
                         {% set depth = parts | length %}
-                        <tr class="level-header" style="background: {% if depth == 1 %}var(--accent); color:white;{% elif depth == 2 %}rgba(74,158,255,0.15);{% elif depth == 3 %}rgba(74,158,255,0.08);{% else %}rgba(74,158,255,0.04);{% endif %}">
-                            <td colspan="99" style="padding-left:{{ (depth - 1) * 1.5 }}rem; font-weight:{% if depth <= 2 %}700{% else %}600{% endif %}; font-size:{% if depth == 1 %}0.9rem{% else %}0.8rem{% endif %};">
+                        <tr class="level-header" style="background: {% if depth == 1 %}var(--accent); color:white;{% elif depth == 2 %}rgba(74,158,255,0.15);{% elif depth == 3 %}rgba(74,158,255,0.08);{% elif depth == 4 %}rgba(74,158,255,0.04);{% else %}rgba(74,158,255,0.02);{% endif %}">
+                            <td colspan="99" style="padding-left:{{ (depth - 1) * 1.2 }}rem; font-weight:{% if depth <= 2 %}700{% else %}600{% endif %}; font-size:{% if depth == 1 %}0.9rem{% elif depth == 2 %}0.85rem{% else %}0.8rem{% endif %};">
                                 {% if depth > 1 %}
                                     {{ parts[-1] }}
                                 {% else %}
@@ -156,6 +157,11 @@
                         <tr class="level-header">
                             <td colspan="99">{{ header_val }}</td>
                         </tr>
+                    {% endif %}
+
+                    {# Skip section marker rows — they only exist to trigger the header above #}
+                    {% if is_marker %}
+                        {% continue %}
                     {% endif %}
 
                     <tr id="row-{{ row.id }}" class="{{ 'verified' if row.verified else '' }}">
