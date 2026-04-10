@@ -33,6 +33,8 @@
     }
     .gt-table tr:hover { background: rgba(74,158,255,0.05); }
     .gt-table tr.verified { background: rgba(34,197,94,0.04); }
+    .gt-table tr.level-header:hover { background: inherit; }
+    .gt-table tr.level-header td { border-bottom: 2px solid var(--border); }
     .gt-table tr.verified td:first-child { border-left: 3px solid var(--pass); }
     .gt-table tr:not(.verified) td:first-child { border-left: 3px solid var(--warn); }
 
@@ -115,7 +117,9 @@
                 <tr>
                     <th>#</th>
                     {% for col in columns %}
+                    {% if col not in ["header", "path"] %}
                     <th>{{ col }}</th>
+                    {% endif %}
                     {% endfor %}
                     <th style="text-align:center;">
                         <input type="checkbox" id="select-all" onclick="toggleAll(this)" style="width:auto; cursor:pointer;"
@@ -124,20 +128,40 @@
                 </tr>
             </thead>
             <tbody>
-                {% set current_level = namespace(value="") %}
+                {% set current_path = namespace(value="") %}
+                {% set current_header = namespace(value="") %}
                 {% for row in rows %}
-                    {# Show level separator if level column changes #}
                     {% set row_data = row.data %}
-                    {% if "level" in row_data and row_data["level"] != current_level.value and row_data["level"] %}
-                        {% set current_level.value = row_data["level"] %}
+
+                    {# Show group headers when path or header changes #}
+                    {% set path_val = row_data.get("path", row_data.get("level", "")) %}
+                    {% set header_val = row_data.get("header", "") %}
+
+                    {% if path_val and path_val != current_path.value %}
+                        {% set current_path.value = path_val %}
+                        {# Split path into levels and show each level that changed #}
+                        {% set parts = path_val.split(" > ") %}
+                        {% set depth = parts | length %}
+                        <tr class="level-header" style="background: {% if depth == 1 %}var(--accent); color:white;{% elif depth == 2 %}rgba(74,158,255,0.15);{% elif depth == 3 %}rgba(74,158,255,0.08);{% else %}rgba(74,158,255,0.04);{% endif %}">
+                            <td colspan="99" style="padding-left:{{ (depth - 1) * 1.5 }}rem; font-weight:{% if depth <= 2 %}700{% else %}600{% endif %}; font-size:{% if depth == 1 %}0.9rem{% else %}0.8rem{% endif %};">
+                                {% if depth > 1 %}
+                                    {{ parts[-1] }}
+                                {% else %}
+                                    {{ path_val }}
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% elif header_val and header_val != current_header.value and not path_val %}
+                        {% set current_header.value = header_val %}
                         <tr class="level-header">
-                            <td colspan="{{ columns|length + 2 }}">{{ current_level.value }}</td>
+                            <td colspan="99">{{ header_val }}</td>
                         </tr>
                     {% endif %}
 
                     <tr id="row-{{ row.id }}" class="{{ 'verified' if row.verified else '' }}">
                         <td style="font-size:0.7rem; opacity:0.5;">{{ row.row_index + 1 }}</td>
                         {% for col in columns %}
+                        {% if col not in ["header", "path"] %}
                         <td>
                             <span class="cell-value" onclick="startEdit({{ row.id }}, '{{ col }}', this)"
                                   title="Click to edit">{{ row_data.get(col, "") }}</span>
@@ -150,6 +174,7 @@
                                 <button type="button" onclick="cancelEdit('{{ row.id }}', '{{ col }}')">X</button>
                             </form>
                         </td>
+                        {% endif %}
                         {% endfor %}
                         <td style="text-align:center;">
                             <input type="checkbox" name="row_ids" value="{{ row.id }}" class="row-check"
