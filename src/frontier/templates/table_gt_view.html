@@ -123,6 +123,7 @@
         <table class="gt-table">
             <thead>
                 <tr>
+                    <th style="padding:0; width:36px;"></th>
                     <th>#</th>
                     {% for col in columns %}
                     {% if col not in ["header", "path"] %}
@@ -172,7 +173,12 @@
                     {% set row_depth = row_data.get("path", "").count(" > ") + 1 if row_data.get("path") else 1 %}
                     {% set depth_color = "#2563eb" if row_depth == 1 else "#16a34a" if row_depth == 2 else "#d97706" if row_depth == 3 else "#9333ea" if row_depth == 4 else "#dc2626" if row_depth == 5 else "#0891b2" %}
                     <tr id="row-{{ row.id }}" class="{{ 'verified' if row.verified else '' }}">
-                        <td style="font-size:0.7rem; opacity:0.5; border-left: 4px solid {{ depth_color }};">{{ row.row_index + 1 }}</td>
+                        <td style="padding:0; white-space:nowrap; width:{{ row_depth * 6 }}px; border-bottom:none;">
+                            {%- for d in range(1, row_depth + 1) -%}
+                            <span style="display:inline-block; width:5px; height:100%; min-height:1.4em; background:{% if d == 1 %}#2563eb{% elif d == 2 %}#16a34a{% elif d == 3 %}#d97706{% elif d == 4 %}#9333ea{% elif d == 5 %}#dc2626{% else %}#0891b2{% endif %}; margin-right:1px; vertical-align:top;"></span>
+                            {%- endfor -%}
+                        </td>
+                        <td style="font-size:0.7rem; opacity:0.5;">{{ row.row_index + 1 }}</td>
                         {% for col in columns %}
                         {% if col not in ["header", "path"] %}
                         <td>
