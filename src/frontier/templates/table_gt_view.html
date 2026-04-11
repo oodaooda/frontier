@@ -8,6 +8,14 @@
     main.content { max-width: none; padding: 1rem 1.5rem; }
     /* Measure nav height dynamically */
     :root { --nav-height: 48px; }
+
+    /* WBS hierarchy colors for left border grouping */
+    .wbs-depth-1 { border-left: 4px solid #2563eb !important; }  /* blue */
+    .wbs-depth-2 { border-left: 4px solid #16a34a !important; }  /* green */
+    .wbs-depth-3 { border-left: 4px solid #d97706 !important; }  /* amber */
+    .wbs-depth-4 { border-left: 4px solid #9333ea !important; }  /* purple */
+    .wbs-depth-5 { border-left: 4px solid #dc2626 !important; }  /* red */
+    .wbs-depth-6 { border-left: 4px solid #0891b2 !important; }  /* cyan */
     .table-side { }
     .gt-table {
         font-size: 0.8rem;
@@ -160,12 +168,11 @@
                     {% endif %}
 
                     {# Skip section marker rows — they only exist to trigger the header above #}
-                    {% if is_marker %}
-                        {% continue %}
-                    {% endif %}
-
+                    {% if not is_marker %}
+                    {% set row_depth = row_data.get("path", "").count(" > ") + 1 if row_data.get("path") else 1 %}
+                    {% set depth_color = "#2563eb" if row_depth == 1 else "#16a34a" if row_depth == 2 else "#d97706" if row_depth == 3 else "#9333ea" if row_depth == 4 else "#dc2626" if row_depth == 5 else "#0891b2" %}
                     <tr id="row-{{ row.id }}" class="{{ 'verified' if row.verified else '' }}">
-                        <td style="font-size:0.7rem; opacity:0.5;">{{ row.row_index + 1 }}</td>
+                        <td style="font-size:0.7rem; opacity:0.5; border-left: 4px solid {{ depth_color }};">{{ row.row_index + 1 }}</td>
                         {% for col in columns %}
                         {% if col not in ["header", "path"] %}
                         <td>
@@ -187,6 +194,7 @@
                                    style="width:auto; cursor:pointer;" {% if row.verified %}checked{% endif %}>
                         </td>
                     </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>
         </table>

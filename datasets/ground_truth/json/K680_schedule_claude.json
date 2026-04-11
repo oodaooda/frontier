@@ -1,0 +1,1704 @@
+{
+  "project": {
+    "title": "M.S.680(K) - LLW NO. 127569-Early Demolition Package - Baseline",
+    "contractor": "NK Construction Consultants, Inc.",
+    "start_date": "9/23/24",
+    "finish_date": "9/22/25",
+    "data_date": "9/23/24",
+    "file_name": "K680-B000"
+  },
+  "columns": [
+    "Activity ID",
+    "Activity Name",
+    "Original Duration",
+    "Remaining Duration",
+    "Actual Duration",
+    "Early Start",
+    "Early Finish",
+    "Late Start",
+    "Late Finish",
+    "Total Float"
+  ],
+  "structure": [
+    {
+      "header": "MAJOR MILESTONES",
+      "activities": [
+        {
+          "id": "A1000",
+          "name": "Notice to Proceed (9/23/2024)",
+          "original_duration": 0,
+          "remaining_duration": 0,
+          "actual_duration": 0,
+          "early_start": "9/23/24",
+          "early_finish": "",
+          "late_start": "9/23/24",
+          "late_finish": "",
+          "total_float": 0
+        },
+        {
+          "id": "A1030",
+          "name": "Complete 1-Storey Building Demolition",
+          "original_duration": 0,
+          "remaining_duration": 0,
+          "actual_duration": 0,
+          "early_start": "",
+          "early_finish": "3/19/25",
+          "late_start": "",
+          "late_finish": "3/19/25",
+          "total_float": 0
+        },
+        {
+          "id": "A1050",
+          "name": "Complete Adjacent Property Building Facade",
+          "original_duration": 0,
+          "remaining_duration": 0,
+          "actual_duration": 0,
+          "early_start": "",
+          "early_finish": "4/8/25",
+          "late_start": "",
+          "late_finish": "4/8/25",
+          "total_float": 0
+        },
+        {
+          "id": "A1060",
+          "name": "Complete Site Removals",
+          "original_duration": 0,
+          "remaining_duration": 0,
+          "actual_duration": 0,
+          "early_start": "",
+          "early_finish": "5/14/25",
+          "late_start": "",
+          "late_finish": "5/14/25",
+          "total_float": 0
+        },
+        {
+          "id": "A1040",
+          "name": "Complete Site Improvements",
+          "original_duration": 0,
+          "remaining_duration": 0,
+          "actual_duration": 0,
+          "early_start": "",
+          "early_finish": "6/6/25",
+          "late_start": "",
+          "late_finish": "6/6/25",
+          "total_float": 0
+        },
+        {
+          "id": "A1010",
+          "name": "Substantial Completion (6/20/2025) - 270 CCDs from NTP as per Phasing Exhib",
+          "original_duration": 0,
+          "remaining_duration": 0,
+          "actual_duration": 0,
+          "early_start": "",
+          "early_finish": "6/20/25*",
+          "late_start": "",
+          "late_finish": "6/20/25",
+          "total_float": 0
+        },
+        {
+          "id": "A1020",
+          "name": "Final Completion (9/22/2025) - 365 CCDs as per NTP Letter",
+          "original_duration": 0,
+          "remaining_duration": 0,
+          "actual_duration": 0,
+          "early_start": "",
+          "early_finish": "9/22/25*",
+          "late_start": "",
+          "late_finish": "9/22/25",
+          "total_float": 0
+        }
+      ],
+      "subheaders": []
+    },
+    {
+      "header": "PRE-CONSTRUCTION",
+      "activities": [],
+      "subheaders": [
+        {
+          "subheader": "PERMITS & PROCEDURES",
+          "activities": [
+            {
+              "id": "A3270",
+              "name": "NYCSCA to Provide Copies of Zone of Public Protection Plan",
+              "original_duration": 21,
+              "remaining_duration": 21,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/22/24",
+              "late_start": "9/23/24",
+              "late_finish": "10/22/24",
+              "total_float": 0
+            },
+            {
+              "id": "A3990",
+              "name": "GC to Notify Licensor/Neighbor in Writing Before Commencement of Phase1 (De",
+              "original_duration": 21,
+              "remaining_duration": 21,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/22/24",
+              "late_start": "9/23/24",
+              "late_finish": "10/22/24",
+              "total_float": 0
+            },
+            {
+              "id": "A4000",
+              "name": "GC to Notify Licensor/Neighbor in Writing Prior to Any Property Protection Installa",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/4/24",
+              "late_start": "10/8/24",
+              "late_finish": "10/22/24",
+              "total_float": 11
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "SOIL SAMPLING",
+          "activities": [
+            {
+              "id": "A3340",
+              "name": "GC to Notify the NYCSCA for Soil Sampling",
+              "original_duration": 2,
+              "remaining_duration": 2,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "9/24/24",
+              "late_start": "10/22/24",
+              "late_finish": "10/23/24",
+              "total_float": 20
+            },
+            {
+              "id": "A3350",
+              "name": "Perform Soil Sampling as Required",
+              "original_duration": 3,
+              "remaining_duration": 3,
+              "actual_duration": 0,
+              "early_start": "9/25/24",
+              "early_finish": "9/27/24",
+              "late_start": "10/24/24",
+              "late_finish": "10/28/24",
+              "total_float": 20
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "PRE-CONSTRUCTION SURVEY",
+          "activities": [
+            {
+              "id": "A3940",
+              "name": "GC to Notify Licensor/Neighbor of Pre-construction Survey",
+              "original_duration": 3,
+              "remaining_duration": 3,
+              "actual_duration": 0,
+              "early_start": "10/23/24",
+              "early_finish": "10/25/24",
+              "late_start": "10/23/24",
+              "late_finish": "10/25/24",
+              "total_float": 0
+            },
+            {
+              "id": "A3950",
+              "name": "Perform Pre-construction Survey",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "10/28/24",
+              "early_finish": "11/7/24",
+              "late_start": "10/28/24",
+              "late_finish": "11/7/24",
+              "total_float": 0
+            },
+            {
+              "id": "A3960",
+              "name": "Submit Pre-construction Survey Report",
+              "original_duration": 5,
+              "remaining_duration": 5,
+              "actual_duration": 0,
+              "early_start": "11/8/24",
+              "early_finish": "11/15/24",
+              "late_start": "11/8/24",
+              "late_finish": "11/15/24",
+              "total_float": 0
+            },
+            {
+              "id": "A4040",
+              "name": "Licensor/Neighbor to Notify Licensee/Construction Team of Any Changes to the",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "11/18/24",
+              "early_finish": "12/2/24",
+              "late_start": "11/18/24",
+              "late_finish": "12/2/24",
+              "total_float": 0
+            },
+            {
+              "id": "A4050",
+              "name": "GC to Make Changes Upon Receiving Notice from Licensor/Neighbor or Prior to",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "12/3/24",
+              "early_finish": "12/16/24",
+              "late_start": "12/3/24",
+              "late_finish": "12/16/24",
+              "total_float": 0
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "PROPERTY PROTECTION PLAN",
+          "activities": [
+            {
+              "id": "A3970",
+              "name": "NYCSCA to Provide Licensor/Neighbor with Code Compliant Set of Drawings & P",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/4/24",
+              "late_start": "9/30/24",
+              "late_finish": "10/11/24",
+              "total_float": 5
+            },
+            {
+              "id": "A3980",
+              "name": "Licensor/Neighbor to Review & Confer Comments to Licensee/Construction Tea",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "10/7/24",
+              "early_finish": "10/21/24",
+              "late_start": "10/15/24",
+              "late_finish": "10/28/24",
+              "total_float": 5
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "MONITORING PLAN",
+          "activities": [
+            {
+              "id": "A4010",
+              "name": "Monitoring Plan Meeting",
+              "original_duration": 5,
+              "remaining_duration": 5,
+              "actual_duration": 0,
+              "early_start": "11/18/24",
+              "early_finish": "11/22/24",
+              "late_start": "12/3/24",
+              "late_finish": "12/9/24",
+              "total_float": 10
+            },
+            {
+              "id": "A4020",
+              "name": "GC to Notify Licensor/Neighbor to Permit Access for Monitoring Equipment",
+              "original_duration": 5,
+              "remaining_duration": 5,
+              "actual_duration": 0,
+              "early_start": "11/25/24",
+              "early_finish": "12/2/24",
+              "late_start": "12/10/24",
+              "late_finish": "12/16/24",
+              "total_float": 10
+            },
+            {
+              "id": "A4030",
+              "name": "Install Vibration Monitors, Optical Survey Marks and/or Electronic Survey Equipm",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "12/3/24",
+              "early_finish": "12/16/24",
+              "late_start": "12/17/24",
+              "late_finish": "12/31/24",
+              "total_float": 10
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "SITE SAFETY PLAN",
+          "activities": [
+            {
+              "id": "A3020",
+              "name": "Prep/Submit Site Safety Plan",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/4/24",
+              "late_start": "9/23/24",
+              "late_finish": "10/4/24",
+              "total_float": 0
+            },
+            {
+              "id": "A3030",
+              "name": "Review/Approve Site Safety Plan",
+              "original_duration": 15,
+              "remaining_duration": 15,
+              "actual_duration": 0,
+              "early_start": "10/7/24",
+              "early_finish": "10/28/24",
+              "late_start": "10/7/24",
+              "late_finish": "10/28/24",
+              "total_float": 0
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "SCA/TMG MEETING",
+          "activities": [
+            {
+              "id": "A3120",
+              "name": "Schedule/Attend SCA/TMG Meeting for Permit Requirements",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/4/24",
+              "late_start": "10/15/24",
+              "late_finish": "10/28/24",
+              "total_float": 15
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "QUALITY CONTROL PLAN",
+          "activities": [
+            {
+              "id": "A3040",
+              "name": "Prep/Submit Quality Control Plan",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/4/24",
+              "late_start": "11/25/24",
+              "late_finish": "12/9/24",
+              "total_float": 44
+            },
+            {
+              "id": "A3050",
+              "name": "Review/Approve Quality Control Plan",
+              "original_duration": 15,
+              "remaining_duration": 15,
+              "actual_duration": 0,
+              "early_start": "10/7/24",
+              "early_finish": "10/28/24",
+              "late_start": "12/10/24",
+              "late_finish": "12/31/24",
+              "total_float": 44
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "CONSTRUCTION WASTE MANAGEMENT PLAN",
+          "activities": [
+            {
+              "id": "A3060",
+              "name": "Prep/Submit Construction Waste Management Plan",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/4/24",
+              "late_start": "11/25/24",
+              "late_finish": "12/9/24",
+              "total_float": 44
+            },
+            {
+              "id": "A3070",
+              "name": "Review/Approve Construction Waste Management Plan",
+              "original_duration": 15,
+              "remaining_duration": 15,
+              "actual_duration": 0,
+              "early_start": "10/7/24",
+              "early_finish": "10/28/24",
+              "late_start": "12/10/24",
+              "late_finish": "12/31/24",
+              "total_float": 44
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "SAFETY PROGRAM",
+          "activities": [
+            {
+              "id": "A3080",
+              "name": "Prep/Submit Safety Program",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/4/24",
+              "late_start": "11/25/24",
+              "late_finish": "12/9/24",
+              "total_float": 44
+            },
+            {
+              "id": "A3090",
+              "name": "Review/Approve Safety Program",
+              "original_duration": 15,
+              "remaining_duration": 15,
+              "actual_duration": 0,
+              "early_start": "10/7/24",
+              "early_finish": "10/28/24",
+              "late_start": "12/10/24",
+              "late_finish": "12/31/24",
+              "total_float": 44
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "INDOOR AIR QUALITY (IAQ) PLAN",
+          "activities": [
+            {
+              "id": "A3100",
+              "name": "Prep/Submit Indoor Air Quality Plan",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/4/24",
+              "late_start": "11/25/24",
+              "late_finish": "12/9/24",
+              "total_float": 44
+            },
+            {
+              "id": "A3110",
+              "name": "Review/Approve Indoor Air Quality Plan",
+              "original_duration": 15,
+              "remaining_duration": 15,
+              "actual_duration": 0,
+              "early_start": "10/7/24",
+              "early_finish": "10/28/24",
+              "late_start": "12/10/24",
+              "late_finish": "12/31/24",
+              "total_float": 44
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "TR-1 - STRUCTURAL STABILITY",
+          "activities": [
+            {
+              "id": "A3280",
+              "name": "Prep/Submit All Initial TR-1 Structural Stability",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/4/24",
+              "late_start": "11/25/24",
+              "late_finish": "12/9/24",
+              "total_float": 44
+            },
+            {
+              "id": "A3290",
+              "name": "Approve/Obtain TR-1 Structural Stability",
+              "original_duration": 15,
+              "remaining_duration": 15,
+              "actual_duration": 0,
+              "early_start": "10/7/24",
+              "early_finish": "10/28/24",
+              "late_start": "12/10/24",
+              "late_finish": "12/31/24",
+              "total_float": 44
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "TR-3 - CONCRETE DESIGN MIX TECHNICAL REPORT",
+          "activities": [
+            {
+              "id": "A3300",
+              "name": "Prep/Submit TR-3 Concrete Design Mix Technical Report",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/4/24",
+              "late_start": "11/25/24",
+              "late_finish": "12/9/24",
+              "total_float": 44
+            },
+            {
+              "id": "A3310",
+              "name": "Approve/Obtain TR-3 Concrete Design Mix Technical Report",
+              "original_duration": 15,
+              "remaining_duration": 15,
+              "actual_duration": 0,
+              "early_start": "10/7/24",
+              "early_finish": "10/28/24",
+              "late_start": "12/10/24",
+              "late_finish": "12/31/24",
+              "total_float": 44
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "TEMPORARY EGRESS PLAN",
+          "activities": [
+            {
+              "id": "A3360",
+              "name": "Prep/Submit Temp. Egress Plan for Closed Exits or Exit Paths",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "10/4/24",
+              "late_start": "11/25/24",
+              "late_finish": "12/9/24",
+              "total_float": 44
+            },
+            {
+              "id": "A3370",
+              "name": "Review/Approve Temp. Egress Plan for Closed Exits or Exit Paths",
+              "original_duration": 15,
+              "remaining_duration": 15,
+              "actual_duration": 0,
+              "early_start": "10/7/24",
+              "early_finish": "10/28/24",
+              "late_start": "12/10/24",
+              "late_finish": "12/31/24",
+              "total_float": 44
+            }
+          ],
+          "subheaders": []
+        },
+        {
+          "subheader": "PERMITS",
+          "activities": [],
+          "subheaders": [
+            {
+              "subheader": "ASBESTOS ABATEMENT PERMIT",
+              "activities": [
+                {
+                  "id": "A3210",
+                  "name": "Field Survey, Test & Report - ACM",
+                  "original_duration": 10,
+                  "remaining_duration": 10,
+                  "actual_duration": 0,
+                  "early_start": "9/23/24",
+                  "early_finish": "10/4/24",
+                  "late_start": "9/30/24",
+                  "late_finish": "10/11/24",
+                  "total_float": 5
+                },
+                {
+                  "id": "A3220",
+                  "name": "Obtain DEP Variance",
+                  "original_duration": 5,
+                  "remaining_duration": 5,
+                  "actual_duration": 0,
+                  "early_start": "10/7/24",
+                  "early_finish": "10/11/24",
+                  "late_start": "10/15/24",
+                  "late_finish": "10/21/24",
+                  "total_float": 5
+                },
+                {
+                  "id": "A3230",
+                  "name": "File/Obtain Asbestos Abatement Variance ACP-5",
+                  "original_duration": 5,
+                  "remaining_duration": 5,
+                  "actual_duration": 0,
+                  "early_start": "10/15/24",
+                  "early_finish": "10/21/24",
+                  "late_start": "10/22/24",
+                  "late_finish": "10/28/24",
+                  "total_float": 5
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "FENCE PERMIT",
+              "activities": [
+                {
+                  "id": "A3320",
+                  "name": "Prep/Submit Fence Application Permit",
+                  "original_duration": 10,
+                  "remaining_duration": 10,
+                  "actual_duration": 0,
+                  "early_start": "9/23/24",
+                  "early_finish": "10/4/24",
+                  "late_start": "4/10/25",
+                  "late_finish": "4/23/25",
+                  "total_float": 137
+                },
+                {
+                  "id": "A3330",
+                  "name": "Approve/Obtain Fence Permit",
+                  "original_duration": 15,
+                  "remaining_duration": 15,
+                  "actual_duration": 0,
+                  "early_start": "10/7/24",
+                  "early_finish": "10/28/24",
+                  "late_start": "4/24/25",
+                  "late_finish": "5/14/25",
+                  "total_float": 137
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "DOB WORK PERMIT TYPES",
+              "activities": [
+                {
+                  "id": "A3380",
+                  "name": "Obtain All DOB Work Permit Types",
+                  "original_duration": 20,
+                  "remaining_duration": 20,
+                  "actual_duration": 0,
+                  "early_start": "10/29/24",
+                  "early_finish": "11/25/24",
+                  "late_start": "10/29/24",
+                  "late_finish": "11/25/24",
+                  "total_float": 0
+                }
+              ],
+              "subheaders": []
+            }
+          ]
+        },
+        {
+          "subheader": "MOBILIZATION",
+          "activities": [
+            {
+              "id": "A3240",
+              "name": "Bonds & Insurances",
+              "original_duration": 40,
+              "remaining_duration": 40,
+              "actual_duration": 0,
+              "early_start": "9/23/24",
+              "early_finish": "11/18/24",
+              "late_start": "10/4/24",
+              "late_finish": "12/2/24",
+              "total_float": 9
+            },
+            {
+              "id": "A3250",
+              "name": "Mobilization",
+              "original_duration": 4,
+              "remaining_duration": 4,
+              "actual_duration": 0,
+              "early_start": "11/26/24",
+              "early_finish": "12/2/24",
+              "late_start": "11/26/24",
+              "late_finish": "12/2/24",
+              "total_float": 0
+            },
+            {
+              "id": "A3260",
+              "name": "Setup/Facilitate Temp. Power, & Furnishing Field Offices",
+              "original_duration": 10,
+              "remaining_duration": 10,
+              "actual_duration": 0,
+              "early_start": "12/3/24",
+              "early_finish": "12/16/24",
+              "late_start": "12/3/24",
+              "late_finish": "12/16/24",
+              "total_float": 0
+            }
+          ],
+          "subheaders": []
+        }
+      ]
+    },
+    {
+      "header": "SUBMITTALS, APPROVALS, PROCUREMENTS",
+      "activities": [],
+      "subheaders": [
+        {
+          "subheader": "DIVISION 2 - SITE WORK",
+          "activities": [],
+          "subheaders": [
+            {
+              "subheader": "COORDINATION DRAWINGS",
+              "activities": [
+                {
+                  "id": "A3390",
+                  "name": "Prep/Submit MEP Coordination Drawings",
+                  "original_duration": 21,
+                  "remaining_duration": 21,
+                  "actual_duration": 0,
+                  "early_start": "9/23/24",
+                  "early_finish": "10/22/24",
+                  "late_start": "11/7/24",
+                  "late_finish": "12/9/24",
+                  "total_float": 33
+                },
+                {
+                  "id": "A3400",
+                  "name": "Review/Approve MEP Coordination Drawings",
+                  "original_duration": 15,
+                  "remaining_duration": 15,
+                  "actual_duration": 0,
+                  "early_start": "10/23/24",
+                  "early_finish": "11/12/24",
+                  "late_start": "12/10/24",
+                  "late_finish": "12/31/24",
+                  "total_float": 33
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "02060 - BUILDING DEMOLITION",
+              "activities": [
+                {
+                  "id": "A3130",
+                  "name": "Prep/Submit Building Demolition Shop Drawings",
+                  "original_duration": 21,
+                  "remaining_duration": 21,
+                  "actual_duration": 0,
+                  "early_start": "9/23/24",
+                  "early_finish": "10/22/24",
+                  "late_start": "11/7/24",
+                  "late_finish": "12/9/24",
+                  "total_float": 33
+                },
+                {
+                  "id": "A3140",
+                  "name": "Prep/Submit Building Demolition Shop Drawings",
+                  "original_duration": 15,
+                  "remaining_duration": 15,
+                  "actual_duration": 0,
+                  "early_start": "10/23/24",
+                  "early_finish": "11/12/24",
+                  "late_start": "12/10/24",
+                  "late_finish": "12/31/24",
+                  "total_float": 33
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "02081 - ASBESTOS ABATEMENT",
+              "activities": [
+                {
+                  "id": "A3150",
+                  "name": "Prep/Submit Asbestos Abatement",
+                  "original_duration": 21,
+                  "remaining_duration": 21,
+                  "actual_duration": 0,
+                  "early_start": "9/23/24",
+                  "early_finish": "10/22/24",
+                  "late_start": "10/25/24",
+                  "late_finish": "11/22/24",
+                  "total_float": 23
+                },
+                {
+                  "id": "A3160",
+                  "name": "Review/Approve Asbestos Abatement",
+                  "original_duration": 15,
+                  "remaining_duration": 15,
+                  "actual_duration": 0,
+                  "early_start": "10/23/24",
+                  "early_finish": "11/12/24",
+                  "late_start": "11/25/24",
+                  "late_finish": "12/16/24",
+                  "total_float": 23
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "02511 - ASPHALTIC CONCRETE PAVING",
+              "activities": [
+                {
+                  "id": "A3170",
+                  "name": "Prep/Submit Asphaltic Concrete Paving Shop Drawings",
+                  "original_duration": 21,
+                  "remaining_duration": 21,
+                  "actual_duration": 0,
+                  "early_start": "9/23/24",
+                  "early_finish": "10/22/24",
+                  "late_start": "3/28/25",
+                  "late_finish": "4/25/25",
+                  "total_float": 128
+                },
+                {
+                  "id": "A3180",
+                  "name": "Review/Approve Asphaltic Concrete Paving Shop Drawings",
+                  "original_duration": 15,
+                  "remaining_duration": 15,
+                  "actual_duration": 0,
+                  "early_start": "10/23/24",
+                  "early_finish": "11/12/24",
+                  "late_start": "4/28/25",
+                  "late_finish": "5/16/25",
+                  "total_float": 128
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "02513 - SIDEWALK & STREET PAVING",
+              "activities": [
+                {
+                  "id": "A3190",
+                  "name": "Prep/Submit Sidewalk & Street Paving Shop Drawings",
+                  "original_duration": 21,
+                  "remaining_duration": 21,
+                  "actual_duration": 0,
+                  "early_start": "9/23/24",
+                  "early_finish": "10/22/24",
+                  "late_start": "4/3/25",
+                  "late_finish": "5/1/25",
+                  "total_float": 132
+                },
+                {
+                  "id": "A3200",
+                  "name": "Review/Approve Sidewalk & Street Paving Shop Drawings",
+                  "original_duration": 15,
+                  "remaining_duration": 15,
+                  "actual_duration": 0,
+                  "early_start": "10/23/24",
+                  "early_finish": "11/12/24",
+                  "late_start": "5/2/25",
+                  "late_finish": "5/22/25",
+                  "total_float": 132
+                }
+              ],
+              "subheaders": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "header": "CONSTRUCTION",
+      "activities": [],
+      "subheaders": [
+        {
+          "subheader": "LLW NO.: 127569 - EARLY DEMOLITION PACKAGE",
+          "activities": [],
+          "subheaders": [
+            {
+              "subheader": "ASBESTOS ABATEMENT - DWG H101-H201",
+              "activities": [
+                {
+                  "id": "A3410",
+                  "name": "Abate Confirmed ACM Roof Screed/Membrane/Flashing/Tar/Tar Below Coping S",
+                  "original_duration": 10,
+                  "remaining_duration": 10,
+                  "actual_duration": 0,
+                  "early_start": "12/17/24",
+                  "early_finish": "12/31/24",
+                  "late_start": "12/17/24",
+                  "late_finish": "12/31/24",
+                  "total_float": 0
+                },
+                {
+                  "id": "A3420",
+                  "name": "Abate Confirmed ACM Pipe/Pipe Joint/Breeching/Duct Insulation & Debris",
+                  "original_duration": 10,
+                  "remaining_duration": 10,
+                  "actual_duration": 0,
+                  "early_start": "12/17/24",
+                  "early_finish": "12/31/24",
+                  "late_start": "12/17/24",
+                  "late_finish": "12/31/24",
+                  "total_float": 0
+                },
+                {
+                  "id": "A3430",
+                  "name": "Abate Confirmed ACM Floor Tiles/Mastic & Floor Tiles Debris",
+                  "original_duration": 10,
+                  "remaining_duration": 10,
+                  "actual_duration": 0,
+                  "early_start": "12/17/24",
+                  "early_finish": "12/31/24",
+                  "late_start": "12/17/24",
+                  "late_finish": "12/31/24",
+                  "total_float": 0
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET)",
+              "activities": [],
+              "subheaders": [
+                {
+                  "subheader": "MAIN ROOF",
+                  "activities": [
+                    {
+                      "id": "A3440",
+                      "name": "Remove Roof in its Entirety",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "1/2/25",
+                      "early_finish": "1/8/25",
+                      "late_start": "1/2/25",
+                      "late_finish": "1/8/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3450",
+                      "name": "Remove Exist'g Rooftop A/C Units",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "1/9/25",
+                      "early_finish": "1/15/25",
+                      "late_start": "1/9/25",
+                      "late_finish": "1/15/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3460",
+                      "name": "Remove Deck & Supports Down to Foundation Only",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "1/16/25",
+                      "early_finish": "1/22/25",
+                      "late_start": "1/16/25",
+                      "late_finish": "1/22/25",
+                      "total_float": 0
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "NORTH BUILDING ELEVATION - DWG 2/DM104",
+                  "activities": [
+                    {
+                      "id": "A3500",
+                      "name": "NB - Protect Adjacent Property Structure as Req'd",
+                      "original_duration": 2,
+                      "remaining_duration": 2,
+                      "actual_duration": 0,
+                      "early_start": "1/23/25",
+                      "early_finish": "1/24/25",
+                      "late_start": "1/23/25",
+                      "late_finish": "1/24/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3510",
+                      "name": "NB - Remove Entire Exist'g A/C Unit",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "1/27/25",
+                      "early_finish": "1/30/25",
+                      "late_start": "1/27/25",
+                      "late_finish": "1/30/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3520",
+                      "name": "NB - Remove Entire Exist'g Windows",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "1/31/25",
+                      "early_finish": "2/5/25",
+                      "late_start": "1/31/25",
+                      "late_finish": "2/5/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3530",
+                      "name": "NB - Remove Entire Exist'g Rolling Door",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "2/6/25",
+                      "early_finish": "2/11/25",
+                      "late_start": "2/6/25",
+                      "late_finish": "2/11/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3540",
+                      "name": "NB - Remove Entire Exist'g Exterior Wall",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "2/13/25",
+                      "early_finish": "2/19/25",
+                      "late_start": "2/13/25",
+                      "late_finish": "2/19/25",
+                      "total_float": 0
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "EAST BUILDING ELEVATION - DWG 1/DM104",
+                  "activities": [
+                    {
+                      "id": "A3470",
+                      "name": "EB - Protect Adjacent Property Structure as Req'd",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "1/9/25",
+                      "early_finish": "1/15/25",
+                      "late_start": "1/31/25",
+                      "late_finish": "2/6/25",
+                      "total_float": 16
+                    },
+                    {
+                      "id": "A3480",
+                      "name": "EB - Remove Entire Exist'g Windows",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "1/16/25",
+                      "early_finish": "1/22/25",
+                      "late_start": "2/7/25",
+                      "late_finish": "2/14/25",
+                      "total_float": 16
+                    },
+                    {
+                      "id": "A3490",
+                      "name": "EB - Remove Entire Exist'g Exterior Wall",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "1/23/25",
+                      "early_finish": "1/29/25",
+                      "late_start": "2/18/25",
+                      "late_finish": "2/24/25",
+                      "total_float": 16
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "SOUTH BUILDING ELEVATION - DWG 3/DM104",
+                  "activities": [
+                    {
+                      "id": "A3550",
+                      "name": "SB - Protect Adjacent Property Structure as Req'd",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "2/20/25",
+                      "early_finish": "2/26/25",
+                      "late_start": "2/25/25",
+                      "late_finish": "3/3/25",
+                      "total_float": 3
+                    },
+                    {
+                      "id": "A3560",
+                      "name": "SB - Remove Entire Exist'g Windows",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "2/27/25",
+                      "early_finish": "3/5/25",
+                      "late_start": "3/4/25",
+                      "late_finish": "3/10/25",
+                      "total_float": 3
+                    },
+                    {
+                      "id": "A3570",
+                      "name": "SB - Remove Entire Exist'g Exterior Wall",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "3/6/25",
+                      "early_finish": "3/12/25",
+                      "late_start": "3/11/25",
+                      "late_finish": "3/17/25",
+                      "total_float": 3
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "WEST BUILDING ELEVATION - DWG 4/DM104",
+                  "activities": [
+                    {
+                      "id": "A3580",
+                      "name": "WB - Protect Adjacent Property Structure as Req'd",
+                      "original_duration": 2,
+                      "remaining_duration": 2,
+                      "actual_duration": 0,
+                      "early_start": "2/20/25",
+                      "early_finish": "2/21/25",
+                      "late_start": "2/20/25",
+                      "late_finish": "2/21/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3590",
+                      "name": "WB - Remove Entire Exist'g Windows",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "2/24/25",
+                      "early_finish": "2/27/25",
+                      "late_start": "2/24/25",
+                      "late_finish": "2/27/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3600",
+                      "name": "WB - Remove Entire Exist'g Stairs",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "2/28/25",
+                      "early_finish": "3/5/25",
+                      "late_start": "2/28/25",
+                      "late_finish": "3/5/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3610",
+                      "name": "WB - Remove Entire Exist'g Door",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "3/6/25",
+                      "early_finish": "3/11/25",
+                      "late_start": "3/6/25",
+                      "late_finish": "3/11/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3620",
+                      "name": "WB - Remove Entire Exist'g Exterior Wall",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "3/12/25",
+                      "early_finish": "3/17/25",
+                      "late_start": "3/12/25",
+                      "late_finish": "3/17/25",
+                      "total_float": 0
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "EAST-WEST SECTION B - DWG 4/DM105",
+                  "activities": [
+                    {
+                      "id": "A3630",
+                      "name": "EWSB - Remove Entire Exist'g Mezzanine & All Components",
+                      "original_duration": 2,
+                      "remaining_duration": 2,
+                      "actual_duration": 0,
+                      "early_start": "3/18/25",
+                      "early_finish": "3/19/25",
+                      "late_start": "3/18/25",
+                      "late_finish": "3/19/25",
+                      "total_float": 0
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "EAST-WEST SECTION CUT B - DWG 2/DM105",
+                  "activities": [
+                    {
+                      "id": "A3640",
+                      "name": "EWSCB - Remove Entire Ext'g Roof Trusses",
+                      "original_duration": 2,
+                      "remaining_duration": 2,
+                      "actual_duration": 0,
+                      "early_start": "3/18/25",
+                      "early_finish": "3/19/25",
+                      "late_start": "3/18/25",
+                      "late_finish": "3/19/25",
+                      "total_float": 0
+                    }
+                  ],
+                  "subheaders": []
+                }
+              ]
+            },
+            {
+              "subheader": "SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+              "activities": [
+                {
+                  "id": "A3870",
+                  "name": "APEBF - Repair Brick",
+                  "original_duration": 2,
+                  "remaining_duration": 2,
+                  "actual_duration": 0,
+                  "early_start": "3/20/25",
+                  "early_finish": "3/21/25",
+                  "late_start": "3/20/25",
+                  "late_finish": "3/21/25",
+                  "total_float": 0
+                },
+                {
+                  "id": "A3880",
+                  "name": "APEBF - Replace Brick",
+                  "original_duration": 2,
+                  "remaining_duration": 2,
+                  "actual_duration": 0,
+                  "early_start": "3/24/25",
+                  "early_finish": "3/25/25",
+                  "late_start": "3/24/25",
+                  "late_finish": "3/25/25",
+                  "total_float": 0
+                },
+                {
+                  "id": "A3890",
+                  "name": "APEBF - Infill Brick",
+                  "original_duration": 2,
+                  "remaining_duration": 2,
+                  "actual_duration": 0,
+                  "early_start": "3/26/25",
+                  "early_finish": "3/27/25",
+                  "late_start": "3/26/25",
+                  "late_finish": "3/27/25",
+                  "total_float": 0
+                },
+                {
+                  "id": "A3900",
+                  "name": "APEBF - Repair Concrete",
+                  "original_duration": 2,
+                  "remaining_duration": 2,
+                  "actual_duration": 0,
+                  "early_start": "3/28/25",
+                  "early_finish": "3/31/25",
+                  "late_start": "3/28/25",
+                  "late_finish": "3/31/25",
+                  "total_float": 0
+                },
+                {
+                  "id": "A3910",
+                  "name": "APEBF - Repoint Brick",
+                  "original_duration": 2,
+                  "remaining_duration": 2,
+                  "actual_duration": 0,
+                  "early_start": "4/1/25",
+                  "early_finish": "4/2/25",
+                  "late_start": "4/1/25",
+                  "late_finish": "4/2/25",
+                  "total_float": 0
+                },
+                {
+                  "id": "A3920",
+                  "name": "APEBF - Masonry Washdown",
+                  "original_duration": 2,
+                  "remaining_duration": 2,
+                  "actual_duration": 0,
+                  "early_start": "4/3/25",
+                  "early_finish": "4/4/25",
+                  "late_start": "4/3/25",
+                  "late_finish": "4/4/25",
+                  "total_float": 0
+                },
+                {
+                  "id": "A3930",
+                  "name": "APEBF - CID Masonry Inspection",
+                  "original_duration": 2,
+                  "remaining_duration": 2,
+                  "actual_duration": 0,
+                  "early_start": "4/7/25",
+                  "early_finish": "4/8/25",
+                  "late_start": "4/7/25",
+                  "late_finish": "4/8/25",
+                  "total_float": 0
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "SITE REMOVALS - DWG DM10",
+              "activities": [],
+              "subheaders": [
+                {
+                  "subheader": "SITE REMOVALS - DELAVAN STREET ELEVATION",
+                  "activities": [
+                    {
+                      "id": "A3650",
+                      "name": "RDS - Install Site Protection",
+                      "original_duration": 2,
+                      "remaining_duration": 2,
+                      "actual_duration": 0,
+                      "early_start": "4/9/25",
+                      "early_finish": "4/10/25",
+                      "late_start": "4/9/25",
+                      "late_finish": "4/10/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3660",
+                      "name": "RDS - Remove Exist'g Asphalt Pavement & Subbase (for Sewer Service Remov",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "4/11/25",
+                      "early_finish": "4/16/25",
+                      "late_start": "4/11/25",
+                      "late_finish": "4/16/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3670",
+                      "name": "RDS - Remove Exist'g Concrete Curb",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "4/17/25",
+                      "early_finish": "4/22/25",
+                      "late_start": "4/17/25",
+                      "late_finish": "4/22/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3680",
+                      "name": "RDS - Remove Exist'g Asphalt Pavement & Subbase (for Gas Service Removal)",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "4/23/25",
+                      "early_finish": "4/28/25",
+                      "late_start": "4/23/25",
+                      "late_finish": "4/28/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3690",
+                      "name": "RDS - Remove Exist'g Concrete Pavement & Subbase (for Sewer & Gas Servic",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "4/29/25",
+                      "early_finish": "5/2/25",
+                      "late_start": "4/29/25",
+                      "late_finish": "5/2/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3760",
+                      "name": "RDS - Cut, Cap & Remove from Bldg to Sewer Main Exist'g Sewer Service",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "5/5/25",
+                      "early_finish": "5/8/25",
+                      "late_start": "5/5/25",
+                      "late_finish": "5/8/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3770",
+                      "name": "RDS - Cut, Cap & Remove from Bldg to Gas Main Exist'g Gas Service",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "5/9/25",
+                      "early_finish": "5/14/25",
+                      "late_start": "5/9/25",
+                      "late_finish": "5/14/25",
+                      "total_float": 0
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "SITE REMOVALS - RICHARDS STREET ELEVATION",
+                  "activities": [
+                    {
+                      "id": "A3700",
+                      "name": "RRS - Install Site Protection",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "4/9/25",
+                      "early_finish": "4/15/25",
+                      "late_start": "5/1/25",
+                      "late_finish": "5/7/25",
+                      "total_float": 16
+                    },
+                    {
+                      "id": "A3710",
+                      "name": "RRS - Remove Exist'g Tree to Grade",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "4/16/25",
+                      "early_finish": "4/22/25",
+                      "late_start": "5/8/25",
+                      "late_finish": "5/14/25",
+                      "total_float": 16
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "SITE REMOVALS - VERONA STREET ELEVATION",
+                  "activities": [
+                    {
+                      "id": "A3720",
+                      "name": "RVS - Install Site Protection",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "4/9/25",
+                      "early_finish": "4/14/25",
+                      "late_start": "4/9/25",
+                      "late_finish": "4/14/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3730",
+                      "name": "RVS - Remove Exist'g Asphalt Pavement & Subbase (for Sewer Service Remov",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "4/15/25",
+                      "early_finish": "4/21/25",
+                      "late_start": "4/15/25",
+                      "late_finish": "4/21/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3740",
+                      "name": "RVS - Remove Exist'g Concrete Curb",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "4/22/25",
+                      "early_finish": "4/25/25",
+                      "late_start": "4/22/25",
+                      "late_finish": "4/25/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3750",
+                      "name": "RVS - Remove Exist'g Concrete Pavement & Subbase (for Sewer Service Rem",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "4/28/25",
+                      "early_finish": "5/2/25",
+                      "late_start": "4/28/25",
+                      "late_finish": "5/2/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3780",
+                      "name": "RVS - Cut, Cap & Remove from Bldg to Sewer Main Exist'g Sewer Service",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "5/5/25",
+                      "early_finish": "5/8/25",
+                      "late_start": "5/5/25",
+                      "late_finish": "5/8/25",
+                      "total_float": 0
+                    }
+                  ],
+                  "subheaders": []
+                }
+              ]
+            },
+            {
+              "subheader": "SITE IMPROVEMENTS - DWG C020",
+              "activities": [],
+              "subheaders": [
+                {
+                  "subheader": "SITE IMPROVEMENTS - DELAVAN STREET ELEVATION",
+                  "activities": [
+                    {
+                      "id": "A3790",
+                      "name": "IDS - Install Construction Fence",
+                      "original_duration": 2,
+                      "remaining_duration": 2,
+                      "actual_duration": 0,
+                      "early_start": "5/15/25",
+                      "early_finish": "5/16/25",
+                      "late_start": "5/15/25",
+                      "late_finish": "5/16/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3800",
+                      "name": "IDS - Install New Asphalt Pavement",
+                      "original_duration": 4,
+                      "remaining_duration": 4,
+                      "actual_duration": 0,
+                      "early_start": "5/19/25",
+                      "early_finish": "5/22/25",
+                      "late_start": "5/19/25",
+                      "late_finish": "5/22/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3810",
+                      "name": "IDS - Install New Concrete Pavement",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "5/23/25",
+                      "early_finish": "5/30/25",
+                      "late_start": "5/23/25",
+                      "late_finish": "5/30/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3820",
+                      "name": "IDS - Install New Concrete Curb",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "6/2/25",
+                      "early_finish": "6/6/25",
+                      "late_start": "6/2/25",
+                      "late_finish": "6/6/25",
+                      "total_float": 0
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "SITE IMPROVEMENTS - VERONA STREET ELEVATION",
+                  "activities": [
+                    {
+                      "id": "A3830",
+                      "name": "IVS - Install Construction Fence",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "5/9/25",
+                      "early_finish": "5/15/25",
+                      "late_start": "5/9/25",
+                      "late_finish": "5/15/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3840",
+                      "name": "IVS - Install New Asphalt Pavement",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "5/16/25",
+                      "early_finish": "5/22/25",
+                      "late_start": "5/16/25",
+                      "late_finish": "5/22/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3850",
+                      "name": "IVS - Install New Concrete Pavement",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "5/23/25",
+                      "early_finish": "5/30/25",
+                      "late_start": "5/23/25",
+                      "late_finish": "5/30/25",
+                      "total_float": 0
+                    },
+                    {
+                      "id": "A3860",
+                      "name": "IVS - Install New Concrete Curb",
+                      "original_duration": 5,
+                      "remaining_duration": 5,
+                      "actual_duration": 0,
+                      "early_start": "6/2/25",
+                      "early_finish": "6/6/25",
+                      "late_start": "6/2/25",
+                      "late_finish": "6/6/25",
+                      "total_float": 0
+                    }
+                  ],
+                  "subheaders": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "header": "PROJECT CLOSE-OUT",
+      "activities": [
+        {
+          "id": "A2970",
+          "name": "Prep/Submit Final Record Drawings",
+          "original_duration": 5,
+          "remaining_duration": 5,
+          "actual_duration": 0,
+          "early_start": "6/9/25",
+          "early_finish": "6/13/25",
+          "late_start": "6/9/25",
+          "late_finish": "6/13/25",
+          "total_float": 0
+        },
+        {
+          "id": "A3010",
+          "name": "Final Clean-up",
+          "original_duration": 5,
+          "remaining_duration": 5,
+          "actual_duration": 0,
+          "early_start": "6/9/25",
+          "early_finish": "6/13/25",
+          "late_start": "6/9/25",
+          "late_finish": "6/13/25",
+          "total_float": 0
+        },
+        {
+          "id": "A2980",
+          "name": "Remove Adjacent Property Structure Protection",
+          "original_duration": 5,
+          "remaining_duration": 5,
+          "actual_duration": 0,
+          "early_start": "6/9/25",
+          "early_finish": "6/13/25",
+          "late_start": "6/9/25",
+          "late_finish": "6/13/25",
+          "total_float": 0
+        },
+        {
+          "id": "A2990",
+          "name": "DOB Final Inspection & Sign-off",
+          "original_duration": 5,
+          "remaining_duration": 5,
+          "actual_duration": 0,
+          "early_start": "6/16/25",
+          "early_finish": "6/20/25",
+          "late_start": "6/16/25",
+          "late_finish": "6/20/25",
+          "total_float": 0
+        },
+        {
+          "id": "A3000",
+          "name": "Punch List Work",
+          "original_duration": 65,
+          "remaining_duration": 65,
+          "actual_duration": 0,
+          "early_start": "6/23/25",
+          "early_finish": "9/22/25",
+          "late_start": "6/23/25",
+          "late_finish": "9/22/25",
+          "total_float": 0
+        }
+      ],
+      "subheaders": []
+    }
+  ]
+}
