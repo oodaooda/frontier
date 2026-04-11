@@ -19,14 +19,28 @@
     .table-side { }
     .gt-table {
         font-size: 0.8rem;
-        border-collapse: separate;
-        border-spacing: 0;
+        border-collapse: collapse;
         width: 100%;
         table-layout: auto;
     }
+    /* WBS bar column — no padding/spacing for continuous lines */
+    .gt-table td.wbs-bars {
+        padding: 0;
+        margin: 0;
+        line-height: 0;
+        border: none;
+        vertical-align: stretch;
+    }
+    .gt-table td.wbs-bars span {
+        display: inline-block;
+        width: 5px;
+        margin-right: 1px;
+        vertical-align: top;
+    }
     .gt-table th {
         position: sticky;
-        top: var(--nav-height); /* below sticky nav bar */
+        top: var(--nav-height);
+        border-bottom: 2px solid var(--border) !important;
         z-index: 5;
         background: var(--bg-secondary);
         font-size: 0.75rem;
@@ -148,9 +162,9 @@
                         {% set depth = parts | length %}
                         {% set hdr_color = "#2563eb" if depth == 1 else "#16a34a" if depth == 2 else "#d97706" if depth == 3 else "#9333ea" if depth == 4 else "#dc2626" if depth == 5 else "#0891b2" %}
                         <tr class="level-header">
-                            <td style="padding:0; white-space:nowrap; border-bottom:none;">
+                            <td class="wbs-bars">
                                 {%- for d in range(1, depth + 1) -%}
-                                <span style="display:inline-block; width:5px; min-height:1.4em; background:{% if d == 1 %}#2563eb{% elif d == 2 %}#16a34a{% elif d == 3 %}#d97706{% elif d == 4 %}#9333ea{% elif d == 5 %}#dc2626{% else %}#0891b2{% endif %}; margin-right:1px; vertical-align:top;"></span>
+                                <span style="height:100%; min-height:1.6em; background:{% if d == 1 %}#2563eb{% elif d == 2 %}#16a34a{% elif d == 3 %}#d97706{% elif d == 4 %}#9333ea{% elif d == 5 %}#dc2626{% else %}#0891b2{% endif %};"></span>
                                 {%- endfor -%}
                             </td>
                             <td colspan="99" style="background: {{ hdr_color }}20; border-left: 3px solid {{ hdr_color }}; padding-left:{{ (depth - 1) * 1.2 + 0.5 }}rem; font-weight:{% if depth <= 2 %}700{% else %}600{% endif %}; font-size:{% if depth == 1 %}0.9rem{% elif depth == 2 %}0.85rem{% else %}0.8rem{% endif %}; color: {{ hdr_color }};">
@@ -173,9 +187,9 @@
                     {% set row_depth = row_data.get("path", "").count(" > ") + 1 if row_data.get("path") else 1 %}
                     {% set depth_color = "#2563eb" if row_depth == 1 else "#16a34a" if row_depth == 2 else "#d97706" if row_depth == 3 else "#9333ea" if row_depth == 4 else "#dc2626" if row_depth == 5 else "#0891b2" %}
                     <tr id="row-{{ row.id }}" class="{{ 'verified' if row.verified else '' }}">
-                        <td style="padding:0; white-space:nowrap; width:{{ row_depth * 6 }}px; border-bottom:none;">
+                        <td class="wbs-bars">
                             {%- for d in range(1, row_depth + 1) -%}
-                            <span style="display:inline-block; width:5px; height:100%; min-height:1.4em; background:{% if d == 1 %}#2563eb{% elif d == 2 %}#16a34a{% elif d == 3 %}#d97706{% elif d == 4 %}#9333ea{% elif d == 5 %}#dc2626{% else %}#0891b2{% endif %}; margin-right:1px; vertical-align:top;"></span>
+                            <span style="height:100%; min-height:1.6em; background:{% if d == 1 %}#2563eb{% elif d == 2 %}#16a34a{% elif d == 3 %}#d97706{% elif d == 4 %}#9333ea{% elif d == 5 %}#dc2626{% else %}#0891b2{% endif %};"></span>
                             {%- endfor -%}
                         </td>
                         <td style="font-size:0.7rem; opacity:0.5;">{{ row.row_index + 1 }}</td>
