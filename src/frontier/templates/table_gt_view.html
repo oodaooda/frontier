@@ -52,7 +52,6 @@
     .gt-table tr:hover { background: rgba(74,158,255,0.05); }
     .gt-table tr.verified { background: rgba(34,197,94,0.04); }
     .gt-table tr.level-header:hover { background: inherit; }
-    .gt-table tr.level-header td { border-bottom: 2px solid var(--border); }
     .gt-table tr.verified td:first-child { border-left: 3px solid var(--pass); }
     .gt-table tr:not(.verified) td:first-child { border-left: 3px solid var(--warn); }
 
@@ -91,7 +90,7 @@
         display: flex; gap: 1.5rem; align-items: center;
         margin-bottom: 1rem; font-size: 0.85rem;
     }
-    .level-header td { border-bottom: 1px solid var(--border); }
+    .level-header td { border-bottom: none; }
 </style>
 {% endblock %}
 
@@ -159,12 +158,8 @@
                         {% set hdr_color = "#2563eb" if depth == 1 else "#16a34a" if depth == 2 else "#d97706" if depth == 3 else "#9333ea" if depth == 4 else "#dc2626" if depth == 5 else "#0891b2" %}
                         <tr class="level-header">
                             <td class="wbs-bars" style="background: {% for d in range(1, depth + 1) %}linear-gradient({% if d == 1 %}#2563eb{% elif d == 2 %}#16a34a{% elif d == 3 %}#d97706{% elif d == 4 %}#9333ea{% elif d == 5 %}#dc2626{% else %}#0891b2{% endif %}, {% if d == 1 %}#2563eb{% elif d == 2 %}#16a34a{% elif d == 3 %}#d97706{% elif d == 4 %}#9333ea{% elif d == 5 %}#dc2626{% else %}#0891b2{% endif %}) {{ (d-1)*6 }}px/5px 100% no-repeat{% if not loop.last %}, {% endif %}{% endfor %};"></td>
-                            <td colspan="99" style="background: {{ hdr_color }}20; border-left: 3px solid {{ hdr_color }}; padding-left:{{ (depth - 1) * 1.2 + 0.5 }}rem; font-weight:{% if depth <= 2 %}700{% else %}600{% endif %}; font-size:{% if depth == 1 %}0.9rem{% elif depth == 2 %}0.85rem{% else %}0.8rem{% endif %}; color: {{ hdr_color }};">
-                                {% if depth > 1 %}
-                                    {{ parts[-1] }}
-                                {% else %}
-                                    {{ path_val }}
-                                {% endif %}
+                            <td colspan="99" style="background: {{ hdr_color }}30; padding: 0.35rem 0.5rem; font-weight:{% if depth <= 2 %}700{% else %}600{% endif %}; font-size:{% if depth == 1 %}0.9rem{% elif depth == 2 %}0.85rem{% else %}0.8rem{% endif %}; color: {{ hdr_color }};">
+                                {{ parts[-1] if depth > 1 else path_val }}
                             </td>
                         </tr>
                     {% elif header_val and header_val != current_header.value and not path_val %}
