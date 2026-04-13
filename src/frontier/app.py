@@ -46,7 +46,7 @@ def get_port() -> int:
 # Import and include routers
 from frontier.routes import (  # noqa: E402
     dashboard, documents, ground_truth, evaluate,
-    results, comparison, models_page, news, settings, table_gt, table_eval,
+    results, comparison, models_page, news, settings, table_gt, table_eval, prompts,
 )
 
 app.include_router(dashboard.router)
@@ -60,3 +60,4 @@ app.include_router(news.router)
 app.include_router(settings.router)
 app.include_router(table_gt.router)
 app.include_router(table_eval.router)
+app.include_router(prompts.router)

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% set active_nav = "prompts" %}
+{% block title_suffix %} — Prompt Templates{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Prompt Templates</h1>
+</div>
+<p style="opacity:0.7; margin-bottom:1.5rem;">Manage prompt templates used for evaluations. Each edit can be saved as a new version so you can track which prompt produced which results.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Version</th>
+            <th>Preview</th>
+            <th>Created</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in prompts %}
+        <tr>
+            <td><strong>{{ p.name }}</strong></td>
+            <td>v{{ p.version }}</td>
+            <td style="max-width:400px; font-size:0.8rem; opacity:0.7; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                {{ p.template[:120] }}...
+            </td>
+            <td>{{ p.created_date[:10] if p.created_date else "" }}</td>
+            <td style="display:flex; gap:0.5rem;">
+                <a href="/prompts/{{ p.id }}/edit" class="btn">Edit</a>
+                <form action="/prompts/{{ p.id }}/delete" method="post" style="display:inline;"
+                      onsubmit="return confirm('Delete this prompt template?');">
+                    <button type="submit" class="outline secondary" style="font-size:0.8rem;">Del</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<details style="margin-top:1.5rem;">
+    <summary style="cursor:pointer; font-weight:600;">Create New Prompt Template</summary>
+    <form action="/prompts/create" method="post" style="margin-top:0.75rem;">
+        <label>Name
+            <input type="text" name="name" placeholder="e.g., table-extraction-v1" required>
+        </label>
+        <label>Template
+            <textarea name="template" rows="12" style="font-family:var(--font-mono); font-size:0.85rem;" required
+                      placeholder="You are analyzing a construction document...&#10;&#10;{question}"></textarea>
+        </label>
+        <p style="font-size:0.8rem; opacity:0.6;">Use <code>{question}</code> as placeholder for the question text.</p>
+        <button type="submit">Create Template</button>
+    </form>
+</details>
+{% endblock %}

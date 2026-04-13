@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% set active_nav = "prompts" %}
+{% block title_suffix %} — Edit {{ prompt.name }} v{{ prompt.version }}{% endblock %}
+
+{% block content %}
+<div class="breadcrumb">
+    <a href="/prompts">Prompts</a> / {{ prompt.name }} v{{ prompt.version }}
+</div>
+
+<h1>Edit Prompt: {{ prompt.name }} v{{ prompt.version }}</h1>
+
+<form action="/prompts/{{ prompt.id }}/update" method="post" style="margin-bottom:1.5rem;">
+    <label>Template
+        <textarea name="template" rows="18" style="font-family:var(--font-mono); font-size:0.85rem; width:100%;" required>{{ prompt.template }}</textarea>
+    </label>
+    <p style="font-size:0.8rem; opacity:0.6; margin-bottom:1rem;">
+        Use <code>{question}</code> as placeholder for the question text.
+        Editing will overwrite this version.
+    </p>
+    <div style="display:flex; gap:0.75rem;">
+        <button type="submit">Save (Overwrite v{{ prompt.version }})</button>
+    </div>
+</form>
+
+<form action="/prompts/{{ prompt.id }}/save-as-new" method="post">
+    <textarea name="template" rows="1" style="display:none;">{{ prompt.template }}</textarea>
+    <p style="font-size:0.85rem; opacity:0.7;">Or save your edits as a new version (preserves the original):</p>
+    <button type="submit" class="outline" onclick="this.form.querySelector('textarea').value = this.form.closest('body').querySelector('textarea[rows=&quot;18&quot;]').value;">
+        Save as {{ prompt.name }} v{{ prompt.version + 1 }}
+    </button>
+</form>
+
+<div style="margin-top:2rem; padding:1rem; border:1px solid var(--border); border-radius:var(--radius);">
+    <h3>Tips</h3>
+    <ul style="font-size:0.85rem; opacity:0.8;">
+        <li>Be specific about output format (JSON, structured text, etc.)</li>
+        <li>Include confidence scoring instructions if you want confidence data</li>
+        <li>For table extraction, specify exact column names the model should use</li>
+        <li>Save as new version before major changes — lets you compare prompt performance</li>
+    </ul>
+</div>
+{% endblock %}
