@@ -1,0 +1,145 @@
+{
+  "summary": {
+    "total_expected": 116,
+    "total_extracted": 116,
+    "missing": 0,
+    "extra": 0,
+    "path_correct": 94,
+    "path_wrong": 22,
+    "path_accuracy_pct": 81.0
+  },
+  "errors": [
+    {
+      "activity_id": "A2970",
+      "expected_path": "PROJECT CLOSE-OUT",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > PROJECT CLOSE-OUT",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A2980",
+      "expected_path": "PROJECT CLOSE-OUT",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > PROJECT CLOSE-OUT",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A2990",
+      "expected_path": "PROJECT CLOSE-OUT",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > PROJECT CLOSE-OUT",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3000",
+      "expected_path": "PROJECT CLOSE-OUT",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > PROJECT CLOSE-OUT",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3010",
+      "expected_path": "PROJECT CLOSE-OUT",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > PROJECT CLOSE-OUT",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3130",
+      "expected_path": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02060 - BUILDING DEMOLITION",
+      "extracted_path": "DIVISION 2 - SITE WORK > 02060 - BUILDING DEMOLITION",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3140",
+      "expected_path": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02060 - BUILDING DEMOLITION",
+      "extracted_path": "DIVISION 2 - SITE WORK > 02060 - BUILDING DEMOLITION",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3150",
+      "expected_path": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02081 - ASBESTOS ABATEMENT",
+      "extracted_path": "DIVISION 2 - SITE WORK > 02081 - ASBESTOS ABATEMENT",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3160",
+      "expected_path": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02081 - ASBESTOS ABATEMENT",
+      "extracted_path": "DIVISION 2 - SITE WORK > 02081 - ASBESTOS ABATEMENT",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3170",
+      "expected_path": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02511 - ASPHALTIC CONCRETE PAVING",
+      "extracted_path": "DIVISION 2 - SITE WORK > 02511 - ASPHALTIC CONCRETE PAVING",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3180",
+      "expected_path": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02511 - ASPHALTIC CONCRETE PAVING",
+      "extracted_path": "DIVISION 2 - SITE WORK > 02511 - ASPHALTIC CONCRETE PAVING",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3190",
+      "expected_path": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02513 - SIDEWALK & STREET PAVING",
+      "extracted_path": "DIVISION 2 - SITE WORK > 02513 - SIDEWALK & STREET PAVING",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3200",
+      "expected_path": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02513 - SIDEWALK & STREET PAVING",
+      "extracted_path": "DIVISION 2 - SITE WORK > 02513 - SIDEWALK & STREET PAVING",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3390",
+      "expected_path": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > COORDINATION DRAWINGS",
+      "extracted_path": "DIVISION 2 - SITE WORK > COORDINATION DRAWINGS",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3400",
+      "expected_path": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > COORDINATION DRAWINGS",
+      "extracted_path": "DIVISION 2 - SITE WORK > COORDINATION DRAWINGS",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3870",
+      "expected_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3880",
+      "expected_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3890",
+      "expected_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3900",
+      "expected_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3910",
+      "expected_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3920",
+      "expected_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "error_type": "wrong_parent"
+    },
+    {
+      "activity_id": "A3930",
+      "expected_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "extracted_path": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "error_type": "wrong_parent"
+    }
+  ]
+}
