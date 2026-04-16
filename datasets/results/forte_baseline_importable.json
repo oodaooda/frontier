@@ -1,0 +1,3617 @@
+{
+  "_meta": {
+    "sheet_title": "Forte Baseline Schedule",
+    "source": "Claude Opus 4.6 extraction (4-pass v2) \u2014 needs verification"
+  },
+  "columns": [
+    "Activity ID",
+    "Activity Name",
+    "Original Duration",
+    "Early Start",
+    "Early Finish",
+    "Total Float",
+    "Page"
+  ],
+  "structure": [
+    {
+      "header": "K134 Medgar Evers College Prep Annex - Support of Excavation - Baseline Schedule Rev.01",
+      "activities": [],
+      "subheaders": [
+        {
+          "subheader": "Pre-Construction",
+          "activities": [],
+          "subheaders": [
+            {
+              "subheader": "Key Dates & Milestones",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Notice to Proceed",
+                  "id": "MIL-1000",
+                  "page": 1,
+                  "original_duration": 0,
+                  "early_start": "24-Jun-25",
+                  "early_finish": "",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Pre-Construction > Key Dates & Milestones"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Pre-Construction Survey",
+                  "id": "MIL-1010",
+                  "page": 1,
+                  "original_duration": 3,
+                  "early_start": "24-Jun-25",
+                  "early_finish": "26-Jun-25",
+                  "total_float": 13,
+                  "level": 4,
+                  "parent_path": "Pre-Construction > Key Dates & Milestones"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Mobilization",
+                  "id": "MIL-1020",
+                  "page": 1,
+                  "original_duration": 3,
+                  "early_start": "14-Jul-25",
+                  "early_finish": "16-Jul-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Pre-Construction > Key Dates & Milestones"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Construction Start",
+                  "id": "MIL-1030",
+                  "page": 1,
+                  "original_duration": 0,
+                  "early_start": "17-Jul-25",
+                  "early_finish": "",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Pre-Construction > Key Dates & Milestones"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Project Duration Till Substantial Completion",
+                  "id": "MIL-1040",
+                  "page": 1,
+                  "original_duration": 183,
+                  "early_start": "24-Jun-25",
+                  "early_finish": "23-Dec-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Pre-Construction > Key Dates & Milestones"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Substantial Completion",
+                  "id": "MIL-1050",
+                  "page": 1,
+                  "original_duration": 0,
+                  "early_start": "",
+                  "early_finish": "23-Dec-25*",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Pre-Construction > Key Dates & Milestones"
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "Permits",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Obtain Site Fence Permit and DOT Permits",
+                  "id": "PER-1000",
+                  "page": 1,
+                  "original_duration": 14,
+                  "early_start": "24-Jun-25",
+                  "early_finish": "14-Jul-25",
+                  "total_float": 2,
+                  "level": 4,
+                  "parent_path": "Pre-Construction > Permits"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Obtain Earthwork Permit",
+                  "id": "PER-1010",
+                  "page": 1,
+                  "original_duration": 21,
+                  "early_start": "24-Jun-25",
+                  "early_finish": "23-Jul-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Pre-Construction > Permits"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Obtain SOE Permit",
+                  "id": "PER-1020",
+                  "page": 1,
+                  "original_duration": 28,
+                  "early_start": "24-Jun-25",
+                  "early_finish": "01-Aug-25",
+                  "total_float": 7,
+                  "level": 4,
+                  "parent_path": "Pre-Construction > Permits"
+                }
+              ],
+              "subheaders": []
+            }
+          ]
+        },
+        {
+          "subheader": "Procurement",
+          "activities": [],
+          "subheaders": [
+            {
+              "subheader": "Division 01: General",
+              "activities": [],
+              "subheaders": [
+                {
+                  "subheader": "Spec Section S01010 - Summary of Work",
+                  "activities": [],
+                  "subheaders": [
+                    {
+                      "subheader": "Spec Section S01010 - Summary of Work - Submittals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Pre-Construction Photos",
+                          "id": "SUB-1060",
+                          "page": 1,
+                          "original_duration": 1,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jun-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01010 - Summary of Work > Spec Section S01010 - Summary of Work - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Final Progress Photos",
+                          "id": "SUB-1130",
+                          "page": 1,
+                          "original_duration": 14,
+                          "early_start": "24-Oct-25",
+                          "early_finish": "12-Nov-25",
+                          "total_float": 12,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01010 - Summary of Work > Spec Section S01010 - Summary of Work - Submittals"
+                        }
+                      ],
+                      "subheaders": []
+                    },
+                    {
+                      "subheader": "Spec Section S01010 - Summary of Work - Approvals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Pre-Construction Photos",
+                          "id": "APP-1060",
+                          "page": 1,
+                          "original_duration": 21,
+                          "early_start": "25-Jun-25",
+                          "early_finish": "15-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01010 - Summary of Work > Spec Section S01010 - Summary of Work - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Final Progress Photos",
+                          "id": "APP-2060",
+                          "page": 1,
+                          "original_duration": 21,
+                          "early_start": "13-Nov-25",
+                          "early_finish": "03-Dec-25",
+                          "total_float": 20,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01010 - Summary of Work > Spec Section S01010 - Summary of Work - Approvals"
+                        }
+                      ],
+                      "subheaders": []
+                    },
+                    {
+                      "subheader": "Spec Section S01300 - Submittals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Submittal Log",
+                          "id": "SUB-1220",
+                          "page": 1,
+                          "original_duration": 1,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jun-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01010 - Summary of Work > Spec Section S01300 - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Submittal Log",
+                          "id": "APP-2070",
+                          "page": 1,
+                          "original_duration": 21,
+                          "early_start": "25-Jun-25",
+                          "early_finish": "15-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01010 - Summary of Work > Spec Section S01300 - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit eCloseout Submittal Log",
+                          "id": "SUB-1250",
+                          "page": 1,
+                          "original_duration": 10,
+                          "early_start": "24-Oct-25",
+                          "early_finish": "06-Nov-25",
+                          "total_float": 16,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01010 - Summary of Work > Spec Section S01300 - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve eCloseout Submittal Log",
+                          "id": "APP-2080",
+                          "page": 1,
+                          "original_duration": 21,
+                          "early_start": "07-Nov-25",
+                          "early_finish": "27-Nov-25",
+                          "total_float": 26,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01010 - Summary of Work > Spec Section S01300 - Submittals"
+                        }
+                      ],
+                      "subheaders": []
+                    }
+                  ]
+                },
+                {
+                  "subheader": "Spec Section 01312 - Progress Schedule",
+                  "activities": [],
+                  "subheaders": [
+                    {
+                      "subheader": "Spec Section 01312 - Progress Schedule - Submittals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Preliminary Schedule",
+                          "id": "SUB-1260",
+                          "page": 1,
+                          "original_duration": 15,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "15-Jul-25",
+                          "total_float": 78,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section 01312 - Progress Schedule > Spec Section 01312 - Progress Schedule - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Baseline Schedule",
+                          "id": "SUB-1280",
+                          "page": 1,
+                          "original_duration": 3,
+                          "early_start": "06-Aug-25",
+                          "early_finish": "08-Aug-25",
+                          "total_float": 78,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section 01312 - Progress Schedule > Spec Section 01312 - Progress Schedule - Submittals"
+                        }
+                      ],
+                      "subheaders": []
+                    },
+                    {
+                      "subheader": "Spec Section 01312 - Progress Schedule - Approvals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Preliminary Schedule",
+                          "id": "APP-1180",
+                          "page": 1,
+                          "original_duration": 21,
+                          "early_start": "16-Jul-25",
+                          "early_finish": "05-Aug-25",
+                          "total_float": 112,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section 01312 - Progress Schedule > Spec Section 01312 - Progress Schedule - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Baseline Schedule",
+                          "id": "APP-1880",
+                          "page": 1,
+                          "original_duration": 21,
+                          "early_start": "09-Aug-25",
+                          "early_finish": "29-Aug-25",
+                          "total_float": 116,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section 01312 - Progress Schedule > Spec Section 01312 - Progress Schedule - Approvals"
+                        }
+                      ],
+                      "subheaders": []
+                    }
+                  ]
+                },
+                {
+                  "subheader": "Spec Section S01500 - Temporary Facilities & Controls",
+                  "activities": [],
+                  "subheaders": [
+                    {
+                      "subheader": "Spec Section S01500 - Temporary Facilities & Controls - Submittals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Security Guard Certs",
+                          "id": "SUB-1600",
+                          "page": 1,
+                          "original_duration": 3,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "26-Jun-25",
+                          "total_float": 5,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01500 - Temporary Facilities & Controls > Spec Section S01500 - Temporary Facilities & Controls - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Temporary Fence Plan",
+                          "id": "SUB-1610",
+                          "page": 1,
+                          "original_duration": 3,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "26-Jun-25",
+                          "total_float": 5,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01500 - Temporary Facilities & Controls > Spec Section S01500 - Temporary Facilities & Controls - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Dust Control Plan",
+                          "id": "SUB-1620",
+                          "page": 1,
+                          "original_duration": 3,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "26-Jun-25",
+                          "total_float": 5,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01500 - Temporary Facilities & Controls > Spec Section S01500 - Temporary Facilities & Controls - Submittals"
+                        }
+                      ],
+                      "subheaders": []
+                    },
+                    {
+                      "subheader": "Spec Section S01500 - Temporary Facilities & Controls - Approvals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Security Guard Certs",
+                          "id": "APP-2110",
+                          "page": 1,
+                          "original_duration": 21,
+                          "early_start": "27-Jun-25",
+                          "early_finish": "17-Jul-25",
+                          "total_float": 7,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01500 - Temporary Facilities & Controls > Spec Section S01500 - Temporary Facilities & Controls - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Temporary Fence Plan",
+                          "id": "APP-1110",
+                          "page": 1,
+                          "original_duration": 21,
+                          "early_start": "27-Jun-25",
+                          "early_finish": "17-Jul-25",
+                          "total_float": 7,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01500 - Temporary Facilities & Controls > Spec Section S01500 - Temporary Facilities & Controls - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Dust Control Plan",
+                          "id": "APP-1220",
+                          "page": 1,
+                          "original_duration": 21,
+                          "early_start": "27-Jun-25",
+                          "early_finish": "17-Jul-25",
+                          "total_float": 7,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 01: General > Spec Section S01500 - Temporary Facilities & Controls > Spec Section S01500 - Temporary Facilities & Controls - Approvals"
+                        }
+                      ],
+                      "subheaders": []
+                    }
+                  ]
+                },
+                {
+                  "subheader": "Spec Section S01400 - Quality Control",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Prepare & Submit Contractor Quality Control Plan",
+                      "id": "SUB-1780",
+                      "page": 1,
+                      "original_duration": 1,
+                      "early_start": "24-Jun-25",
+                      "early_finish": "24-Jun-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 01: General > Spec Section S01400 - Quality Control"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Review & Approve Contractor Quality Control Plan",
+                      "id": "APP-1230",
+                      "page": 2,
+                      "original_duration": 21,
+                      "early_start": "25-Jun-25",
+                      "early_finish": "15-Jul-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 01: General > Spec Section S01400 - Quality Control"
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "Spec Section 01524 - Construction Waste Management",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Prepare & Submit Waste Management Plan",
+                      "id": "SUB-1800",
+                      "page": 2,
+                      "original_duration": 1,
+                      "early_start": "24-Jun-25",
+                      "early_finish": "24-Jun-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 01: General > Spec Section 01524 - Construction Waste Management"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Review & Approve Waste Management Plan",
+                      "id": "APP-1120",
+                      "page": 2,
+                      "original_duration": 21,
+                      "early_start": "25-Jun-25",
+                      "early_finish": "15-Jul-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 01: General > Spec Section 01524 - Construction Waste Management"
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "Spec Section 01535 - Safety Program",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Prepare & Submit Site Safety Plan",
+                      "id": "SUB-1020",
+                      "page": 2,
+                      "original_duration": 6,
+                      "early_start": "24-Jun-25",
+                      "early_finish": "01-Jul-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 01: General > Spec Section 01535 - Safety Program"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Prepare & Submit Safety Program Overview",
+                      "id": "SUB-1840",
+                      "page": 2,
+                      "original_duration": 6,
+                      "early_start": "24-Jun-25",
+                      "early_finish": "01-Jul-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 01: General > Spec Section 01535 - Safety Program"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Review & Approve Site Safety Plan",
+                      "id": "APP-1020",
+                      "page": 2,
+                      "original_duration": 14,
+                      "early_start": "02-Jul-25",
+                      "early_finish": "15-Jul-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 01: General > Spec Section 01535 - Safety Program"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Review & Approve Safety Program Overview",
+                      "id": "APP-1240",
+                      "page": 2,
+                      "original_duration": 14,
+                      "early_start": "02-Jul-25",
+                      "early_finish": "15-Jul-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 01: General > Spec Section 01535 - Safety Program"
+                    }
+                  ],
+                  "subheaders": []
+                }
+              ]
+            },
+            {
+              "subheader": "Division 02: Sitework",
+              "activities": [],
+              "subheaders": [
+                {
+                  "subheader": "Spec Section 02081 - Asbestos Abatement",
+                  "activities": [],
+                  "subheaders": [
+                    {
+                      "subheader": "Spec Section 02081 - Asbestos Abatement - Submittals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Certificate of Insurance",
+                          "id": "SUB-1860",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Health & Safety Plan",
+                          "id": "SUB-1870",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Emergency Action Plan",
+                          "id": "SUB-1880",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Fall Protection Plan",
+                          "id": "SUB-1890",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Permits, State Licenses & Notifications",
+                          "id": "SUB-1900",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Qualifications of Workers",
+                          "id": "SUB-1910",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Respiratory Protection Program",
+                          "id": "SUB-1920",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Historic Airborne Fiber Data for Similar Projects",
+                          "id": "SUB-1930",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Asbestos Landfill Site",
+                          "id": "SUB-1940",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Asbestos Equipment & MSDS",
+                          "id": "SUB-1950",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Asbestos Abatement Work & Removal Plan",
+                          "id": "SUB-1960",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Sample Daily Log",
+                          "id": "SUB-1970",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Schedule of Work Changes",
+                          "id": "SUB-1980",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Waste Shipment Records",
+                          "id": "SUB-1990",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Copy of Log Book",
+                          "id": "SUB-2000",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Personal air monitoring records pertaining to this project",
+                          "id": "SUB-2010",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Compilation of all Completed and Signed Waste Shipment Record forms.",
+                          "id": "SUB-2020",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Copies of Workers' Licences",
+                          "id": "SUB-2030",
+                          "page": 2,
+                          "original_duration": 10,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "08-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Submittals"
+                        }
+                      ],
+                      "subheaders": []
+                    },
+                    {
+                      "subheader": "Spec Section 02081 - Asbestos Abatement - Approvals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Certificate of Insurance",
+                          "id": "APP-1630",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Health & Safety Plan",
+                          "id": "APP-1640",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Emergency Action Plan",
+                          "id": "APP-1650",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Fall Protection Plan",
+                          "id": "APP-1660",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Permits, State Licenses & Notifications",
+                          "id": "APP-1670",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Qualifications of Workers",
+                          "id": "APP-1680",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Respiratory Protection Program",
+                          "id": "APP-1690",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Historic Airborne Fiber Data for Similar Projects",
+                          "id": "APP-1700",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Asbestos Landfill Site",
+                          "id": "APP-1710",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Asbestos Equipment & MSDS",
+                          "id": "APP-1720",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Asbestos Abatement Work & Removal Plan",
+                          "id": "APP-1730",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Sample Daily Log",
+                          "id": "APP-1740",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Schedule of Work Changes",
+                          "id": "APP-1750",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Waste Shipment Records",
+                          "id": "APP-1760",
+                          "page": 2,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Copy of Log Book",
+                          "id": "APP-1770",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Personal air monitoring records pertaining to this project",
+                          "id": "APP-1780",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Compilation of all Completed and Signed Waste Shipment Record forms.",
+                          "id": "APP-1790",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Copies of Workers' Licences",
+                          "id": "APP-1800",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "09-Jul-25",
+                          "early_finish": "29-Jul-25",
+                          "total_float": 1,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02081 - Asbestos Abatement > Spec Section 02081 - Asbestos Abatement - Approvals"
+                        }
+                      ],
+                      "subheaders": []
+                    }
+                  ]
+                },
+                {
+                  "subheader": "Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill",
+                  "activities": [],
+                  "subheaders": [
+                    {
+                      "subheader": "Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill - Submittals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Soil Sampling Plan",
+                          "id": "SUB-1010",
+                          "page": 3,
+                          "original_duration": 5,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "30-Jun-25",
+                          "total_float": 0,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Qualified Environmental Professional (QEP) credentials",
+                          "id": "SUB-2220",
+                          "page": 3,
+                          "original_duration": 5,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "30-Jun-25",
+                          "total_float": 9,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Documentation of Proper Disposal",
+                          "id": "SUB-2290",
+                          "page": 3,
+                          "original_duration": 12,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "10-Jul-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Excavated Material Disposal Plan",
+                          "id": "SUB-1050",
+                          "page": 3,
+                          "original_duration": 6,
+                          "early_start": "21-Jul-25",
+                          "early_finish": "28-Jul-25",
+                          "total_float": 0,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill - Submittals"
+                        }
+                      ],
+                      "subheaders": []
+                    },
+                    {
+                      "subheader": "Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill - Approvals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Soil Sampling Plan",
+                          "id": "APP-1000",
+                          "page": 3,
+                          "original_duration": 16,
+                          "early_start": "01-Jul-25",
+                          "early_finish": "16-Jul-25",
+                          "total_float": 0,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Qualified Environmental Professional (QEP) credentials",
+                          "id": "APP-2140",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "01-Jul-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 14,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Documentation of Proper Disposal",
+                          "id": "APP-1250",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "11-Jul-25",
+                          "early_finish": "31-Jul-25",
+                          "total_float": 4,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Excavated Material Disposal Plan",
+                          "id": "APP-1040",
+                          "page": 3,
+                          "original_duration": 7,
+                          "early_start": "29-Jul-25",
+                          "early_finish": "04-Aug-25",
+                          "total_float": 0,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill > Spec Section 02090 - Environmental Management of Excavated Material & Fill/Backfill - Approvals"
+                        }
+                      ],
+                      "subheaders": []
+                    }
+                  ]
+                },
+                {
+                  "subheader": "Spec Section 02100 - Site Preparation",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Prepare & Submit Existing Conditions Topo Survey",
+                      "id": "SUB-2350",
+                      "page": 3,
+                      "original_duration": 3,
+                      "early_start": "24-Jun-25",
+                      "early_finish": "26-Jun-25",
+                      "total_float": 9,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 02: Sitework > Spec Section 02100 - Site Preparation"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Prepare & Submit Surveyor Qualifications - Cornerstone",
+                      "id": "SUB-2360",
+                      "page": 3,
+                      "original_duration": 3,
+                      "early_start": "24-Jun-25",
+                      "early_finish": "26-Jun-25",
+                      "total_float": 9,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 02: Sitework > Spec Section 02100 - Site Preparation"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Review & Approve Existing Conditions Topo Survey",
+                      "id": "APP-1140",
+                      "page": 3,
+                      "original_duration": 21,
+                      "early_start": "27-Jun-25",
+                      "early_finish": "17-Jul-25",
+                      "total_float": 14,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 02: Sitework > Spec Section 02100 - Site Preparation"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Review & Approve Surveyor Qualifications - Cornerstone",
+                      "id": "APP-2150",
+                      "page": 3,
+                      "original_duration": 21,
+                      "early_start": "27-Jun-25",
+                      "early_finish": "17-Jul-25",
+                      "total_float": 14,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 02: Sitework > Spec Section 02100 - Site Preparation"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Prepare & Submit Final Survey",
+                      "id": "SUB-2370",
+                      "page": 3,
+                      "original_duration": 26,
+                      "early_start": "22-Oct-25",
+                      "early_finish": "26-Nov-25",
+                      "total_float": 2,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 02: Sitework > Spec Section 02100 - Site Preparation"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Review & Approve Final Survey",
+                      "id": "APP-2150",
+                      "page": 3,
+                      "original_duration": 21,
+                      "early_start": "27-Nov-25",
+                      "early_finish": "17-Dec-25",
+                      "total_float": 6,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 02: Sitework > Spec Section 02100 - Site Preparation"
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "Spec Section 02200 - Earthwork",
+                  "activities": [],
+                  "subheaders": [
+                    {
+                      "subheader": "Spec Section 02200 - Earthwork - Submittals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Micropile and Secant Pile Drilling Equipment",
+                          "id": "SUB-2460",
+                          "page": 3,
+                          "original_duration": 1,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jun-25",
+                          "total_float": 19,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Erosion Sediment Control Plan",
+                          "id": "SUB-1000",
+                          "page": 3,
+                          "original_duration": 5,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "30-Jun-25",
+                          "total_float": 6,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Sediment & Erosion Control Product Data",
+                          "id": "SUB-2410",
+                          "page": 3,
+                          "original_duration": 5,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "30-Jun-25",
+                          "total_float": 6,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Sediment & Erosion Control Representative Cert.",
+                          "id": "SUB-2440",
+                          "page": 3,
+                          "original_duration": 5,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "30-Jun-25",
+                          "total_float": 6,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Vibration Monitoring Plan",
+                          "id": "SUB-1030",
+                          "page": 3,
+                          "original_duration": 16,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "16-Jul-25",
+                          "total_float": 6,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit SOE Shop Drawings",
+                          "id": "SUB-1040",
+                          "page": 3,
+                          "original_duration": 18,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "18-Jul-25",
+                          "total_float": 23,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Concrete Mix Design for Heelblocks",
+                          "id": "SUB-2430",
+                          "page": 3,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 57,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Compaction Equipment Product Data",
+                          "id": "SUB-2480",
+                          "page": 3,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 57,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Submittals"
+                        }
+                      ],
+                      "subheaders": []
+                    },
+                    {
+                      "subheader": "Spec Section 02200 - Earthwork - Approvals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Micropile and Secant Pile Drilling Equipment",
+                          "id": "APP-1290",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "25-Jun-25",
+                          "early_finish": "15-Jul-25",
+                          "total_float": 28,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Erosion Sediment Control Plan",
+                          "id": "APP-1010",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "01-Jul-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 9,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Sediment & Erosion Control Product Data",
+                          "id": "APP-1160",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "01-Jul-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 9,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Sediment & Erosion Control Representative Cert.",
+                          "id": "APP-1280",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "01-Jul-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 9,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Vibration Monitoring Plan",
+                          "id": "APP-1030",
+                          "page": 3,
+                          "original_duration": 14,
+                          "early_start": "17-Jul-25",
+                          "early_finish": "30-Jul-25",
+                          "total_float": 8,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve SOE Shop Drawings",
+                          "id": "APP-1050",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "19-Jul-25",
+                          "early_finish": "08-Aug-25",
+                          "total_float": 33,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Concrete Mix Design for Heelblocks",
+                          "id": "APP-1270",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 83,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Compaction Equipment Product Data",
+                          "id": "APP-1310",
+                          "page": 3,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 83,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02200 - Earthwork > Spec Section 02200 - Earthwork - Approvals"
+                        }
+                      ],
+                      "subheaders": []
+                    }
+                  ]
+                },
+                {
+                  "subheader": "Spec Section 02363 - Secant Pile Wall",
+                  "activities": [],
+                  "subheaders": [
+                    {
+                      "subheader": "Spec Section 02363 - Secant Pile Wall - Submittals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Secant Pile Product Data",
+                          "id": "SUB-2690",
+                          "page": 3,
+                          "original_duration": 19,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Secant Pile Equipment Product Data",
+                          "id": "SUB-2700",
+                          "page": 3,
+                          "original_duration": 19,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Secant Pile Installation Procedures",
+                          "id": "SUB-2710",
+                          "page": 4,
+                          "original_duration": 19,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Secant Pile Schedule",
+                          "id": "SUB-2720",
+                          "page": 4,
+                          "original_duration": 19,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Secant Pile Identification Plan",
+                          "id": "SUB-2730",
+                          "page": 4,
+                          "original_duration": 19,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Secant Pile Driller's Logs",
+                          "id": "SUB-2740",
+                          "page": 4,
+                          "original_duration": 19,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Secant Pile Survey",
+                          "id": "SUB-2750",
+                          "page": 4,
+                          "original_duration": 19,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Secant Pile Steel Material Certificates",
+                          "id": "SUB-2760",
+                          "page": 4,
+                          "original_duration": 19,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Secant Pile Contractor Qualifications",
+                          "id": "SUB-2770",
+                          "page": 4,
+                          "original_duration": 19,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "21-Jul-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Submittals"
+                        }
+                      ],
+                      "subheaders": []
+                    },
+                    {
+                      "subheader": "Spec Section 02363 - Secant Pile Wall - Approvals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Secant Pile Product Data",
+                          "id": "APP-1320",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "22-Jul-25",
+                          "early_finish": "11-Aug-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Secant Pile Equipment Product Data",
+                          "id": "APP-1330",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "22-Jul-25",
+                          "early_finish": "11-Aug-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Secant Pile Installation Procedures",
+                          "id": "APP-1340",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "22-Jul-25",
+                          "early_finish": "11-Aug-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Secant Pile Schedule",
+                          "id": "APP-1350",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "22-Jul-25",
+                          "early_finish": "11-Aug-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Secant Pile Identification Plan",
+                          "id": "APP-1360",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "22-Jul-25",
+                          "early_finish": "11-Aug-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Secant Pile Driller's Logs",
+                          "id": "APP-1370",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "22-Jul-25",
+                          "early_finish": "11-Aug-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Secant Pile Survey",
+                          "id": "APP-1380",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "22-Jul-25",
+                          "early_finish": "11-Aug-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Secant Pile Steel Material Certificates",
+                          "id": "APP-1390",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "22-Jul-25",
+                          "early_finish": "11-Aug-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Secant Pile Contractor Qualifications",
+                          "id": "APP-1400",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "22-Jul-25",
+                          "early_finish": "11-Aug-25",
+                          "total_float": 2,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02363 - Secant Pile Wall > Spec Section 02363 - Secant Pile Wall - Approvals"
+                        }
+                      ],
+                      "subheaders": []
+                    }
+                  ]
+                },
+                {
+                  "subheader": "Spec Section 02365 - Micropile Foundations",
+                  "activities": [],
+                  "subheaders": [
+                    {
+                      "subheader": "Spec Section 02365 - Micropile Foundations - Submittals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Micropile Product Data",
+                          "id": "SUB-2870",
+                          "page": 4,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 29,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Micropile Equipment Product Data",
+                          "id": "SUB-2880",
+                          "page": 4,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 29,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Micropile Installation Procedures",
+                          "id": "SUB-2890",
+                          "page": 4,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 29,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Micropile Schedule",
+                          "id": "SUB-2900",
+                          "page": 4,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 29,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Micropile Identification Plan",
+                          "id": "SUB-2910",
+                          "page": 4,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 29,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Micropile Driller's Logs",
+                          "id": "SUB-2920",
+                          "page": 4,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 29,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Micropile Survey",
+                          "id": "SUB-2930",
+                          "page": 4,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 29,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Micropile Steel Material Certificates",
+                          "id": "SUB-2940",
+                          "page": 4,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 29,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Micropile Contractor Qualifications",
+                          "id": "SUB-2950",
+                          "page": 4,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 29,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Submittals"
+                        }
+                      ],
+                      "subheaders": []
+                    },
+                    {
+                      "subheader": "Spec Section 02365 - Micropile Foundations - Approvals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Micropile Product Data",
+                          "id": "APP-1410",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 42,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Micropile Equipment Product Data",
+                          "id": "APP-1420",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 42,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Micropile Installation Procedures",
+                          "id": "APP-1430",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 42,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Micropile Schedule",
+                          "id": "APP-1440",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 42,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Micropile Identification Plan",
+                          "id": "APP-1450",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 42,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Micropile Driller's Logs",
+                          "id": "APP-1460",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 42,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Micropile Survey",
+                          "id": "APP-1470",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 42,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Micropile Steel Material Certificates",
+                          "id": "APP-1480",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 42,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Micropile Contractor Qualifications",
+                          "id": "APP-1490",
+                          "page": 4,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 42,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 02365 - Micropile Foundations > Spec Section 02365 - Micropile Foundations - Approvals"
+                        }
+                      ],
+                      "subheaders": []
+                    }
+                  ]
+                },
+                {
+                  "subheader": "Spec Section 02510 - Water Distribution System",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Prepare & Submit Hydrant Permit",
+                      "id": "SUB-3050",
+                      "page": 4,
+                      "original_duration": 22,
+                      "early_start": "24-Jun-25",
+                      "early_finish": "24-Jul-25",
+                      "total_float": 2,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 02: Sitework > Spec Section 02510 - Water Distribution System"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Review & Approve Hydrant Permit",
+                      "id": "APP-1500",
+                      "page": 4,
+                      "original_duration": 21,
+                      "early_start": "25-Jul-25",
+                      "early_finish": "14-Aug-25",
+                      "total_float": 4,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 02: Sitework > Spec Section 02510 - Water Distribution System"
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "Spec Section 05210 - Structural Steel",
+                  "activities": [],
+                  "subheaders": [
+                    {
+                      "subheader": "Spec Section 05210 - Structural Steel - Submittals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Steel Shop Drawings",
+                          "id": "SUB-3070",
+                          "page": 4,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 19,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit HSteel Calculations",
+                          "id": "SUB-3080",
+                          "page": 4,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 19,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Test Reports",
+                          "id": "SUB-3090",
+                          "page": 5,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 19,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Manufacturer's Certificate of AWS Qualifications",
+                          "id": "SUB-3100",
+                          "page": 5,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 19,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Material Product Data",
+                          "id": "SUB-3110",
+                          "page": 5,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 19,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Submittals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Prepare & Submit Anchor Adhesion Certifications",
+                          "id": "SUB-3120",
+                          "page": 5,
+                          "original_duration": 22,
+                          "early_start": "24-Jun-25",
+                          "early_finish": "24-Jul-25",
+                          "total_float": 19,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Submittals"
+                        }
+                      ],
+                      "subheaders": []
+                    },
+                    {
+                      "subheader": "Spec Section 05210 - Structural Steel - Approvals",
+                      "activities": [
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Steel Shop Drawings",
+                          "id": "APP-1510",
+                          "page": 5,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 27,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve HSteel Calculations",
+                          "id": "APP-1520",
+                          "page": 5,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 27,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Test Reports",
+                          "id": "APP-1530",
+                          "page": 5,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 27,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Manufacturer's Certificate of AWS Qualifications",
+                          "id": "APP-1540",
+                          "page": 5,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 27,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Material Product Data",
+                          "id": "APP-1550",
+                          "page": 5,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 27,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Approvals"
+                        },
+                        {
+                          "row_type": "activity",
+                          "text": "Review & Approve Anchor Adhesion Certifications",
+                          "id": "APP-1560",
+                          "page": 5,
+                          "original_duration": 21,
+                          "early_start": "25-Jul-25",
+                          "early_finish": "14-Aug-25",
+                          "total_float": 27,
+                          "level": 6,
+                          "parent_path": "Procurement > Division 02: Sitework > Spec Section 05210 - Structural Steel > Spec Section 05210 - Structural Steel - Approvals"
+                        }
+                      ],
+                      "subheaders": []
+                    }
+                  ]
+                },
+                {
+                  "subheader": "Fabrication & Delivery",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Procure & Deliver Structural Steel",
+                      "id": "PRO-1000",
+                      "page": 5,
+                      "original_duration": 60,
+                      "early_start": "15-Aug-25",
+                      "early_finish": "13-Oct-25",
+                      "total_float": 27,
+                      "level": 5,
+                      "parent_path": "Procurement > Division 02: Sitework > Fabrication & Delivery"
+                    }
+                  ],
+                  "subheaders": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subheader": "Construction",
+          "activities": [],
+          "subheaders": [
+            {
+              "subheader": "Preliminary Work",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "EXPOSE Existing Water Service Line",
+                  "id": "CON-1010",
+                  "page": 5,
+                  "original_duration": 2,
+                  "early_start": "17-Jul-25",
+                  "early_finish": "18-Jul-25",
+                  "total_float": 8,
+                  "level": 4,
+                  "parent_path": "Construction > Preliminary Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Soil Sampling - Upper 10 Feet",
+                  "id": "CON-1020",
+                  "page": 5,
+                  "original_duration": 2,
+                  "early_start": "17-Jul-25",
+                  "early_finish": "18-Jul-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > Preliminary Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Asbestos Bulk Sampling",
+                  "id": "CON-1030",
+                  "page": 5,
+                  "original_duration": 2,
+                  "early_start": "17-Jul-25",
+                  "early_finish": "18-Jul-25",
+                  "total_float": 8,
+                  "level": 4,
+                  "parent_path": "Construction > Preliminary Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install Site Fence",
+                  "id": "CON-1050",
+                  "page": 5,
+                  "original_duration": 6,
+                  "early_start": "16-Jul-25",
+                  "early_finish": "23-Jul-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Construction > Preliminary Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Utility Coordination",
+                  "id": "CON-1040",
+                  "page": 5,
+                  "original_duration": 9,
+                  "early_start": "17-Jul-25",
+                  "early_finish": "29-Jul-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Construction > Preliminary Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Soil Sampling - Upper 10 Feet - Results Approval",
+                  "id": "CON-1560",
+                  "page": 5,
+                  "original_duration": 10,
+                  "early_start": "21-Jul-25",
+                  "early_finish": "01-Aug-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Construction > Preliminary Work"
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "Erosion Controls Work",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Install Protective Tree Barriers",
+                  "id": "CON-1060",
+                  "page": 5,
+                  "original_duration": 1,
+                  "early_start": "24-Jul-25",
+                  "early_finish": "24-Jul-25",
+                  "total_float": 6,
+                  "level": 4,
+                  "parent_path": "Construction > Erosion Controls Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install Temporary Construction Fence & Silt Fence",
+                  "id": "CON-1070",
+                  "page": 5,
+                  "original_duration": 2,
+                  "early_start": "24-Jul-25",
+                  "early_finish": "25-Jul-25",
+                  "total_float": 5,
+                  "level": 4,
+                  "parent_path": "Construction > Erosion Controls Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install Inlet Filters",
+                  "id": "CON-1100",
+                  "page": 5,
+                  "original_duration": 1,
+                  "early_start": "28-Jul-25",
+                  "early_finish": "28-Jul-25",
+                  "total_float": 5,
+                  "level": 4,
+                  "parent_path": "Construction > Erosion Controls Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install Staging & Materials Storage Area",
+                  "id": "CON-1110",
+                  "page": 5,
+                  "original_duration": 1,
+                  "early_start": "28-Jul-25",
+                  "early_finish": "28-Jul-25",
+                  "total_float": 5,
+                  "level": 4,
+                  "parent_path": "Construction > Erosion Controls Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install Stabilized Construction Entrance",
+                  "id": "CON-1120",
+                  "page": 5,
+                  "original_duration": 1,
+                  "early_start": "28-Jul-25",
+                  "early_finish": "28-Jul-25",
+                  "total_float": 5,
+                  "level": 4,
+                  "parent_path": "Construction > Erosion Controls Work"
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "ConED Work",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Coordinate With ConED for Electrical Service Disconnection",
+                  "id": "CON-1000",
+                  "page": 5,
+                  "original_duration": 15,
+                  "early_start": "24-Jun-25",
+                  "early_finish": "15-Jul-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > ConED Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Scheduling With ConED for Electrical Service Disconnection",
+                  "id": "CON-1160",
+                  "page": 5,
+                  "original_duration": 18,
+                  "early_start": "16-Jul-25",
+                  "early_finish": "08-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > ConED Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "ConED Availability to Disconnect Electrical Service",
+                  "id": "CON-1170",
+                  "page": 5,
+                  "original_duration": 0,
+                  "early_start": "11-Aug-25",
+                  "early_finish": "",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > ConED Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Disconnect & Remove Existing 1200A, 208V, 3 Phase CT Cabinet, 1200/3P Fused Disconnect Switch",
+                  "id": "CON-1180",
+                  "page": 5,
+                  "original_duration": 3,
+                  "early_start": "11-Aug-25",
+                  "early_finish": "13-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > ConED Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Disconnect & Remove Existing ConEdison Meter & All Associated Wiring & Conduits.",
+                  "id": "CON-1190",
+                  "page": 5,
+                  "original_duration": 3,
+                  "early_start": "11-Aug-25",
+                  "early_finish": "13-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > ConED Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Disconnect & Remove Existing 1200A, 208V / 3 Phase Distribution Switchboards W/ Branch Circuit, Switch & Fuses",
+                  "id": "CON-1200",
+                  "page": 5,
+                  "original_duration": 3,
+                  "early_start": "11-Aug-25",
+                  "early_finish": "13-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > ConED Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Disconnect & Remove Existing Receptacles & Lighting Fixtures W/ All Associated Wiring And Conduits",
+                  "id": "CON-1210",
+                  "page": 5,
+                  "original_duration": 3,
+                  "early_start": "11-Aug-25",
+                  "early_finish": "13-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > ConED Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Disconnect & Remove Existing Underground Service Feeder & Conduits",
+                  "id": "CON-1220",
+                  "page": 5,
+                  "original_duration": 3,
+                  "early_start": "11-Aug-25",
+                  "early_finish": "13-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > ConED Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Disconnect & Remove Existing Fire Alarm Panel, Pull Box & Associated Conduit & Wiring",
+                  "id": "CON-1230",
+                  "page": 5,
+                  "original_duration": 3,
+                  "early_start": "11-Aug-25",
+                  "early_finish": "13-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > ConED Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "ConED Work Completion",
+                  "id": "CON-1240",
+                  "page": 5,
+                  "original_duration": 0,
+                  "early_start": "",
+                  "early_finish": "13-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > ConED Work"
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "Pre-Pile Work",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Mobilize Site Trailer",
+                  "id": "CON-1080",
+                  "page": 5,
+                  "original_duration": 2,
+                  "early_start": "24-Jul-25",
+                  "early_finish": "25-Jul-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Construction > Pre-Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Land Surveyor Piles Layout",
+                  "id": "CON-1150",
+                  "page": 5,
+                  "original_duration": 6,
+                  "early_start": "24-Jul-25",
+                  "early_finish": "31-Jul-25",
+                  "total_float": 8,
+                  "level": 4,
+                  "parent_path": "Construction > Pre-Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Remove Potential Asbestos Containing Utilies",
+                  "id": "CON-1090",
+                  "page": 5,
+                  "original_duration": 3,
+                  "early_start": "30-Jul-25",
+                  "early_finish": "01-Aug-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Construction > Pre-Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Remove Existing Retaining Walls and Concrete Structures",
+                  "id": "CON-1250",
+                  "page": 5,
+                  "original_duration": 7,
+                  "early_start": "24-Jul-25",
+                  "early_finish": "01-Aug-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Construction > Pre-Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Demolish Existing Site Fence",
+                  "id": "CON-1130",
+                  "page": 5,
+                  "original_duration": 3,
+                  "early_start": "30-Jul-25",
+                  "early_finish": "01-Aug-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Construction > Pre-Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install Monitoring Instrumentation Devices",
+                  "id": "CON-1140",
+                  "page": 6,
+                  "original_duration": 3,
+                  "early_start": "31-Jul-25",
+                  "early_finish": "04-Aug-25",
+                  "total_float": 6,
+                  "level": 4,
+                  "parent_path": "Construction > Pre-Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Excavate to Drilling Level",
+                  "id": "CON-1260",
+                  "page": 6,
+                  "original_duration": 10,
+                  "early_start": "05-Aug-25",
+                  "early_finish": "18-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > Pre-Pile Work"
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "Pile Work",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Soil Sampling to Final Grade",
+                  "id": "CON-1290",
+                  "page": 6,
+                  "original_duration": 5,
+                  "early_start": "08-Aug-25",
+                  "early_finish": "14-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install North Soldier Piles - First Set",
+                  "id": "CON-1270",
+                  "page": 6,
+                  "original_duration": 10,
+                  "early_start": "13-Aug-25",
+                  "early_finish": "26-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install Secant Piles - CP-1 to CP-22",
+                  "id": "CON-1300",
+                  "page": 6,
+                  "original_duration": 10,
+                  "early_start": "13-Aug-25",
+                  "early_finish": "26-Aug-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Construction > Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Soil Sampling to Final Grade Results",
+                  "id": "CON-1570",
+                  "page": 6,
+                  "original_duration": 10,
+                  "early_start": "15-Aug-25",
+                  "early_finish": "28-Aug-25",
+                  "total_float": 19,
+                  "level": 4,
+                  "parent_path": "Construction > Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install North Soldier Piles - Second Set",
+                  "id": "CON-1540",
+                  "page": 6,
+                  "original_duration": 7,
+                  "early_start": "27-Aug-25",
+                  "early_finish": "05-Sep-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install Secant Piles - CP-23 to CP-44",
+                  "id": "CON-1340",
+                  "page": 6,
+                  "original_duration": 10,
+                  "early_start": "27-Aug-25",
+                  "early_finish": "10-Sep-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Construction > Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install East Soldier Piles",
+                  "id": "CON-1280",
+                  "page": 6,
+                  "original_duration": 7,
+                  "early_start": "08-Sep-25",
+                  "early_finish": "16-Sep-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install Secant Piles - CP-45 to CP-54",
+                  "id": "CON-1580",
+                  "page": 6,
+                  "original_duration": 5,
+                  "early_start": "11-Sep-25",
+                  "early_finish": "17-Sep-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Construction > Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install South Soldier Piles - First Set",
+                  "id": "CON-1590",
+                  "page": 6,
+                  "original_duration": 7,
+                  "early_start": "17-Sep-25",
+                  "early_finish": "25-Sep-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install West Soldier Piles",
+                  "id": "CON-1390",
+                  "page": 6,
+                  "original_duration": 10,
+                  "early_start": "18-Sep-25",
+                  "early_finish": "01-Oct-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Construction > Pile Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install South Soldier Piles - Second Set",
+                  "id": "CON-1310",
+                  "page": 6,
+                  "original_duration": 6,
+                  "early_start": "26-Sep-25",
+                  "early_finish": "03-Oct-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Construction > Pile Work"
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "Initial Lagging & Perimeter Berm Excavation",
+              "activities": [],
+              "subheaders": [
+                {
+                  "subheader": "North",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate to 5 Feet Depth - North Side",
+                      "id": "CON-1320",
+                      "page": 6,
+                      "original_duration": 10,
+                      "early_start": "11-Sep-25",
+                      "early_finish": "24-Sep-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > North"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Upper Lagging - North Side",
+                      "id": "CON-1350",
+                      "page": 6,
+                      "original_duration": 2,
+                      "early_start": "25-Sep-25",
+                      "early_finish": "26-Sep-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > North"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate & Create A Berm Along the North Perimeter",
+                      "id": "CON-1370",
+                      "page": 6,
+                      "original_duration": 3,
+                      "early_start": "29-Sep-25",
+                      "early_finish": "01-Oct-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > North"
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "East",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate to 5 Feet Depth - East Side",
+                      "id": "CON-1670",
+                      "page": 6,
+                      "original_duration": 10,
+                      "early_start": "17-Sep-25",
+                      "early_finish": "30-Sep-25",
+                      "total_float": 2,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > East"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Upper Lagging - East Side",
+                      "id": "CON-1360",
+                      "page": 6,
+                      "original_duration": 2,
+                      "early_start": "01-Oct-25",
+                      "early_finish": "02-Oct-25",
+                      "total_float": 2,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > East"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate & Create A Berm Along the East Perimeter",
+                      "id": "CON-1400",
+                      "page": 6,
+                      "original_duration": 3,
+                      "early_start": "03-Oct-25",
+                      "early_finish": "07-Oct-25",
+                      "total_float": 2,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > East"
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "West",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate to 5 Feet Depth - West Side",
+                      "id": "CON-1690",
+                      "page": 6,
+                      "original_duration": 10,
+                      "early_start": "02-Oct-25",
+                      "early_finish": "16-Oct-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > West"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Upper Lagging - West Side",
+                      "id": "CON-1410",
+                      "page": 6,
+                      "original_duration": 3,
+                      "early_start": "17-Oct-25",
+                      "early_finish": "21-Oct-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > West"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate & Create A Berm Along the West Perimeter",
+                      "id": "CON-1430",
+                      "page": 6,
+                      "original_duration": 3,
+                      "early_start": "22-Oct-25",
+                      "early_finish": "24-Oct-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > West"
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "South",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate to 5 Feet Depth - South Side",
+                      "id": "CON-1680",
+                      "page": 6,
+                      "original_duration": 10,
+                      "early_start": "06-Oct-25",
+                      "early_finish": "20-Oct-25",
+                      "total_float": 0,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > South"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Upper Lagging - South Side",
+                      "id": "CON-1380",
+                      "page": 6,
+                      "original_duration": 2,
+                      "early_start": "21-Oct-25",
+                      "early_finish": "22-Oct-25",
+                      "total_float": 0,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > South"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate & Create A Berm Along the South Perimeter",
+                      "id": "CON-1420",
+                      "page": 6,
+                      "original_duration": 3,
+                      "early_start": "23-Oct-25",
+                      "early_finish": "27-Oct-25",
+                      "total_float": 0,
+                      "level": 5,
+                      "parent_path": "Construction > Initial Lagging & Perimeter Berm Excavation > South"
+                    }
+                  ],
+                  "subheaders": []
+                }
+              ]
+            },
+            {
+              "subheader": "Final Excavation & SOE Bracing Elements",
+              "activities": [],
+              "subheaders": [
+                {
+                  "subheader": "North",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate to the Bottom of Excavation - North - (HB-16 to HB-20)",
+                      "id": "CON-1440",
+                      "page": 6,
+                      "original_duration": 6,
+                      "early_start": "02-Oct-25",
+                      "early_finish": "09-Oct-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > North"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Mini Piles Within Heel Blocks - North - (HB-16 to HB-20)",
+                      "id": "CON-1450",
+                      "page": 6,
+                      "original_duration": 7,
+                      "early_start": "10-Oct-25",
+                      "early_finish": "21-Oct-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > North"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Pour Heel Blocks - North - (HB-16 to HB-20)",
+                      "id": "CON-1460",
+                      "page": 6,
+                      "original_duration": 2,
+                      "early_start": "22-Oct-25",
+                      "early_finish": "23-Oct-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > North"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Backfill & Compact - North - (HB-16 to HB-20)",
+                      "id": "CON-1600",
+                      "page": 6,
+                      "original_duration": 2,
+                      "early_start": "22-Oct-25",
+                      "early_finish": "23-Oct-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > North"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Lagging, Waler & Top Level Raker/Brace - North - (HB-16 to HB-20)",
+                      "id": "CON-1470",
+                      "page": 6,
+                      "original_duration": 6,
+                      "early_start": "24-Oct-25",
+                      "early_finish": "31-Oct-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > North"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate Flatten Berm - From the Top Raker to the Intermediate Raker - North - (HB-16 to HB-20)",
+                      "id": "CON-1480",
+                      "page": 6,
+                      "original_duration": 6,
+                      "early_start": "03-Nov-25",
+                      "early_finish": "10-Nov-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > North"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Lagging, Waler & Intermediate Level Raker - North - (HB-16 to HB-20)",
+                      "id": "CON-1490",
+                      "page": 6,
+                      "original_duration": 6,
+                      "early_start": "11-Nov-25",
+                      "early_finish": "18-Nov-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > North"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate Flatten Berm - From the Intermediate Raker to the Bottom Raker - North - (HB-16 to HB-20)",
+                      "id": "CON-1520",
+                      "page": 6,
+                      "original_duration": 6,
+                      "early_start": "19-Nov-25",
+                      "early_finish": "26-Nov-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > North"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Lagging, Waler & Bottom Level Raker - North - (HB-16 to HB-20)",
+                      "id": "CON-1530",
+                      "page": 6,
+                      "original_duration": 6,
+                      "early_start": "01-Dec-25",
+                      "early_finish": "08-Dec-25",
+                      "total_float": 11,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > North"
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "East",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate to the Bottom of Excavation - East - (HB-01 to HB-03)",
+                      "id": "CON-1880",
+                      "page": 6,
+                      "original_duration": 3,
+                      "early_start": "08-Oct-25",
+                      "early_finish": "10-Oct-25",
+                      "total_float": 2,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > East"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Mini Piles Within Heel Blocks - East - (HB-01 to HB-03)",
+                      "id": "CON-1890",
+                      "page": 6,
+                      "original_duration": 4,
+                      "early_start": "14-Oct-25",
+                      "early_finish": "17-Oct-25",
+                      "total_float": 2,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > East"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Pour Heel Blocks - East - (HB-01 to HB-03)",
+                      "id": "CON-1900",
+                      "page": 7,
+                      "original_duration": 2,
+                      "early_start": "20-Oct-25",
+                      "early_finish": "21-Oct-25",
+                      "total_float": 2,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > East"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Backfill & Compact - East - (HB-01 to HB-03)",
+                      "id": "CON-1910",
+                      "page": 7,
+                      "original_duration": 2,
+                      "early_start": "20-Oct-25",
+                      "early_finish": "21-Oct-25",
+                      "total_float": 19,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > East"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Lagging, Waler & Top Level Raker/Brace - East - (HB-01 to HB-03)",
+                      "id": "CON-1920",
+                      "page": 7,
+                      "original_duration": 6,
+                      "early_start": "22-Oct-25",
+                      "early_finish": "29-Oct-25",
+                      "total_float": 19,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > East"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate Flatten Berm - From the Top Raker to the Intermediate Raker - East - (HB-01 to HB-03)",
+                      "id": "CON-1930",
+                      "page": 7,
+                      "original_duration": 4,
+                      "early_start": "30-Oct-25",
+                      "early_finish": "04-Nov-25",
+                      "total_float": 19,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > East"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Lagging, Waler & Intermediate Level Raker - East - (HB-01 to HB-03)",
+                      "id": "CON-1940",
+                      "page": 7,
+                      "original_duration": 4,
+                      "early_start": "05-Nov-25",
+                      "early_finish": "10-Nov-25",
+                      "total_float": 19,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > East"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate Flatten Berm - From the Intermediate Raker to the Bottom Raker - East - (HB-01 to HB-03)",
+                      "id": "CON-1950",
+                      "page": 7,
+                      "original_duration": 4,
+                      "early_start": "11-Nov-25",
+                      "early_finish": "14-Nov-25",
+                      "total_float": 19,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > East"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Lagging, Waler & Bottom Level Raker - East - (HB-01 to HB-03)",
+                      "id": "CON-1960",
+                      "page": 7,
+                      "original_duration": 6,
+                      "early_start": "17-Nov-25",
+                      "early_finish": "24-Nov-25",
+                      "total_float": 19,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > East"
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "West",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate to the Bottom of Excavation - West - (HB-11 to HB-15)",
+                      "id": "CON-1700",
+                      "page": 7,
+                      "original_duration": 6,
+                      "early_start": "27-Oct-25",
+                      "early_finish": "03-Nov-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > West"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Mini Piles Within Heel Blocks - West - (HB-11 to HB-15)",
+                      "id": "CON-1710",
+                      "page": 7,
+                      "original_duration": 6,
+                      "early_start": "04-Nov-25",
+                      "early_finish": "11-Nov-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > West"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Pour Heel Blocks - West - (HB-11 to HB-15)",
+                      "id": "CON-1720",
+                      "page": 7,
+                      "original_duration": 2,
+                      "early_start": "12-Nov-25",
+                      "early_finish": "13-Nov-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > West"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Backfill & Compact - West - (HB-11 to HB-15)",
+                      "id": "CON-1730",
+                      "page": 7,
+                      "original_duration": 2,
+                      "early_start": "12-Nov-25",
+                      "early_finish": "13-Nov-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > West"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Lagging, Waler & Top Level Raker/Brace - West - (HB-11 to HB-15)",
+                      "id": "CON-1740",
+                      "page": 7,
+                      "original_duration": 6,
+                      "early_start": "14-Nov-25",
+                      "early_finish": "21-Nov-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > West"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate Flatten Berm - From the Top Raker to the Intermediate Raker - West - (HB-11 to HB-15)",
+                      "id": "CON-1750",
+                      "page": 7,
+                      "original_duration": 6,
+                      "early_start": "24-Nov-25",
+                      "early_finish": "03-Dec-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > West"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Lagging, Waler & Intermediate Level Raker - West - (HB-11 to HB-15)",
+                      "id": "CON-1760",
+                      "page": 7,
+                      "original_duration": 2,
+                      "early_start": "04-Dec-25",
+                      "early_finish": "05-Dec-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > West"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate Flatten Berm - From the Intermediate Raker to the Bottom Raker - West - (HB-11 to HB-15)",
+                      "id": "CON-1770",
+                      "page": 7,
+                      "original_duration": 5,
+                      "early_start": "08-Dec-25",
+                      "early_finish": "12-Dec-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > West"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Lagging, Waler & Bottom Level Raker - West - (HB-11 to HB-15)",
+                      "id": "CON-1780",
+                      "page": 7,
+                      "original_duration": 6,
+                      "early_start": "15-Dec-25",
+                      "early_finish": "22-Dec-25",
+                      "total_float": 1,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > West"
+                    }
+                  ],
+                  "subheaders": []
+                },
+                {
+                  "subheader": "South",
+                  "activities": [
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate to the Bottom of Excavation - South - (HB-04 to HB-10)",
+                      "id": "CON-1790",
+                      "page": 7,
+                      "original_duration": 8,
+                      "early_start": "28-Oct-25",
+                      "early_finish": "06-Nov-25",
+                      "total_float": 0,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > South"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Mini Piles Within Heel Blocks - South - (HB-04 to HB-10)",
+                      "id": "CON-1800",
+                      "page": 7,
+                      "original_duration": 6,
+                      "early_start": "07-Nov-25",
+                      "early_finish": "14-Nov-25",
+                      "total_float": 0,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > South"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Pour Heel Blocks - South - (HB-04 to HB-10)",
+                      "id": "CON-1810",
+                      "page": 7,
+                      "original_duration": 2,
+                      "early_start": "17-Nov-25",
+                      "early_finish": "18-Nov-25",
+                      "total_float": 0,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > South"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Backfill & Compact - South - (HB-04 to HB-10)",
+                      "id": "CON-1820",
+                      "page": 7,
+                      "original_duration": 2,
+                      "early_start": "17-Nov-25",
+                      "early_finish": "18-Nov-25",
+                      "total_float": 0,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > South"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Lagging, Waler & Top Level Raker/Brace - South - (HB-04 to HB-10)",
+                      "id": "CON-1830",
+                      "page": 7,
+                      "original_duration": 7,
+                      "early_start": "19-Nov-25",
+                      "early_finish": "01-Dec-25",
+                      "total_float": 0,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > South"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Excavate Flatten Berm - From the Top Raker to the Bottom Raker - South - (HB-04 to HB-10)",
+                      "id": "CON-1860",
+                      "page": 7,
+                      "original_duration": 8,
+                      "early_start": "02-Dec-25",
+                      "early_finish": "11-Dec-25",
+                      "total_float": 0,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > South"
+                    },
+                    {
+                      "row_type": "activity",
+                      "text": "Install Lagging, Waler & Bottom Level Raker - South - (HB-04 to HB-10)",
+                      "id": "CON-1870",
+                      "page": 7,
+                      "original_duration": 8,
+                      "early_start": "12-Dec-25",
+                      "early_finish": "23-Dec-25",
+                      "total_float": 0,
+                      "level": 5,
+                      "parent_path": "Construction > Final Excavation & SOE Bracing Elements > South"
+                    }
+                  ],
+                  "subheaders": []
+                }
+              ]
+            },
+            {
+              "subheader": "Landscape Work",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Pavement Repaving",
+                  "id": "CON-1500",
+                  "page": 7,
+                  "original_duration": 3,
+                  "early_start": "11-Nov-25",
+                  "early_finish": "13-Nov-25",
+                  "total_float": 13,
+                  "level": 4,
+                  "parent_path": "Construction > Landscape Work"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Install 4\" Sidewalk",
+                  "id": "CON-1510",
+                  "page": 7,
+                  "original_duration": 3,
+                  "early_start": "11-Nov-25",
+                  "early_finish": "13-Nov-25",
+                  "total_float": 13,
+                  "level": 4,
+                  "parent_path": "Construction > Landscape Work"
+                }
+              ],
+              "subheaders": []
+            }
+          ]
+        },
+        {
+          "subheader": "Special Inspections",
+          "activities": [],
+          "subheaders": [
+            {
+              "subheader": "Piling",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Piling - North - (HB-16 to HB-20)",
+                  "id": "I-1000",
+                  "page": 7,
+                  "original_duration": 17,
+                  "early_start": "13-Aug-25",
+                  "early_finish": "05-Sep-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Piling"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Piling - East - (HB-01 to HB-03)",
+                  "id": "I-1060",
+                  "page": 7,
+                  "original_duration": 7,
+                  "early_start": "08-Sep-25",
+                  "early_finish": "16-Sep-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Piling"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Piling - West - (HB-11 to HB-15)",
+                  "id": "I-1120",
+                  "page": 7,
+                  "original_duration": 10,
+                  "early_start": "18-Sep-25",
+                  "early_finish": "01-Oct-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Piling"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Piling - South - (HB-04 to HB-10)",
+                  "id": "I-1180",
+                  "page": 7,
+                  "original_duration": 13,
+                  "early_start": "17-Sep-25",
+                  "early_finish": "03-Oct-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Piling"
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "Excavation",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Excavation to Drilling Level - Pre Pile Work",
+                  "id": "I-1240",
+                  "page": 7,
+                  "original_duration": 10,
+                  "early_start": "05-Aug-25",
+                  "early_finish": "18-Aug-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Excavation"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Excavation - East - (HB-01 to HB-03)",
+                  "id": "I-1090",
+                  "page": 7,
+                  "original_duration": 32,
+                  "early_start": "01-Oct-25",
+                  "early_finish": "14-Nov-25",
+                  "total_float": 19,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Excavation"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Excavation - North - (HB-16 to HB-20)",
+                  "id": "I-1030",
+                  "page": 7,
+                  "original_duration": 54,
+                  "early_start": "11-Sep-25",
+                  "early_finish": "26-Nov-25",
+                  "total_float": 11,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Excavation"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Excavation - South - (HB-04 to HB-10)",
+                  "id": "I-1210",
+                  "page": 7,
+                  "original_duration": 36,
+                  "early_start": "21-Oct-25",
+                  "early_finish": "11-Dec-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Excavation"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Excavation - West - (HB-11 to HB-15)",
+                  "id": "I-1150",
+                  "page": 7,
+                  "original_duration": 39,
+                  "early_start": "17-Oct-25",
+                  "early_finish": "12-Dec-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Excavation"
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "Sheeting",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Sheeting - East - (HB-01 to HB-03)",
+                  "id": "I-1100",
+                  "page": 7,
+                  "original_duration": 38,
+                  "early_start": "01-Oct-25",
+                  "early_finish": "24-Nov-25",
+                  "total_float": 19,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Sheeting"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Sheeting - North - (HB-16 to HB-20)",
+                  "id": "I-1040",
+                  "page": 7,
+                  "original_duration": 50,
+                  "early_start": "25-Sep-25",
+                  "early_finish": "08-Dec-25",
+                  "total_float": 11,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Sheeting"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Sheeting - West - (HB-11 to HB-15)",
+                  "id": "I-1160",
+                  "page": 7,
+                  "original_duration": 45,
+                  "early_start": "17-Oct-25",
+                  "early_finish": "22-Dec-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Sheeting"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Sheeting - South - (HB-04 to HB-10)",
+                  "id": "I-1220",
+                  "page": 8,
+                  "original_duration": 44,
+                  "early_start": "21-Oct-25",
+                  "early_finish": "23-Dec-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Sheeting"
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "Concrete",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Concrete - East - (HB-01 to HB-03)",
+                  "id": "I-1070",
+                  "page": 8,
+                  "original_duration": 2,
+                  "early_start": "20-Oct-25",
+                  "early_finish": "21-Oct-25",
+                  "total_float": 19,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Concrete"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Concrete - North - (HB-16 to HB-20)",
+                  "id": "I-1010",
+                  "page": 8,
+                  "original_duration": 2,
+                  "early_start": "22-Oct-25",
+                  "early_finish": "23-Oct-25",
+                  "total_float": 11,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Concrete"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Concrete - West - (HB-11 to HB-15)",
+                  "id": "I-1130",
+                  "page": 8,
+                  "original_duration": 2,
+                  "early_start": "12-Nov-25",
+                  "early_finish": "13-Nov-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Concrete"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Concrete - South - (HB-04 to HB-10)",
+                  "id": "I-1190",
+                  "page": 8,
+                  "original_duration": 2,
+                  "early_start": "17-Nov-25",
+                  "early_finish": "18-Nov-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Concrete"
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "Backfilling & Compaction",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Backfill & Compact - East - (HB-01 to HB-03)",
+                  "id": "I-1080",
+                  "page": 8,
+                  "original_duration": 2,
+                  "early_start": "20-Oct-25",
+                  "early_finish": "21-Oct-25",
+                  "total_float": 19,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Backfilling & Compaction"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Backfill & Compact - North - (HB-16 to HB-20)",
+                  "id": "I-1020",
+                  "page": 8,
+                  "original_duration": 2,
+                  "early_start": "22-Oct-25",
+                  "early_finish": "23-Oct-25",
+                  "total_float": 11,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Backfilling & Compaction"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Backfill & Compact - West - (HB-11 to HB-15)",
+                  "id": "I-1140",
+                  "page": 8,
+                  "original_duration": 2,
+                  "early_start": "12-Nov-25",
+                  "early_finish": "13-Nov-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Backfilling & Compaction"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Backfill & Compact - South - (HB-04 to HB-10)",
+                  "id": "I-1200",
+                  "page": 8,
+                  "original_duration": 2,
+                  "early_start": "17-Nov-25",
+                  "early_finish": "18-Nov-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Backfilling & Compaction"
+                }
+              ],
+              "subheaders": []
+            },
+            {
+              "subheader": "Welding",
+              "activities": [
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Welding - East - (HB-01 to HB-03)",
+                  "id": "I-1110",
+                  "page": 8,
+                  "original_duration": 24,
+                  "early_start": "22-Oct-25",
+                  "early_finish": "24-Nov-25",
+                  "total_float": 19,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Welding"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Welding - North - (HB-16 to HB-20)",
+                  "id": "I-1050",
+                  "page": 8,
+                  "original_duration": 30,
+                  "early_start": "24-Oct-25",
+                  "early_finish": "08-Dec-25",
+                  "total_float": 11,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Welding"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Welding - West - (HB-11 to HB-15)",
+                  "id": "I-1170",
+                  "page": 8,
+                  "original_duration": 25,
+                  "early_start": "14-Nov-25",
+                  "early_finish": "22-Dec-25",
+                  "total_float": 1,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Welding"
+                },
+                {
+                  "row_type": "activity",
+                  "text": "Special Inspector for Welding - South - (HB-04 to HB-10)",
+                  "id": "I-1230",
+                  "page": 8,
+                  "original_duration": 23,
+                  "early_start": "19-Nov-25",
+                  "early_finish": "23-Dec-25",
+                  "total_float": 0,
+                  "level": 4,
+                  "parent_path": "Special Inspections > Welding"
+                }
+              ],
+              "subheaders": []
+            }
+          ]
+        },
+        {
+          "subheader": "Closeout",
+          "activities": [
+            {
+              "row_type": "activity",
+              "text": "GC Inspections",
+              "id": "CLO-1000",
+              "page": 8,
+              "original_duration": 4,
+              "early_start": "05-Dec-25",
+              "early_finish": "08-Dec-25",
+              "total_float": 0,
+              "level": 3,
+              "parent_path": "Closeout"
+            },
+            {
+              "row_type": "activity",
+              "text": "GC Punchlist",
+              "id": "CLO-1010",
+              "page": 8,
+              "original_duration": 12,
+              "early_start": "09-Dec-25",
+              "early_finish": "20-Dec-25",
+              "total_float": 0,
+              "level": 3,
+              "parent_path": "Closeout"
+            },
+            {
+              "row_type": "activity",
+              "text": "Reconfigure Fence, Repair Sidewalk, Remove Trailers And Demobilization",
+              "id": "CLO-1020",
+              "page": 8,
+              "original_duration": 3,
+              "early_start": "21-Dec-25",
+              "early_finish": "23-Dec-25",
+              "total_float": 0,
+              "level": 3,
+              "parent_path": "Closeout"
+            }
+          ],
+          "subheaders": []
+        }
+      ]
+    }
+  ]
+}

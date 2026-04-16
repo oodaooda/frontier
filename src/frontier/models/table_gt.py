@@ -191,6 +191,7 @@ def _flatten_structure(structure: list, columns: list[str], path: str = "") -> l
             field_map = {
                 "id": "Activity ID",
                 "name": "Activity Name",
+                "text": "Activity Name",
                 "original_duration": "Original Duration",
                 "remaining_duration": "Remaining Duration",
                 "actual_duration": "Actual Duration",
@@ -199,6 +200,7 @@ def _flatten_structure(structure: list, columns: list[str], path: str = "") -> l
                 "late_start": "Late Start",
                 "late_finish": "Late Finish",
                 "total_float": "Total Float",
+                "page": "Page",
             }
             for key, col_name in field_map.items():
                 if col_name in columns:
