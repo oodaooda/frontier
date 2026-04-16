@@ -24,7 +24,7 @@ def _load_image_b64(path: str) -> str:
         return base64.standard_b64encode(f.read()).decode("utf-8")
 
 
-def _call_model(image_paths: list[str], prompt: str, model: str = "claude-opus-4-6") -> tuple[str, int, int]:
+def _call_model(image_paths: list[str], prompt: str, model: str = "claude-opus-4-6", max_tokens: int = 64000) -> tuple[str, int, int]:
     client = anthropic.Anthropic()
     content = []
     for img_path in image_paths:
@@ -34,9 +34,17 @@ def _call_model(image_paths: list[str], prompt: str, model: str = "claude-opus-4
             "source": {"type": "base64", "media_type": "image/png", "data": img_data},
         })
     content.append({"type": "text", "text": prompt})
-    response = client.messages.create(model=model, max_tokens=16000, messages=[{"role": "user", "content": content}])
-    answer = "".join(b.text for b in response.content if b.type == "text")
-    return answer, response.usage.input_tokens, response.usage.output_tokens
+    # Use streaming for large outputs to avoid timeouts
+    answer = ""
+    input_tokens = 0
+    output_tokens = 0
+    with client.messages.stream(model=model, max_tokens=max_tokens, messages=[{"role": "user", "content": content}]) as stream:
+        for text in stream.text_stream:
+            answer += text
+        final = stream.get_final_message()
+        input_tokens = final.usage.input_tokens
+        output_tokens = final.usage.output_tokens
+    return answer, input_tokens, output_tokens
 
 
 def _parse_json(raw: str) -> any:
@@ -48,8 +56,20 @@ def _parse_json(raw: str) -> any:
         start = text.find(start_char)
         end = text.rfind(end_char)
         if start != -1 and end != -1 and end > start:
-            return json.loads(text[start:end + 1])
-    raise ValueError(f"No JSON found: {text[:200]}")
+            try:
+                return json.loads(text[start:end + 1])
+            except json.JSONDecodeError:
+                # Try to fix truncated JSON by closing open brackets
+                fragment = text[start:end + 1]
+                # Count unclosed brackets
+                open_sq = fragment.count('[') - fragment.count(']')
+                open_cr = fragment.count('{') - fragment.count('}')
+                fixed = fragment + ('}' * open_cr) + (']' * open_sq)
+                try:
+                    return json.loads(fixed)
+                except json.JSONDecodeError:
+                    pass
+    raise ValueError(f"No valid JSON found: {text[:300]}")
 
 
 def extract_schedule_v2(

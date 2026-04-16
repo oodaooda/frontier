@@ -1,10 +1,707 @@
 {
   "total": 116,
-  "extracted": 116,
-  "correct": 116,
+  "extracted": 266,
+  "correct": 0,
   "wrong": 0,
-  "missing": 0,
-  "extra": 0,
-  "accuracy": 100.0,
-  "errors": []
+  "missing": 116,
+  "extra": 266,
+  "accuracy": 0.0,
+  "errors": [
+    {
+      "id": "A1000",
+      "expected": "MAJOR MILESTONES",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A1010",
+      "expected": "MAJOR MILESTONES",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A1020",
+      "expected": "MAJOR MILESTONES",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A1030",
+      "expected": "MAJOR MILESTONES",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A1040",
+      "expected": "MAJOR MILESTONES",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A1050",
+      "expected": "MAJOR MILESTONES",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A1060",
+      "expected": "MAJOR MILESTONES",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A2970",
+      "expected": "PROJECT CLOSE-OUT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A2980",
+      "expected": "PROJECT CLOSE-OUT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A2990",
+      "expected": "PROJECT CLOSE-OUT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3000",
+      "expected": "PROJECT CLOSE-OUT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3010",
+      "expected": "PROJECT CLOSE-OUT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3020",
+      "expected": "PRE-CONSTRUCTION > SITE SAFETY PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3030",
+      "expected": "PRE-CONSTRUCTION > SITE SAFETY PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3040",
+      "expected": "PRE-CONSTRUCTION > QUALITY CONTROL PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3050",
+      "expected": "PRE-CONSTRUCTION > QUALITY CONTROL PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3060",
+      "expected": "PRE-CONSTRUCTION > CONSTRUCTION WASTE MANAGEMENT PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3070",
+      "expected": "PRE-CONSTRUCTION > CONSTRUCTION WASTE MANAGEMENT PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3080",
+      "expected": "PRE-CONSTRUCTION > SAFETY PROGRAM",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3090",
+      "expected": "PRE-CONSTRUCTION > SAFETY PROGRAM",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3100",
+      "expected": "PRE-CONSTRUCTION > INDOOR AIR QUALITY (IAQ) PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3110",
+      "expected": "PRE-CONSTRUCTION > INDOOR AIR QUALITY (IAQ) PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3120",
+      "expected": "PRE-CONSTRUCTION > SCA/TMG MEETING",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3130",
+      "expected": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02060 - BUILDING DEMOLITION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3140",
+      "expected": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02060 - BUILDING DEMOLITION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3150",
+      "expected": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02081 - ASBESTOS ABATEMENT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3160",
+      "expected": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02081 - ASBESTOS ABATEMENT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3170",
+      "expected": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02511 - ASPHALTIC CONCRETE PAVING",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3180",
+      "expected": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02511 - ASPHALTIC CONCRETE PAVING",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3190",
+      "expected": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02513 - SIDEWALK & STREET PAVING",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3200",
+      "expected": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > 02513 - SIDEWALK & STREET PAVING",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3210",
+      "expected": "PRE-CONSTRUCTION > PERMITS > ASBESTOS ABATEMENT PERMIT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3220",
+      "expected": "PRE-CONSTRUCTION > PERMITS > ASBESTOS ABATEMENT PERMIT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3230",
+      "expected": "PRE-CONSTRUCTION > PERMITS > ASBESTOS ABATEMENT PERMIT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3240",
+      "expected": "PRE-CONSTRUCTION > MOBILIZATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3250",
+      "expected": "PRE-CONSTRUCTION > MOBILIZATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3260",
+      "expected": "PRE-CONSTRUCTION > MOBILIZATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3270",
+      "expected": "PRE-CONSTRUCTION > PERMITS & PROCEDURES",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3280",
+      "expected": "PRE-CONSTRUCTION > TR-1 - STRUCTURAL STABILITY",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3290",
+      "expected": "PRE-CONSTRUCTION > TR-1 - STRUCTURAL STABILITY",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3300",
+      "expected": "PRE-CONSTRUCTION > TR-3 - CONCRETE DESIGN MIX TECHNICAL REPORT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3310",
+      "expected": "PRE-CONSTRUCTION > TR-3 - CONCRETE DESIGN MIX TECHNICAL REPORT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3320",
+      "expected": "PRE-CONSTRUCTION > PERMITS > FENCE PERMIT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3330",
+      "expected": "PRE-CONSTRUCTION > PERMITS > FENCE PERMIT",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3340",
+      "expected": "PRE-CONSTRUCTION > SOIL SAMPLING",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3350",
+      "expected": "PRE-CONSTRUCTION > SOIL SAMPLING",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3360",
+      "expected": "PRE-CONSTRUCTION > TEMPORARY EGRESS PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3370",
+      "expected": "PRE-CONSTRUCTION > TEMPORARY EGRESS PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3380",
+      "expected": "PRE-CONSTRUCTION > PERMITS > DOB WORK PERMIT TYPES",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3390",
+      "expected": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > COORDINATION DRAWINGS",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3400",
+      "expected": "SUBMITTALS, APPROVALS, PROCUREMENTS > DIVISION 2 - SITE WORK > COORDINATION DRAWINGS",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3410",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > ASBESTOS ABATEMENT - DWG H101-H201",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3420",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > ASBESTOS ABATEMENT - DWG H101-H201",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3430",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > ASBESTOS ABATEMENT - DWG H101-H201",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3440",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > MAIN ROOF",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3450",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > MAIN ROOF",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3460",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > MAIN ROOF",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3470",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > EAST BUILDING ELEVATION - DWG 1/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3480",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > EAST BUILDING ELEVATION - DWG 1/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3490",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > EAST BUILDING ELEVATION - DWG 1/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3500",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > NORTH BUILDING ELEVATION - DWG 2/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3510",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > NORTH BUILDING ELEVATION - DWG 2/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3520",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > NORTH BUILDING ELEVATION - DWG 2/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3530",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > NORTH BUILDING ELEVATION - DWG 2/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3540",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > NORTH BUILDING ELEVATION - DWG 2/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3550",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > SOUTH BUILDING ELEVATION - DWG 3/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3560",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > SOUTH BUILDING ELEVATION - DWG 3/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3570",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > SOUTH BUILDING ELEVATION - DWG 3/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3580",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > WEST BUILDING ELEVATION - DWG 4/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3590",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > WEST BUILDING ELEVATION - DWG 4/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3600",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > WEST BUILDING ELEVATION - DWG 4/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3610",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > WEST BUILDING ELEVATION - DWG 4/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3620",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > WEST BUILDING ELEVATION - DWG 4/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3630",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > EAST-WEST SECTION B - DWG 4/DM105",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3640",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > 1-STOREY MASONRY BUILDING (21-31 DELAVAN STREET) > EAST-WEST SECTION CUT B - DWG 2/DM105",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3650",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - DELAVAN STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3660",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - DELAVAN STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3670",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - DELAVAN STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3680",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - DELAVAN STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3690",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - DELAVAN STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3700",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - RICHARDS STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3710",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - RICHARDS STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3720",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - VERONA STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3730",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - VERONA STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3740",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - VERONA STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3750",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - VERONA STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3760",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - DELAVAN STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3770",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - DELAVAN STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3780",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE REMOVALS - DWG DM10 > SITE REMOVALS - VERONA STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3790",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE IMPROVEMENTS - DWG C020 > SITE IMPROVEMENTS - DELAVAN STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3800",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE IMPROVEMENTS - DWG C020 > SITE IMPROVEMENTS - DELAVAN STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3810",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE IMPROVEMENTS - DWG C020 > SITE IMPROVEMENTS - DELAVAN STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3820",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE IMPROVEMENTS - DWG C020 > SITE IMPROVEMENTS - DELAVAN STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3830",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE IMPROVEMENTS - DWG C020 > SITE IMPROVEMENTS - VERONA STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3840",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE IMPROVEMENTS - DWG C020 > SITE IMPROVEMENTS - VERONA STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3850",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE IMPROVEMENTS - DWG C020 > SITE IMPROVEMENTS - VERONA STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3860",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SITE IMPROVEMENTS - DWG C020 > SITE IMPROVEMENTS - VERONA STREET ELEVATION",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3870",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3880",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3890",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3900",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3910",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3920",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3930",
+      "expected": "CONSTRUCTION > LLW NO.: 127569 - EARLY DEMOLITION PACKAGE > SECTION AT ADJACENT PROPERTY EXTERIOR BUILDING FACADE - DWG 7/DM104",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3940",
+      "expected": "PRE-CONSTRUCTION > PRE-CONSTRUCTION SURVEY",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3950",
+      "expected": "PRE-CONSTRUCTION > PRE-CONSTRUCTION SURVEY",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3960",
+      "expected": "PRE-CONSTRUCTION > PRE-CONSTRUCTION SURVEY",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3970",
+      "expected": "PRE-CONSTRUCTION > PROPERTY PROTECTION PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3980",
+      "expected": "PRE-CONSTRUCTION > PROPERTY PROTECTION PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A3990",
+      "expected": "PRE-CONSTRUCTION > PERMITS & PROCEDURES",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A4000",
+      "expected": "PRE-CONSTRUCTION > PERMITS & PROCEDURES",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A4010",
+      "expected": "PRE-CONSTRUCTION > MONITORING PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A4020",
+      "expected": "PRE-CONSTRUCTION > MONITORING PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A4030",
+      "expected": "PRE-CONSTRUCTION > MONITORING PLAN",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A4040",
+      "expected": "PRE-CONSTRUCTION > PRE-CONSTRUCTION SURVEY",
+      "got": "(missing)",
+      "type": "missing"
+    },
+    {
+      "id": "A4050",
+      "expected": "PRE-CONSTRUCTION > PRE-CONSTRUCTION SURVEY",
+      "got": "(missing)",
+      "type": "missing"
+    }
+  ]
 }
